@@ -20,7 +20,7 @@ Each row pair uses common points; c values share samples. Runs use independent s
 
 ## Analytical and geometry checks
 
-- 9 unittest tests passed; exact log: [tests.log](tests.log).
+- 10 unittest tests passed; exact log: [tests.log](tests.log).
 - `python3 -m py_compile circle_research.py test_circle_research.py` exited 0.
 - Fast finite-segment distances checked against brute reference over six angles, five N values, 500 random points per case plus boundary/endpoint/caustic/midpoint cases; diameter and center have independent analytical checks.
 - Internal audit supplies angular-neighbor candidate proof; no interval-certified arithmetic.

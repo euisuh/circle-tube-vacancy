@@ -41,7 +41,7 @@ batch sizes. `--help` lists flags. Outputs are JSON metadata/raw counts and CSV.
 Do not overwrite old results when investigating changes: choose a new output stem.
 Original per-point samples are regenerated from config, not stored.
 
-Observed validation: 9 unittest tests passed, including brute finite-segment,
+Observed validation: 10 unittest tests passed, including brute finite-segment,
 endpoint/caustic/periodic cases, analytical diameter, quadrature and paired SE.
 Syntax compilation passed. No lint/typecheck config or tools available; these
 checks were not run. No npm project or lint:slop:changed script exists here.

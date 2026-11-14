@@ -10,5 +10,5 @@ requirements.txt; results/* saved outputs/report/tests.
 Next: exact Fibonacci/intermediate gap derivation; certified integral separation;
 independent expert proof/originality review. See docs/PLAN.md gates.
 Blocked: no execution blocker. Lint/typecheck tools absent; not claimed passed.
-Evidence: 9 tests, syntax compilation, 24 quadrature checks; two 4m-point MC pairs.
+Evidence: 10 tests, syntax compilation, 24 quadrature checks; two 4m-point MC pairs.
 Do not write this research into phd-prep. No manuscript/publication authorized.

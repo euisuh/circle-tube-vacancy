@@ -61,6 +61,23 @@ class Predictions(unittest.TestCase):
             np.testing.assert_allclose(report['observed_frequencies'], report['predicted_frequencies'], atol=0.0003)
             self.assertAlmostEqual(report['scaled_mean'], cr.TAU, places=11)
 
+    def test_exact_finite_fibonacci_gap_counts(self):
+        fibonacci = [0, 1]
+        for _ in range(22):
+            fibonacci.append(sum(fibonacci[-2:]))
+        for m in [4, 5, 8, 13, 18, 22]:
+            for k in [0, fibonacci[m-1]//3, fibonacci[m-1]]:
+                n = fibonacci[m]+k
+                _, normals = cr.geometry(cr.ALPHA, n)
+                angles = np.sort(normals)
+                actual = np.sort(np.diff(np.r_[angles, angles[0]+cr.TAU]))
+                counts = [fibonacci[m-1]-k, fibonacci[m-2]+k, k]
+                lengths = cr.TAU*cr.LAMBDA**(m-2+np.arange(3))
+                expected = np.sort(np.repeat(lengths, counts))
+                with self.subTest(m=m, k=k, n=n):
+                    self.assertEqual(sum(counts), n)
+                    np.testing.assert_allclose(actual, expected, atol=2e-10, rtol=0)
+
     def test_batching_reproducibility_and_uncertainty(self):
         first = cr.experiment(1000, 137, 42, [13, 17], [1, 2])
         second = cr.experiment(1000, 1000, 42, [13, 17], [1, 2])

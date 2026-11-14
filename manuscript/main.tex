@@ -3,7 +3,9 @@
 \usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,tikz}
 \usepackage[hidelinks]{hyperref}
 
-\newtheorem{theorem}{Theorem}
+\newtheorem{mainthm}{Theorem}
+\renewcommand{\themainthm}{\Alph{mainthm}}
+\newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
@@ -14,8 +16,11 @@
 \DeclareMathOperator{\dist}{dist}
 
 \title[Shrinking tubes around a circular billiard orbit]{Shrinking tubes around a circular billiard orbit:\\ spatial dephasing and arithmetic oscillation of the uncovered area}
-\author{[Author name and affiliation to be supplied by the author]}
+\author{Euisuh Jeong}
+\address{Republic of Korea Air Force}
 \date{Draft of 14 November 2026}
+\subjclass[2020]{Primary 37E10, 11K06; Secondary 11J70, 37C83}
+\keywords{circular billiard, irrational rotation, three-distance theorem, shrinking targets, coverage, convex order, badly approximable numbers}
 
 \begin{document}
 
@@ -29,11 +34,14 @@ $N$ arcs of half-length proportional to $1/N$ centred at the rotation orbit. The
 square arises only after radial integration; the two angular branches through a
 point are not independent. Combined with the three-distance theorem this gives: (i)
 for every irrational angle, $\liminf V_N(c)$ is at least an explicit uniform-gap value
-$\Vd(c)$, with equality exactly when the angle has unbounded partial quotients, in
+$\Vd(c)$; for $0<c<\pi\sin\alpha$ equality holds exactly when the angle has unbounded partial quotients, in
 which case $V_N(c)$ diverges for every $c>0$; (ii) for the golden angle (and every
 noble angle) the full set of limit points of $V_N(c)$ is an explicit interval, its
 lower end is attained along Fibonacci times by a convex-order argument, and
-$V_N(c)$ converges if and only if $c\ge c_*=\pi\sin\alpha/(\sqrt5\lambda^3)$.
+$V_N(c)$ converges if and only if $c\ge c_*=\pi\sin\alpha/(\sqrt5\lambda^3)$; (iii) for
+every irrational angle the outer annulus becomes asymptotically fully covered exactly when
+$c\ge\pi\sin\alpha\,\kappa(\beta)$, where $\kappa(\beta)$ is the limsup of $N$ times the largest
+circular gap of $\{n\beta\}$, and $\kappa(\beta)\ge1+2/\sqrt5$ with equality exactly for noble angles.
 Finite-$N$ Monte Carlo and deterministic computations agree with the limits.
 \end{abstract}
 
@@ -66,12 +74,12 @@ half-length $s/N$ centred at these points is
 m_N(s)=\frac{1}{2\pi}\sum_{j=0}^{N-1}\Bigl(g_{N,j}-\frac{2s}{N}\Bigr)_+ .
 \end{equation}
 
-\begin{theorem}[Spatial dephasing]\label{thm:A}
+\begin{mainthm}[Spatial dephasing]\label{thm:A}
 For fixed irrational $\beta\in(0,1/2)$ and fixed $c>0$,
 \[
 V_N(c)=a^2+2\int_0^{Q} q\,m_N(c/q)^2\,dq+o(1)\qquad(N\to\infty).
 \]
-\end{theorem}
+\end{mainthm}
 
 Equivalently, with $q=\sqrt{r^2-a^2}$, $V_N(c)=a^2+2\int_a^1 r\,m_N\bigl(c/\sqrt{r^2-a^2}\bigr)^2dr+o(1)$.
 A point at radius $r>a$ is covered if and only if one of two angular branches,
@@ -86,7 +94,7 @@ Theorem~\ref{thm:A} would take if all gaps were equal. Explicitly,
 $\Vd(c)=a^2+Q^2-4cQ/\pi+3(c/\pi)^2+2(c/\pi)^2\log(\pi Q/c)$ for $0<c<\pi Q$ and
 $\Vd(c)=a^2$ for $c\ge\pi Q$.
 
-\begin{theorem}[Uniform-gap envelope]\label{thm:C}
+\begin{mainthm}[Uniform-gap envelope]\label{thm:C}
 Let $\beta\in(0,1/2)$ be irrational with partial quotients $(a_k)$ and let $c>0$.
 \begin{enumerate}
 \item $\liminf_N V_N(c)\ge \Vd(c)$.
@@ -94,7 +102,7 @@ Let $\beta\in(0,1/2)$ be irrational with partial quotients $(a_k)$ and let $c>0$
 $W(c)=a^2+2\int_0^Q q\,[(\tfrac12-\tfrac{c}{\pi q})_++\tfrac12]^2dq$. In particular $V_N(c)$ diverges for every $c>0$.
 \item If $(a_k)$ is bounded and $0<c<\pi Q$, then $\liminf_N V_N(c)>\Vd(c)$.
 \end{enumerate}
-\end{theorem}
+\end{mainthm}
 
 \begin{corollary}
 For any fixed $c\in(0,\pi\sin\alpha)$, the angle $\beta$ is badly approximable if and
@@ -110,17 +118,24 @@ M_x(s)=\frac1\pi\sum_{i=0}^{2}f_i(\ell_i-s)_+,\qquad
 V(x,c)=a^2+2\int_0^Q q\,M_x(c/q)^2\,dq .
 \]
 
-\begin{theorem}[Golden angle]\label{thm:B}
+\begin{mainthm}[Golden angle]\label{thm:B}
 Let $\beta=\lambda^2$ and $c>0$. Then
 \begin{enumerate}
 \item the set of limit points of $V_N(c)$ is the interval $\{V(x,c):x\in[0,\lambda]\}$;
 \item $\liminf_N V_N(c)=V(0,c)=\lim_{m\to\infty}V_{F_m}(c)$, where $F_m$ are the Fibonacci numbers;
-\item $V(x,c)>V(0,c)$ if and only if $0<x<\lambda$ and $c<Qu(1+x)$. Consequently
-$\limsup_N V_N(c)>\liminf_N V_N(c)$ if and only if $c<c_*=Qu/\lambda=\pi Q/(\sqrt5\lambda^3)\approx 5.547$, and $V_N(c)\to a^2$ for $c\ge c_*$.
+\item for $x\in[0,\lambda]$ we have $V(x,c)\ge V(0,c)$, with strict inequality exactly when
+$0<x<\lambda$ and $c<Qu(1+x)$. Consequently
+$\limsup_N V_N(c)>\liminf_N V_N(c)$ if and only if
+\[c<c_*=\frac{Qu}{\lambda}=\frac{\pi Q}{\sqrt5\lambda^3}\approx 5.547,\]
+and $V_N(c)\to a^2$ for $c\ge c_*$.
 \end{enumerate}
 The same conclusions hold, with $a=\cos\pi\beta$ and $Q=\sin\pi\beta$, for every
 noble $\beta\in(0,1/2)$, i.e.\ every $\beta$ whose partial quotients are eventually $1$.
-\end{theorem}
+\end{mainthm}
+
+Section~\ref{disp:sec} extends the threshold to every irrational angle
+(Theorem~\ref{disp:thm:iff}) and shows that noble angles minimize the normalized threshold
+(Proposition~\ref{disp:prop:min}).
 
 For $Qu\le c<c_*$ (about $3.428\le c<5.547$) the outer annulus is asymptotically fully
 covered along Fibonacci times, while along other times a positive area stays
@@ -128,105 +143,14 @@ uncovered. Certified values (interval arithmetic, Section~\ref{sec:golden}) are
 $V(0,1)=0.3362261295\ldots$, $V(1/3,1)=0.3381403717\ldots$, $V(0,2)=0.1564616538\ldots$,
 $V(1/3,2)=0.1621730101\ldots$.
 
-\paragraph{Relation to prior work.}
-The caustic of the circular billiard and the three-distance theorem
-\cite{Sos58,Swier59,Slater67,vRav88,AB98,Leong17} are classical, and the fixed-angle
-gap and hitting-time laws of irrational rotations, including their failure to converge
-along the full sequence, are well studied \cite{CdF96,Coelho04,BI09,DK24}. Hitting-time
-statistics for integrable billiards \cite{DMS17} assume an absolutely continuous family
-of frequencies and do not apply to a single fixed angle; cover times of rotations
-\cite{Zhao25} are a different observable. Fixed-direction free path lengths in the
-periodic Lorentz gas lead to area computations driven by three-strip structure
-\cite{MS03,BZ07}, which is closest in spirit. We did not find the planar tube-vacancy
-statements above in the literature we could access; this is a bounded search, and the
-underlying ingredients (almost invariance, Riemann--Lebesgue, three-distance arithmetic,
-convex order) are standard. For Theorem~\ref{thm:C}, the closest one-dimensional statements are Coelho and de Faria's
-dichotomy between uniform and piecewise linear subsequential entrance-time laws
-\cite[Thm.~I]{CdF96}, Coelho's result that tightness of rescaled hitting-time processes holds
-exactly for bounded type \cite{Coelho04}, and the classical fact that gap ratios of $\{n\beta\}$
-stay bounded exactly for badly approximable $\beta$ (see e.g.\ \cite[\S4]{Ram14}).
-Theorem~\ref{thm:C} transfers such a dichotomy to the planar area observable; we did not find
-this planar form, nor the golden phase family with its convex-order minimality, in
-\cite{CdF96} (full text read) or elsewhere, but we could not read \cite{Coelho04,DK24} in full.
-Our contribution is the exact reduction of the planar
-observable to the one-dimensional gap law and the resulting arithmetic consequences.
+\paragraph{Prior work.} The ingredients are classical: the caustic, the three-distance
+theorem, fixed-angle hitting laws and almost invariance. What we add is the exact reduction of
+the planar observable to the one-dimensional gap law and its arithmetic consequences.
+Section~\ref{sec:related} compares the results with the literature in detail.
 
-\section{Exact two-branch structure}\label{sec:geometry}
+\input{sections/related}
 
-Fix $\varepsilon\in(0,(1-a)/3)$, write $I_\varepsilon=[a+\varepsilon,1-\varepsilon]$ and
-$w=c/N$, and take $N$ large enough that $w<\min(\varepsilon/2,a)$ and $(1-\varepsilon)^2-(a-w)^2<Q^2$.
-
-\begin{lemma}\label{lem:branches}
-For $r\in I_\varepsilon$ let $d_\mp(r)=\arccos((a\pm w)/r)$. A point $x=re^{i\varphi}$ satisfies
-$\dist(x,\Gamma_N)\le w$ if and only if $\varphi-\theta_j\in\pm[d_-(r),d_+(r)]\pmod{2\pi}$
-for some $j<N$.
-\end{lemma}
-
-\begin{proof}
-With $\delta=\varphi-\theta_j$, the distance to the line $u_j\cdot x=a$ is $|r\cos\delta-a|$,
-so it is at most $w$ exactly when $|\delta|\in[d_-,d_+]$; here $(a+w)/r<1$. On that set
-the coordinate of $x$ along the chord direction is $r|\sin\delta|\le\sqrt{r^2-(a-w)^2}<Q$,
-while the chord occupies coordinates $[-Q,Q]$; hence the foot of the perpendicular lies
-on the chord and the distance to the chord equals the distance to the line. Off that set
-the distance to the chord is at least the distance to the line, which exceeds $w$.
-\end{proof}
-
-Let $F_{N,s}$ be the indicator of the points of the circle at circular distance more than
-$s/N$ from every $\theta_j$, $j<N$, so that $\int F_{N,s}\,d\varphi/2\pi=m_N(s)$. With
-$\bar d_N=(d_++d_-)/2$, $h_N=(d_+-d_-)/2$, $s_N=Nh_N$ and $\psi_N=2\bar d_N$,
-Lemma~\ref{lem:branches} gives for the uncovered angular fraction at radius $r\in I_\varepsilon$
-\begin{equation}\label{eq:autocorr}
-U_N(r)=\int F_{N,s_N(r)}(\varphi-\bar d_N)\,F_{N,s_N(r)}(\varphi+\bar d_N)\,\frac{d\varphi}{2\pi}
-=C_{N,s_N(r)}(\psi_N(r)),
-\end{equation}
-where $C_{N,s}(t)=\int F_{N,s}(\varphi)F_{N,s}(\varphi+t)\,d\varphi/2\pi$. Since
-$(r,w)\mapsto\arccos((a\pm w)/r)$ is real analytic near $I_\varepsilon\times\{0\}$,
-$s_N(r)\to c/q(r)$ uniformly with $q(r)=\sqrt{r^2-a^2}$, and $\psi_N\to\psi=2\arccos(a/r)$ in
-$C^2(I_\varepsilon)$, where $\psi'=2a/(rq)\ge 2a/(1-\varepsilon)>0$.
-
-\section{Proof of Theorem~\ref{thm:A}}
-
-\emph{Layers.} If $r<a-w$ every line is at distance at least $a-r>w$, so $U_N(r)=1$.
-The radii $[a-w,a+\varepsilon]\cup[1-\varepsilon,1]$ carry normalized area at most
-$2(a+\varepsilon)(\varepsilon+w)+2\varepsilon$, both for $V_N$ and for the right-hand side
-(since $0\le m_N\le1$). Hence
-\[
-\Bigl|V_N(c)-a^2-2\!\int_a^1\! r\,m_N(c/q)^2dr\Bigr|
-\le 6\varepsilon+2w+\Bigl|\int_{I_\varepsilon}2r\bigl[C_{N,s_N(r)}(\psi_N(r))-m_N(c/q(r))^2\bigr]dr\Bigr|.
-\]
-
-\emph{Low modes.} Rotation by $2\alpha$ maps $\{\theta_0,\dots,\theta_{N-1}\}$ to
-$\{\theta_1,\dots,\theta_N\}$, so $F_{N,s}(\cdot-2\alpha)$ and $F_{N,s}$ differ on at most
-two arcs: $\|F_{N,s}(\cdot-2\alpha)-F_{N,s}\|_{L^1(d\varphi/2\pi)}\le 2s/(\pi N)$. For the
-Fourier coefficients $\hat F_{N,s}(k)$ this gives
-$|e^{-2ik\alpha}-1|\,|\hat F_{N,s}(k)|\le 2s/(\pi N)$. As $\beta\notin\mathbb Q$, for every
-fixed $k\ne0$ we get $\sup_{s\le S}|\hat F_{N,s}(k)|\to0$.
-
-\emph{High modes.} By Parseval, $\sum_k|\hat F_{N,s}(k)|^2=m_N(s)\le1$ and
-$C_{N,s}(t)=\sum_k|\hat F_{N,s}(k)|^2e^{ikt}$ converges absolutely. For an interval
-$J\subset I_\varepsilon$ and $k\ne0$, integration by parts and the uniform bounds on
-$\psi_N'$ and $(2r/\psi_N')'$ give $|\int_J 2r\,e^{ik\psi_N(r)}dr|\le B_\varepsilon/|k|$,
-uniformly in $J$ and large $N$. Hence for fixed $s\le S$,
-\[
-\Bigl|\int_J 2r\bigl[C_{N,s}(\psi_N(r))-m_N(s)^2\bigr]dr\Bigr|\le
-2\!\sum_{0<|k|\le K}\!|\hat F_{N,s}(k)|^2+\frac{B_\varepsilon}{K},
-\]
-which tends to $0$ when $N\to\infty$ and then $K\to\infty$.
-
-\emph{Unfreezing.} Moving $N$ arcs' half-widths from $s/N$ to $t/N$ changes $F$ on a set of
-measure at most $|s-t|/\pi$, so $|C_{N,s}-C_{N,t}|\le2|s-t|/\pi$ and
-$|m_N(s)^2-m_N(t)^2|\le2|s-t|/\pi$, uniformly in $N$ and the lag. Partition $I_\varepsilon$
-into finitely many intervals on which $c/q$ oscillates by less than $\eta$, freeze $s$ on
-each, and use $s_N\to c/q$ uniformly. The integral above is then at most
-$8\eta/\pi+o(1)$. Letting $N\to\infty$, then $\eta\to0$, then $\varepsilon\to0$ proves the
-theorem. \qed
-
-\begin{remark}
-The order of limits is: fix $\varepsilon$, then the partition, then the Fourier cutoff $K$,
-let $N\to\infty$, then $K\to\infty$, refine the partition, and finally let
-$\varepsilon\to0$. The rate in the low-mode step depends on the Diophantine properties of
-$\beta$, which is why no rate is stated.
-\end{remark}
+\input{sections/dephasing}
 
 \section{Gap laws and Theorem~\ref{thm:C}}
 
@@ -243,23 +167,16 @@ $\sum_j(g_{N,j}-2s/N)_+\ge\max(0,\sum_j(g_{N,j}-2s/N))=(2\pi-2s)_+$. The identit
 $y_+=y+(-y)_+$.
 \end{proof}
 
-We use the three-distance theorem in the explicit form of \cite[Thm.~3]{Leong17}
-(see also \cite{AB98,vRav88}); note that \cite{Leong17} counts the $N'+1$ gaps of
-$N'+1$ points $0,\beta,\dots,N'\beta$, so we apply it with $N'=N-1$. Let $q_k$ be the
-convergent denominators of $\beta$ and $\eta_k=\|q_k\beta\|$. Since the angles $\theta_j$
-form a translate of $\{2\pi j\beta\}$, their gaps are $2\pi$ times those of $\{j\beta\bmod1\}_{j<N}$.
+The arithmetic input is collected below; the three-distance theorem is proved in the
+$N$-point convention used throughout, and compared with \cite[Thm.~3]{Leong17} (which counts
+$N'+1$ gaps of $N'+1$ points) in a remark.
 
-\begin{lemma}\label{lem:twogap}
-If $N=rq_k+q_{k-1}$ with $1\le r\le a_{k+1}$, the gaps are $\eta_k$ ($N-q_k$ times) and
-$\eta_{k-1}-(r-1)\eta_k$ ($q_k$ times). For $N=q_k$ they are $\eta_{k-1}$ ($q_k-q_{k-1}$ times)
-and $\eta_{k-1}+\eta_k$ ($q_{k-1}$ times). Moreover $1/(a_{k+1}+2)<q_k\eta_k<1/a_{k+1}$ and
-$q_k\eta_{k-1}+q_{k-1}\eta_k=1$.
-\end{lemma}
+\input{sections/gaplemmas}
 
 \begin{proof}[Proof of Theorem~\ref{thm:C}]
 Part (1) is Lemma~\ref{lem:jensen} with Theorem~\ref{thm:A}.
 
-(2) Choose $k$ with $a_{k+1}\to\infty$. At $N=q_k$ both scaled gaps $N\eta_{k-1}$ and
+(2) We use Corollaries~\ref{gap:cor:ineq} and~\ref{gap:cor:two}. Choose $k$ with $a_{k+1}\to\infty$. At $N=q_k$ both scaled gaps $N\eta_{k-1}$ and
 $N(\eta_{k-1}+\eta_k)$ lie in $(1-1/a_{k+1},1+1/a_{k+1})$, so $m_N(s)\to(1-s/\pi)_+$ uniformly
 and $V_N(c)\to\Vd(c)$. At $N=rq_k+q_{k-1}$ with $r=\lceil a_{k+1}/2\rceil$, the class $\eta_k$ has
 frequency $(N-q_k)/N\to1$ and scaled length $N\eta_k\to1/2$; the other class has frequency
@@ -272,7 +189,7 @@ $s>\pi/2$, a set meeting $(c/Q,\infty)$; hence $W(c)>\Vd(c)$.
 (3) Let $a_k\le A_0$ and $\varepsilon=1/((A_0+1)(A_0+2))$. Every $N$ has a unique form
 $N=rq_k+q_{k-1}+s$ with $1\le r\le a_{k+1}$, $0\le s<q_k$, and then the gaps are
 $A=\eta_k$ ($N-q_k$ times), $B=\eta_{k+1}+(a_{k+1}-r)\eta_k$ ($s$ times) and $C=A+B$ ($q_k-s$
-times) \cite[Thm.~3]{Leong17}. Since $N-q_k\ge q_{k-1}$ and $N<q_{k+1}+q_k$, class $A$ has
+times) by Theorem~\ref{gap:thm:three}; see also Corollary~\ref{gap:cor:bdd}. Since $N-q_k\ge q_{k-1}$ and $N<q_{k+1}+q_k$, class $A$ has
 frequency at least $\varepsilon$, and $B,C$ together have frequency $q_k/N\ge1/(A_0+2)$, so one of
 them, call it $E$, has frequency at least $1/(2(A_0+2))\ge\varepsilon$. We use
 $1/(A_0+2)\le\eta_{k+1}/\eta_k\le(1+1/(A_0+1))^{-1}$. If $E=C$, then $C/A=1+B/A\ge1+\eta_{k+1}/\eta_k\ge1+\varepsilon$.
@@ -296,10 +213,8 @@ $\{j\beta\bmod1\}_{j<N}$ are $\lambda^{m-2},\lambda^{m-1},\lambda^m$ with multip
 $F_{m-1}-k$, $F_{m-2}+k$, $k$.
 \end{lemma}
 
-This is the three-distance theorem for the rotation by $\lambda$ (note $\beta\equiv-\lambda$),
-for which all partial quotients equal $1$, $q_k=F_{k+1}$ and $\eta_k=\lambda^{k+1}$. We also
-verified the statement in exact arithmetic in $\mathbb Z[\lambda]$ for every $2\le N\le3000$
-(Appendix~\ref{app:repro}).
+This is Corollary~\ref{gap:cor:golden}. We also verified it in exact arithmetic in
+$\mathbb Z[\lambda]$ for every $2\le N\le3000$ (Appendix~\ref{app:repro}).
 
 \begin{proof}[Proof of Theorem~\ref{thm:B}]
 \emph{Reduction to the phase.} For $N=F_m+k$ put $x_N=k/F_m$. By Lemma~\ref{lem:golden},
@@ -338,7 +253,7 @@ $(u\lambda^2(1+x),u(1+x))$ with $0<x<\lambda$, i.e.\ when $c<Qu(1+x)$. Letting $
 gives strictness for some $x$ iff $c<Qu(1+\lambda)=c_*$. If $c\ge c_*$ then $c/q\ge u(1+x)$ for all
 $q\le Q$ and all $x$, so $M_x(c/q)=0$ and $V(x,c)=a^2$; by the reduction $V_N(c)\to a^2$.
 
-\emph{Noble angles.} If $a_{k+1}=1$ for $k\ge k_0$, Leong's theorem gives for $N=q_k+s$,
+\emph{Noble angles.} If $a_k=1$ for all $k\ge k_0$, Corollary~\ref{gap:cor:noble} gives for $N=q_k+s$,
 $0\le s<q_{k-1}$, gaps $\eta_{k-1},\eta_k,\eta_{k-2}$ with counts $N-q_{k-1}$, $s$, $q_{k-1}-s$.
 From $q_{k-1}/q_k\to\lambda$, $\eta_k/\eta_{k-1}\to\lambda$ and $q_k\eta_{k-1}+q_{k-1}\eta_k=1$ one gets
 $q_k\eta_{k-2}\to1/(\sqrt5\lambda^2)$, so $x_N=s/q_k$ produces the same family $\mu_x$ and the
@@ -387,6 +302,8 @@ difference & $0.00191424219926666204\ldots$ & $0.00571135631190210251\ldots$\\
 $c_*=5.54700825580342652455\ldots$.}
 \label{tab:limits}
 \end{table}
+
+\input{sections/dispersion}
 
 \section{Numerical experiments}\label{sec:numerics}
 
@@ -452,6 +369,17 @@ denominators, but the block-wise convex-order domination used for the golden ang
 fails for other quadratic irrationals (e.g.\ $\sqrt2$-type), so a different argument
 would be needed. The tube is geometric; no optical beam model is intended.
 
+\section*{Acknowledgements and use of AI tools}
+The proofs, computations and text of this paper were drafted with substantial
+assistance from AI systems (Anthropic Claude models), including the independent
+proof reviews, the literature searches and the second, independently written numerical
+integrator described in Section~\ref{sec:numerics}. The author checked the
+arguments and is responsible for all statements.
+
+\section*{Code and data availability}
+All code, saved outputs and verification logs are available at
+\url{https://github.com/euisuh/circle-tube-vacancy}.
+
 \appendix
 \section{Reproducibility}\label{app:repro}
 All code is in the accompanying repository: \texttt{circle\_research.py} (geometry,
@@ -463,18 +391,25 @@ Python 3.14.7, NumPy 2.5.3, mpmath 1.3.0. Saved outputs and hashes are in
 
 \begin{thebibliography}{99}
 \bibitem{AB98} P.~Alessandri and V.~Berth\'e, Three distance theorems and combinatorics on words, \emph{Enseign. Math.} (2) \textbf{44} (1998), 103--132.
-\bibitem{BI09} C.~Bonanno and S.~Isola, A renormalization approach to irrational rotations, \emph{Ann. Mat. Pura Appl.} \textbf{188} (2009); arXiv:0708.0048.
+\bibitem{BK93} S.~Blank and N.~Krikorian, Thom's problem on irrational flows, \emph{Internat. J. Math.} \textbf{4} (1993), 721--726.
 \bibitem{BZ07} F.~P.~Boca and A.~Zaharescu, The distribution of the free path lengths in the periodic two-dimensional Lorentz gas in the small-scatterer limit, \emph{Comm. Math. Phys.} \textbf{269} (2007), 425--471.
+\bibitem{BI09} C.~Bonanno and S.~Isola, A renormalization approach to irrational rotations, \emph{Ann. Mat. Pura Appl.} \textbf{188} (2009); arXiv:0708.0048.
+\bibitem{MS03} E.~Caglioti and F.~Golse, On the distribution of free path lengths for the periodic Lorentz gas III, \emph{Comm. Math. Phys.} \textbf{236} (2003), 199--221; arXiv:math/0301300.
 \bibitem{CdF96} Z.~Coelho and E.~de Faria, Limit laws of entrance times for homeomorphisms of the circle, \emph{Israel J. Math.} \textbf{93} (1996), 93--112.
 \bibitem{Coelho04} Z.~Coelho, The loss of tightness of time distributions for homeomorphisms of the circle, \emph{Trans. Amer. Math. Soc.} \textbf{356} (2004), 4427--4445.
 \bibitem{DMS17} C.~P.~Dettmann, J.~Marklof and A.~Str\"ombergsson, Universal hitting time statistics for integrable flows, \emph{J. Stat. Phys.} \textbf{166} (2017), 714--749.
+\bibitem{Don12} H.~Don, Polygons in billiard orbits, \emph{J. Number Theory} \textbf{132} (2012), no.~6, 1151--1163; arXiv:1106.2030.
+\bibitem{Dro86} V.~Drobot, On dispersion and Markov constants, \emph{Acta Math. Hungar.} \textbf{47} (1986), 89--93.
+\bibitem{Dup79} Y.~Dupain, Discr\'epance de la suite $(\{n\alpha\})$, $\alpha=(1+\sqrt5)/2$, \emph{Ann. Inst. Fourier (Grenoble)} \textbf{29} (1979), no.~1, 81--106.
 \bibitem{DK24} A.~Dzhalilov and J.~Khomidov, Limit law of rescaled hitting time functions for quadratic irrational rotations, \emph{Uzbek Math. J.} (2024), no.~2.
+\bibitem{FS02} A.-H.~Fan and J.~Schmeling, Coverings of the circle driven by rotations, in: \emph{Dynamical Systems from Number Theory to Probability II} (A.~Khrennikov, ed.), V\"axj\"o University Press, 2002, 7--15.
 \bibitem{Leong17} N.~Leong, Sums of reciprocals and the three distance theorem, arXiv:1712.03758.
-\bibitem{MS03} J.~Marklof and A.~Str\"ombergsson, On the distribution of free path lengths for the periodic Lorentz gas III, \emph{Comm. Math. Phys.} \textbf{248} (2004); arXiv:math/0301300.
+\bibitem{Nie84} H.~Niederreiter, On a measure of denseness for sequences, in: \emph{Topics in Classical Number Theory, Vol.~II (Budapest, 1981)}, Colloq. Math. Soc. J\'anos Bolyai \textbf{34}, North-Holland, Amsterdam, 1984, 1163--1208.
 \bibitem{Ram14} F.~A.~Ram\'irez, Khintchine types of translated coordinate hyperplanes, arXiv:1405.7277.
 \bibitem{Slater67} N.~B.~Slater, Gaps and steps for the sequence $n\theta$ mod 1, \emph{Proc. Cambridge Philos. Soc.} \textbf{63} (1967), 1115--1123.
 \bibitem{Sos58} V.~T.~S\'os, On the distribution mod 1 of the sequence $n\alpha$, \emph{Ann. Univ. Sci. Budapest. E\"otv\"os Sect. Math.} \textbf{1} (1958), 127--134.
 \bibitem{Swier59} S.~\'Swierczkowski, On successive settings of an arc on the circumference of a circle, \emph{Fund. Math.} \textbf{46} (1959), 187--189.
+\bibitem{Tab05} S.~Tabachnikov, \emph{Geometry and Billiards}, Student Mathematical Library \textbf{30}, Amer. Math. Soc., Providence, RI, 2005.
 \bibitem{vRav88} T.~van Ravenstein, The three gap theorem (Steinhaus conjecture), \emph{J. Austral. Math. Soc. Ser. A} \textbf{45} (1988), 360--370.
 \bibitem{Zhao25} Y.~Zhao, Almost sure convergence of cover times for $\psi$-mixing systems, arXiv:2412.17425.
 \end{thebibliography}

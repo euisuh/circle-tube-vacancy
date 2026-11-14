@@ -1,0 +1,35 @@
+== golden: kappa~1.89443 ccov=5.54703
+ c=0.90c_cov  max_t E over blocks k, k+1: 8.18e-07 8.18e-07 8.18e-07 8.18e-07 8.18e-07 8.18e-07 8.18e-07
+ c=0.99c_cov  max_t E over blocks k, k+1: 1.61e-12 1.63e-12 1.63e-12 1.63e-12 1.63e-12 1.63e-12 1.63e-12
+ c=1.01c_cov  max_t E over blocks k, k+1: 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ c=1.05c_cov  max_t E over blocks k, k+1: 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+== silver: kappa~2.06066 ccov=6.24007
+ c=0.90c_cov  max_t E over blocks k, k+1: 1.05e-06 1.05e-06 1.05e-06 1.05e-06 1.05e-06 1.05e-06 1.05e-06
+ c=0.99c_cov  max_t E over blocks k, k+1: 9.35e-13 9.35e-13 9.35e-13 9.35e-13 9.35e-13 9.35e-13 9.35e-13
+ c=1.01c_cov  max_t E over blocks k, k+1: 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ c=1.05c_cov  max_t E over blocks k, k+1: 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+== [2,(1,2)^]: kappa~2.15470 ccov=6.17840
+ c=0.90c_cov  max_t E over blocks k, k+1: 1.00e-06 1.00e-06 1.00e-06 1.00e-06 1.00e-06 1.00e-06 1.00e-06
+ c=0.99c_cov  max_t E over blocks k, k+1: 2.72e-12 2.72e-12 2.72e-12 2.72e-12 2.72e-12 2.72e-12 2.72e-12
+ c=1.01c_cov  max_t E over blocks k, k+1: 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ c=1.05c_cov  max_t E over blocks k, k+1: 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+== [(1,3)^]: kappa~2.30931 ccov=6.54743
+ c=0.90c_cov  max_t E over blocks k, k+1: 1.11e-06 1.11e-06 1.11e-06 1.11e-06 1.11e-06 1.11e-06 1.11e-06
+ c=0.99c_cov  max_t E over blocks k, k+1: 8.65e-12 8.65e-12 8.65e-12 8.65e-12 8.65e-12 8.65e-12 8.65e-12
+ c=1.01c_cov  max_t E over blocks k, k+1: 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ c=1.05c_cov  max_t E over blocks k, k+1: 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+== [3,1,1,(2,2,1)^]: kappa~2.08465 ccov=5.03010
+ c=0.90c_cov  max_t E over blocks k, k+1: 6.66e-07 6.66e-07 6.66e-07 6.66e-07 6.66e-07 6.66e-07 6.66e-07
+ c=0.99c_cov  max_t E over blocks k, k+1: 1.69e-12 1.69e-12 1.69e-12 1.69e-12 1.69e-12 1.69e-12 1.69e-12
+ c=1.01c_cov  max_t E over blocks k, k+1: 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ c=1.05c_cov  max_t E over blocks k, k+1: 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+== early large then noble: kappa~1.89443 ccov=5.93171
+ c=0.90c_cov  max_t E over blocks k, k+1: 9.35e-07 9.35e-07 9.35e-07 9.35e-07 9.35e-07 9.35e-07 9.35e-07
+ c=0.99c_cov  max_t E over blocks k, k+1: 1.87e-12 1.87e-12 1.87e-12 1.87e-12 1.87e-12 1.87e-12 1.87e-12
+ c=1.01c_cov  max_t E over blocks k, k+1: 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ c=1.05c_cov  max_t E over blocks k, k+1: 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+== {1,2,4}-per: kappa~2.55188 ccov=7.92704
+ c=0.90c_cov  max_t E over blocks k, k+1: 1.46e-06 0.00e+00 1.46e-06 0.00e+00 1.46e-06 0.00e+00 1.46e-06
+ c=0.99c_cov  max_t E over blocks k, k+1: 1.24e-11 0.00e+00 1.24e-11 0.00e+00 1.24e-11 0.00e+00 1.24e-11
+ c=1.01c_cov  max_t E over blocks k, k+1: 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+ c=1.05c_cov  max_t E over blocks k, k+1: 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00

@@ -225,3 +225,15 @@ Rejected in this session:
   use deterministic finite-N values, not limits (offset ≈ −2ac/N).
 - Literature round 2: Coelho–de Faria full text read (no phase-x continuum/convex order);
   rating upper-end short note. Manuscript created (author placeholder; no submission).
+
+## 11. Revision round — 2026-11-14 (user: name Euisuh Jeong, Republic of Korea Air Force)
+
+Fable referee (docs/reviews/FABLE_REVIEW.md): major revision, no math errors. Parallel lanes:
+gap lemmas proved in N-point convention (49 angles verified); related work (LIT_ROUND3:
+Dzhalilov–Khomidov 2024 read in full, no overlap; Coelho 2004 still unread; MS03 citation
+was wrong → Caglioti–Golse CMP 236 (2003)); expanded dephasing proof + geometry figure; NEW
+coverage-threshold theorem for every irrational (V_N→a² iff c≥πQκ(β), κ=limsup N·maxgap) and
+κ≥1+2/√5 with equality iff noble (docs/DISPERSION.md; adversarial review: no counterexample,
+minimality not found in literature). Rejected: Fable's "c_* = πQ × Niederreiter constant"
+(Niederreiter dispersion is on [0,1]; golden 1.1708 vs circular 1.894). Private GitHub repo
+euisuh/circle-tube-vacancy created (not public; flip at submission only with user approval).

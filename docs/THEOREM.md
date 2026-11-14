@@ -1,5 +1,8 @@
 # Theorems and complete proofs — 2026-11-14
 
+> Numbering note (2026-11-14): manuscript Theorem A = Theorem A here; manuscript Theorem B
+> (uniform-gap envelope) = Theorem C here; manuscript Theorem C (golden) = Theorem B here.
+
 Status label: **audited argument (internal), pending independent adversarial review**
 (see `docs/reviews/PROOF_REVIEW.md` once written). Supersedes the proof sketch in
 `PROOF_AUDIT.md` for Theorem A: the two-branch reduction is now exact on the trimmed

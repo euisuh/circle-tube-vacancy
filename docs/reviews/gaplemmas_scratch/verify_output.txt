@@ -1,0 +1,57 @@
+golden lam^2: N<= 3000, partial quotients [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]..., levels used K=20, mismatches=0
+silver sqrt2-1: N<= 3000, partial quotients [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]..., levels used K=11, mismatches=0
+sqrt3-1 over 2? (sqrt3-1)/2... [0;2,1,2,1..]: N<= 3000, partial quotients [2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1]..., levels used K=15, mismatches=0
+bronze (sqrt13-3)/2: N<= 3000, partial quotients [3, 3, 3, 3, 3, 3, 3, 3]..., levels used K=8, mismatches=0
+e-type 3-e: N<= 3000, partial quotients [3, 1, 1, 4, 1, 1, 6, 1, 1, 8, 1, 1]..., levels used K=12, mismatches=0
+pi-3 -> 1/(7.06..): N<= 3000, partial quotients [7, 15, 1, 292]..., levels used K=4, mismatches=0
+large a: 1/(1000+pi): N<= 3000, partial quotients [1003, 7, 15]..., levels used K=3, mismatches=0
+[0;2,50,3,200,1,1,7]-ish: N<= 3000, partial quotients [2, 50, 3, 200]..., levels used K=4, mismatches=0
+1/2-1e-9 + irrational: N<= 3000, partial quotients [2, 1767766]..., levels used K=2, mismatches=0
+random#0 beta=0.032037: N<= 1500, partial quotients [31, 4, 1, 2, 10, 1, 2]..., levels used K=7, mismatches=0
+random#1 beta=0.276768: N<= 1500, partial quotients [3, 1, 1, 1, 1, 2, 2, 4, 6, 2]..., levels used K=10, mismatches=0
+random#2 beta=0.464753: N<= 1500, partial quotients [2, 6, 1, 1, 2, 5, 4, 1, 7]..., levels used K=9, mismatches=0
+random#3 beta=0.252689: N<= 1500, partial quotients [3, 1, 22, 2, 27, 1, 1]..., levels used K=7, mismatches=0
+random#4 beta=0.064481: N<= 1500, partial quotients [15, 1, 1, 29, 2, 2, 5]..., levels used K=7, mismatches=0
+random#5 beta=0.012279: N<= 1500, partial quotients [81, 2, 3, 1, 1, 1, 1, 3]..., levels used K=8, mismatches=0
+random#6 beta=0.391631: N<= 1500, partial quotients [2, 1, 1, 4, 5, 1, 1, 3, 3, 9]..., levels used K=10, mismatches=0
+random#7 beta=0.118193: N<= 1500, partial quotients [8, 2, 5, 1, 6, 1, 1, 3, 1]..., levels used K=9, mismatches=0
+random#8 beta=0.485631: N<= 1500, partial quotients [2, 16, 1, 8, 1, 4, 2, 3]..., levels used K=8, mismatches=0
+random#9 beta=0.076901: N<= 1500, partial quotients [13, 271, 1, 2]..., levels used K=4, mismatches=0
+random#10 beta=0.424405: N<= 1500, partial quotients [2, 2, 1, 4, 5, 2, 3, 1, 1, 2]..., levels used K=10, mismatches=0
+random#11 beta=0.416247: N<= 1500, partial quotients [2, 2, 2, 16, 7, 1, 3]..., levels used K=7, mismatches=0
+random#12 beta=0.326770: N<= 1500, partial quotients [3, 16, 1, 1, 2, 9, 6]..., levels used K=7, mismatches=0
+random#13 beta=0.270047: N<= 1500, partial quotients [3, 1, 2, 2, 1, 2, 1, 1, 3, 3, 5]..., levels used K=11, mismatches=0
+random#14 beta=0.198535: N<= 1500, partial quotients [5, 27, 9, 23]..., levels used K=4, mismatches=0
+random#15 beta=0.135561: N<= 1500, partial quotients [7, 2, 1, 1, 1, 8, 2, 2, 5]..., levels used K=9, mismatches=0
+random#16 beta=0.119436: N<= 1500, partial quotients [8, 2, 1, 2, 6, 3, 20]..., levels used K=7, mismatches=0
+random#17 beta=0.074775: N<= 1500, partial quotients [13, 2, 1, 2, 10, 3, 1, 13]..., levels used K=8, mismatches=0
+random#18 beta=0.468838: N<= 1500, partial quotients [2, 7, 1, 1, 10, 1, 1, 3, 1, 2]..., levels used K=10, mismatches=0
+random#19 beta=0.282706: N<= 1500, partial quotients [3, 1, 1, 6, 4, 1, 2, 3, 313]..., levels used K=9, mismatches=0
+random#20 beta=0.442456: N<= 1500, partial quotients [2, 3, 1, 5, 2, 3, 6, 1, 1, 1]..., levels used K=10, mismatches=0
+random#21 beta=0.422469: N<= 1500, partial quotients [2, 2, 1, 2, 1, 1, 1, 2, 2, 1, 2, 9]..., levels used K=12, mismatches=0
+random#22 beta=0.458792: N<= 1500, partial quotients [2, 5, 1, 1, 3, 4, 7, 11]..., levels used K=8, mismatches=0
+random#23 beta=0.197327: N<= 1500, partial quotients [5, 14, 1, 3, 3, 2, 5]..., levels used K=7, mismatches=0
+random#24 beta=0.240440: N<= 1500, partial quotients [4, 6, 3, 2, 10, 1, 2]..., levels used K=7, mismatches=0
+random#25 beta=0.388027: N<= 1500, partial quotients [2, 1, 1, 2, 1, 2, 1, 6, 79]..., levels used K=9, mismatches=0
+random#26 beta=0.366889: N<= 1500, partial quotients [2, 1, 2, 1, 1, 1, 4, 2, 1, 2, 1, 2, 1]..., levels used K=13, mismatches=0
+random#27 beta=0.320132: N<= 1500, partial quotients [3, 8, 11, 1, 66]..., levels used K=5, mismatches=0
+random#28 beta=0.491853: N<= 1500, partial quotients [2, 30, 5, 2, 1, 25]..., levels used K=6, mismatches=0
+random#29 beta=0.485393: N<= 1500, partial quotients [2, 16, 1, 1, 1, 1, 2, 9, 1, 56]..., levels used K=10, mismatches=0
+randomCF#0 [2, 3, 1, 2, 1, 4]: N<= 1500, partial quotients [2, 3, 1, 2, 1, 4, 8, 3, 5]..., levels used K=9, mismatches=0
+randomCF#1 [2, 4, 1, 2, 4, 1]: N<= 1500, partial quotients [2, 4, 1, 2, 4, 1, 1, 3, 9]..., levels used K=9, mismatches=0
+randomCF#2 [2, 1, 2, 2, 1, 1]: N<= 1500, partial quotients [2, 1, 2, 2, 1, 1, 1, 1, 1, 4, 1, 5]..., levels used K=12, mismatches=0
+randomCF#3 [2, 1, 1, 1, 1, 1]: N<= 1500, partial quotients [2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1]..., levels used K=17, mismatches=0
+randomCF#4 [2, 1, 1, 2, 1, 1]: N<= 1500, partial quotients [2, 1, 1, 2, 1, 1, 1, 4, 1, 2, 1, 2, 1, 1]..., levels used K=14, mismatches=0
+randomCF#5 [2, 34, 2, 1, 1, 1]: N<= 1500, partial quotients [2, 34, 2, 1, 1, 1, 5, 3]..., levels used K=8, mismatches=0
+randomCF#6 [2, 1, 2, 1, 1, 2]: N<= 1500, partial quotients [2, 1, 2, 1, 1, 2, 1, 8, 1, 17]..., levels used K=10, mismatches=0
+randomCF#7 [2, 9, 1, 1, 2, 1]: N<= 1500, partial quotients [2, 9, 1, 1, 2, 1, 6, 1, 1, 1, 1, 1]..., levels used K=12, mismatches=0
+randomCF#8 [6, 3, 2, 2, 11, 2]: N<= 1500, partial quotients [6, 3, 2, 2, 11, 2, 1, 1]..., levels used K=8, mismatches=0
+randomCF#9 [4, 3, 2, 1, 1, 16]: N<= 1500, partial quotients [4, 3, 2, 1, 1, 16, 23]..., levels used K=7, mismatches=0
+golden law (Lemma gap:golden), 2<=N<=3000: mismatches=0
+noble [0;3,2,1^inf]: k0=3; eta_k/eta_(k-1) at k=K-1: 0.618033988750 (lam=0.618033988750); q_k eta_(k-2)=1.170820335 vs 1/(sqrt5 lam^2)=1.170820393; q_(k-1)/q_k=0.618034100
+noble [0;5,1,4,1^inf]: k0=4; eta_k/eta_(k-1) at k=K-1: 0.618033988750 (lam=0.618033988750); q_k eta_(k-2)=1.170822937 vs 1/(sqrt5 lam^2)=1.170820393; q_(k-1)/q_k=0.618029130
+noble [0;2,1^inf]=lam^2: k0=2; eta_k/eta_(k-1) at k=K-1: 0.618033988750 (lam=0.618033988750); q_k eta_(k-2)=1.170820395 vs 1/(sqrt5 lam^2)=1.170820393; q_(k-1)/q_k=0.618033985
+noble 1/(7+lam): k0=2; eta_k/eta_(k-1) at k=K-1: 0.618033988750 (lam=0.618033988750); q_k eta_(k-2)=1.170820223 vs 1/(sqrt5 lam^2)=1.170820393; q_(k-1)/q_k=0.618034313
+noble law: mismatches=0
+mu_N identity pi*m_N(s)=int (l-s)_+ dmu_N and mean pi: max abs err 8.88e-16
+TOTAL MISMATCHES: 0

@@ -1,0 +1,57 @@
+\section{Related work}\label{sec:related}
+
+\emph{Caustic.} Every chord of an irrational orbit of the circular billiard is tangent to the
+concentric circle of radius $a$, so the orbit never enters the open disk of radius $a$; this
+is the classical caustic of the circular table and is standard \cite{Tab05}.
+
+\emph{Three distances.} The gap structure of $\{n\alpha\}$ is governed by the three-distance
+theorem \cite{Sos58,Swier59,Slater67}, with proofs and combinatorial refinements in
+\cite{vRav88,AB98} and a recent account of the gap multiplicities in \cite{Leong17}. Blank and
+Krikorian proved the analogous three-length theorem for the linear flow on a torus with a slit
+\cite{BK93}. Our reduction of the planar tube to the one-dimensional gap law uses only the first
+of these.
+
+\emph{Fixed-angle entrance and hitting laws.} For a single irrational rotation, the entrance-time
+laws along the denominators $q_k$ need not converge along the full sequence, and Coelho and de
+Faria classify the subsequential limits as uniform or piecewise linear \cite{CdF96}. Coelho shows
+that tightness of the rescaled hitting-time processes characterizes bounded type
+\cite{Coelho04}; Dzhalilov and Khomidov prove piecewise linear limit laws for quadratic
+irrational rotations \cite{DK24}; renormalization methods appear in \cite{BI09}. These are
+statements about one-dimensional return or hitting times. The planar vacancy area of
+Theorem~\ref{thm:C} is a different observable, which we reduce to the one-dimensional gap law.
+
+\emph{Dispersion.} Niederreiter introduced the dispersion
+\[D(\{x_n\})=\limsup_{N\to\infty} N d_N,\qquad d_N=\sup_{x\in[0,1]}\min_{n\le N}|x-x_n|,\]
+as a measure of denseness \cite{Nie84}. For $x_n=\{n\alpha\}$
+it is finite exactly for badly approximable $\alpha$, and Drobot gave a formula for quadratic
+irrationals \cite{Dro86}. Niederreiter works on $[0,1]$ rather than on the circle, so the
+boundary terms differ from the circular maximal gap used here. Dupain studied the discrepancy of
+$\{n\alpha\}$ for the golden ratio \cite{Dup79}. The threshold $c_*$ in
+Theorem~\ref{thm:B}(3) is proportional to the circular analogue of this constant (the limsup of $N$ times the maximal gap, $1+2/\sqrt5$ for noble angles, a value recomputed numerically); the new input here is its planar interpretation, not the arithmetic.
+
+\emph{Lorentz-gas free path.} In the periodic Lorentz gas, the free path in a fixed irrational
+direction is controlled by a three-strip partition of the torus minus a scatterer, obtained from
+\cite{BK93}; see \cite{MS03,BZ07}. These works compute areas of strips as the scatterer radius
+tends to zero, which is closest in method to ours, but the setting is a lattice of scatterers
+rather than the chords of one orbit.
+
+\emph{Coverage and billiards.} Fan and Schmeling study coverings of the circle driven by
+rotations \cite{FS02}, and Zhao proves almost sure convergence of cover times
+\cite{Zhao25}; both concern covering by intervals, not a planar tube. For rectangular billiards,
+Don studies the polygons cut out by a truncated orbit and the number of distinct areas
+\cite{Don12}. Hitting statistics for integrable flows are treated in \cite{DMS17} for
+absolutely continuous families of frequencies, and do not apply to one fixed angle.
+
+\emph{What is new.} We did not find in these sources the exact two-branch description of the
+$w$-neighbourhood of $N$ complete chords, the resulting formula for the uncovered area, or its
+extremal behaviour at Fibonacci $N$ for the golden angle. This reflects a bounded search, and
+the one-dimensional ingredients are classical.
+
+% BIBITEMS
+% \bibitem{BK93} S.~Blank and N.~Krikorian, Thom's problem on irrational flows, \emph{Internat. J. Math.} \textbf{4} (1993), 721--726.
+% \bibitem{Dro86} V.~Drobot, On dispersion and Markov constants, \emph{Acta Math. Hungar.} \textbf{47} (1986), 89--93.
+% \bibitem{Dup79} Y.~Dupain, Discr\'epance de la suite $(\{n\alpha\})$, $\alpha=(1+\sqrt5)/2$, \emph{Ann. Inst. Fourier (Grenoble)} \textbf{29} (1979), no.~1, 81--106.
+% \bibitem{Don12} H.~Don, Polygons in billiard orbits, \emph{J. Number Theory} \textbf{132} (2012), no.~6, 1151--1163; arXiv:1106.2030.
+% \bibitem{FS02} A.-H.~Fan and J.~Schmeling, Coverings of the circle driven by rotations, in: \emph{Dynamical Systems from Number Theory to Probability II} (A.~Khrennikov, ed.), V\"axj\"o University Press, 2002, 7--15.
+% \bibitem{Nie84} H.~Niederreiter, On a measure of denseness for sequences, in: \emph{Topics in Classical Number Theory, Vol.~II (Budapest, 1981)}, Colloq. Math. Soc. J\'anos Bolyai \textbf{34}, North-Holland, Amsterdam, 1984, 1163--1208.
+% \bibitem{Tab05} S.~Tabachnikov, \emph{Geometry and Billiards}, Student Mathematical Library \textbf{30}, Amer. Math. Soc., Providence, RI, 2005.

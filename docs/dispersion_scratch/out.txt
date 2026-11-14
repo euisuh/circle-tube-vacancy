@@ -1,0 +1,34 @@
+== 1. three-gap block structure (exact) ==
+golden [0;2,1,1,..]          cases    607 mismatches 0
+noble [0;3,1,1,..]           cases    839 mismatches 0
+noble [0;2,2,1,1,..]         cases    895 mismatches 0
+silver [0;2,2,2,..]          cases   2498 mismatches 0
+[0;3,3,3,..]                 cases   2497 mismatches 0
+mixed [0;2,1,2,1,..]         cases   2498 mismatches 0
+1/e [0;2,1,1,2,1,1,4,..]     cases   2498 mismatches 0
+
+== 2. limsup N*h_N (turns): block formula vs brute force, and theory ==
+1+2/sqrt5 = 1.8944271909999157
+golden [0;2,1,1,..]          formula blocks (q_k>200): [1.8913, 1.8925, 1.8932, 1.8937, 1.894, 1.8941]  brute sup over N in [q_k,3q_k] k=20: 1.8879
+noble [0;3,1,1,..]           formula blocks (q_k>200): [1.8922, 1.893, 1.8936, 1.8939, 1.8941, 1.8942]  brute sup over N in [q_k,3q_k] k=19: 1.8938
+noble [0;2,2,1,1,..]         formula blocks (q_k>200): [1.891, 1.8923, 1.8931, 1.8936, 1.8939, 1.8941]  brute sup over N in [q_k,3q_k] k=19: 1.8876
+silver [0;2,2,2,..]          formula blocks (q_k>200): [2.0586, 2.0598, 2.0603, 2.0605, 2.0606, 2.0606]  brute sup over N in [q_k,3q_k] k=11: 2.0604
+[0;3,3,3,..]                 formula blocks (q_k>200): [2.1076, 2.1089, 2.1092, 2.1094, 2.1094, 2.1094]  brute sup over N in [q_k,3q_k] k=8: 2.1061
+mixed [0;2,1,2,1,..]         formula blocks (q_k>200): [1.8641, 2.1533, 1.8655, 2.1543, 1.8659, 2.1546]  brute sup over N in [q_k,3q_k] k=14: 2.1518
+1/e [0;2,1,1,2,1,1,4,..]     formula blocks (q_k>200): [2.9085, 1.9917, 1.614, 3.3748, 1.995, 1.593]  brute sup over N in [q_k,3q_k] k=12: 2.9287
+
+== 3. interval (Niederreiter) dispersion N d_N for golden vs circle half-gap ==
+circle: N*max gap (turns) sup over N in [75025,121393): 1.8944114833138883
+interval Niederreiter N*d_N sup over same range: 1.1708106427104212
+
+== 4. threshold check: max_{N in window} (Vt_N(c)-a^2) for c=Q L (1 -/+ 0.03) ==
+golden [0;2,1,1,..]        kappa~1.8944  max excess over last 3 blocks: c=0.80cov ['3.05e-05', '3.05e-05', '3.05e-05'] | 0.97cov ['1.69e-09', '1.69e-09', '1.69e-09'] | 1.03cov ['0.00e+00', '0.00e+00', '0.00e+00']
+noble [0;3,1,1,..]         kappa~1.8944  max excess over last 3 blocks: c=0.80cov ['2.04e-05', '2.04e-05', '2.04e-05'] | 0.97cov ['1.13e-09', '1.13e-09', '1.13e-09'] | 1.03cov ['0.00e+00', '0.00e+00', '0.00e+00']
+silver [0;2,2,2,..]        kappa~2.0606  max excess over last 3 blocks: c=0.80cov ['3.82e-05', '3.82e-05', '3.82e-05'] | 0.97cov ['8.61e-10', '8.32e-10', '8.10e-10'] | 1.03cov ['0.00e+00', '0.00e+00', '0.00e+00']
+[0;3,3,3,..]               kappa~2.1094  max excess over last 3 blocks: c=0.80cov ['2.91e-05', '2.91e-05', '2.91e-05'] | 0.97cov ['7.31e-10', '6.83e-10', '6.50e-10'] | 1.03cov ['0.00e+00', '0.00e+00', '0.00e+00']
+mixed [0;2,1,2,1,..]       kappa~2.1547  max excess over last 3 blocks: c=0.80cov ['3.74e-05', '1.60e-05', '3.74e-05'] | 0.97cov ['2.11e-09', '0.00e+00', '2.12e-09'] | 1.03cov ['0.00e+00', '0.00e+00', '0.00e+00']
+
+   unbounded 1/e: excess for c=2,4 at N around a_{k+1} q_k/2 + q_{k-1} blocks
+ k=6 a_(k+1)=4 N=80 excess(c=2)=0.08069 excess(c=4)=0.00407
+ k=9 a_(k+1)=6 N=1118 excess(c=2)=0.10379 excess(c=4)=0.01751
+ k=12 a_(k+1)=8 N=20142 excess(c=2)=0.12041 excess(c=4)=0.03345

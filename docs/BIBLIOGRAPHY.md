@@ -120,3 +120,10 @@ apply with N'=N−1), Marklof–Strömbergsson Monthly 2017 (no counts), Coelho�
 phase-x continuum or convex order found), Ramírez arXiv:1405.7277 §4 (bounded gap ratio iff
 badly approximable), Dzhalilov–Khomidov 2023 (different observable). Still unread: Coelho
 2004 full text, Dzhalilov–Khomidov 2024, Fan–Schmeling 2002, Alessandri–Berthé 1998.
+
+Correction (2026-11-14, from Fable referee review, verified on arXiv abs page):
+arXiv:math/0301300 "On the distribution of free-path lengths for the periodic Lorentz gas
+III" is by E. Caglioti and F. Golse, Comm. Math. Phys. 236 (2003) 199–221, not
+Marklof–Strömbergsson as LITERATURE_REVIEW.md round 1 states. Referee also flags:
+c_* = πQ(1+2/√5) relates to Niederreiter's dispersion constant (to verify and cite);
+uncited Blank–Krikorian, Fan–Schmeling, Dupain, Don (2012).

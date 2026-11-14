@@ -66,15 +66,9 @@ $\delta>0$ with $c/Q+\delta<\Lambda$; then $m_N(c/Q+\delta)\not\to0$ and Lemma~\
 $\limsup E_N>0$. So (ii) follows from $\Lambda\ge L$, which is Proposition~\ref{disp:prop:lambda} below. (Trivially $\Lambda\le L$.)
 \end{proof}
 
-\begin{lemma}[Three-gap blocks, classical]\label{disp:lem:blocks}
-Let $\beta=[0;a_1,a_2,\dots]$ with convergent denominators $q_k$ ($q_{-1}=0,q_0=1$) and $\eta_k=\|q_k\beta\|$.
-For $k\ge1$, $1\le r\le a_{k+1}$ and $0\le t<q_k$, the $N=rq_k+q_{k-1}+t$ gaps of $\{j\beta\}_{j<N}$ are
-$\eta_k$ (multiplicity $N-q_k$), $\eta_{k-1}-(r-1)\eta_k$ (multiplicity $q_k-t$) and $\eta_{k-1}-r\eta_k$ (multiplicity $t$).
-The blocks $(k,r)$ tile $N\ge q_1+q_0$. In block $(k,r)$ the largest gap is $\ell_{k,r}=\eta_{k-1}-(r-1)\eta_k$, with multiplicity $q_k-t\ge1$.
-\end{lemma}
-\noindent This is the three-distance theorem in the explicit form of S\'os, Alessandri--Berthé and Leong (indexing shifted by one point as in
-Theorem~\ref{thm:C} and Theorem~\ref{gap:thm:three}); the multiplicities add to $N$ and the lengths to $1$ because $q_k\eta_{k-1}+q_{k-1}\eta_k=1$.
-We also checked it by computer for all $N\le2500$ and the angles listed in \S\ref{disp:sec:num}.
+By Theorem~\ref{gap:thm:three} (with $t$ in place of $s$), the blocks $(k,r)$, $1\le r\le a_{k+1}$,
+tile $N\ge q_1+q_0$, and in block $(k,r)$, $N=rq_k+q_{k-1}+t$, the largest gap is
+$\ell_{k,r}=\eta_{k-1}-(r-1)\eta_k$ with multiplicity $q_k-t\ge1$.
 
 Write $s_k=q_{k-1}/q_k=[0;a_k,\dots,a_1]$ and $t_k=\eta_k/\eta_{k-1}=[0;a_{k+1},a_{k+2},\dots]$. Then $q_k\eta_{k-1}=1/(1+s_kt_k)$ and
 $t_k<1/a_{k+1}$.
@@ -141,10 +135,12 @@ $D=\limsup N d_N$. This differs from $\kappa/2$: the interval metric charges the
 given by Drobot's formula (see Tripathi, Acta Arith.\ 63 (1993)). Numerically the interval constant at the golden angle is $(1+3/\sqrt5)/2\approx1.1708$, not $\kappa/2=0.9472$.
 So $c_*/(\pi Q)=1+2/\sqrt5$ is the \emph{circular} dispersion constant of the golden rotation, and Proposition~\ref{disp:prop:min} (proved above via the three-gap theorem)
 is the circular analogue of the minimality of the golden angle for Niederreiter's constant.
-We did not read \cite{Nie84}; we do not claim that it states Proposition~\ref{disp:prop:min}.
+We do not claim that \cite{Nie84} states Proposition~\ref{disp:prop:min}; we know of no source for the circular statement.
 \end{remark}
 
-\subsection{Numerical verification}\label{disp:sec:num}
-The script \texttt{docs/dispersion\_scratch/disp\_check.py} checks Lemma~\ref{disp:lem:blocks} exactly (high-precision $\eta_k$) for all $N\le2500$, compares the formula of
-Lemma~\ref{disp:lem:sup} with a brute-force maximum of $Nh_N$, and evaluates $\widetilde V_N(c)-a^2$ for $c=0.97\,c_{\rm cov}$ and $1.03\,c_{\rm cov}$ at the
-golden, noble, silver and mixed angles over the last blocks with $q_k\le3\cdot10^4$. At $N$ equal to the block end minus $1\%$ of $q_k$ (so that the largest class keeps frequency about $0.01q_k/N$), the excess is positive and constant from block to block for $c=0.8\,c_{\rm cov}$ and $0.97\,c_{\rm cov}$ (of order $10^{-5}$ and $10^{-9}$ respectively, the smallness reflecting the small frequency), and exactly $0$ for $c=1.03\,c_{\rm cov}$ at every sampled $N$ (numbers in \texttt{docs/DISPERSION.md}).
+\subsection{Numerical check}\label{disp:sec:num}
+For golden, noble, silver and mixed angles we compared the block formula with a brute-force
+maximum of $Nh_N$ for $N\le2500$, and evaluated $\widetilde V_N(c)-a^2$ at $N$ equal to a block end
+minus $1\%$ of $q_k$. The excess is positive and stable from block to block for $c=0.8\,c_{\rm cov}$
+and $0.97\,c_{\rm cov}$ (of order $10^{-5}$ and $10^{-9}$; the largest class then has frequency about
+$0.01q_k/N$), and exactly $0$ for $c=1.03\,c_{\rm cov}$.

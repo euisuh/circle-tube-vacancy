@@ -18,7 +18,7 @@
 \title[Shrinking tubes around a circular billiard orbit]{Shrinking tubes around a circular billiard orbit:\\ spatial dephasing and arithmetic oscillation of the uncovered area}
 \author{Euisuh Jeong}
 \address{Republic of Korea Air Force}
-\date{Draft of 14 November 2026}
+\date{14 November 2026}
 \subjclass[2020]{Primary 37E10, 11K06; Secondary 11J70, 37C83}
 \keywords{circular billiard, irrational rotation, three-distance theorem, shrinking targets, coverage, convex order, badly approximable numbers}
 
@@ -202,7 +202,7 @@ $\pi(1+\varepsilon/2)$, forcing $\int(\pi-\ell)_+\ge\pi\varepsilon^2/2$, while t
 $\pi\mu([0,\pi(1-\tau)])+\pi\tau$ with $\tau=\varepsilon^2/4$. By Lemma~\ref{lem:jensen}, for
 $s\in[\pi(1-\varepsilon^2/8),\pi]$ we get $m_N(s)-(1-s/\pi)\ge\varepsilon^4/32$. As $c/Q<\pi$, this
 range of $s=c/q$ corresponds to a set of $q\in(0,Q]$ of positive length independent of
-$N$, so $\tilde V_N(c)-\Vd(c)\ge\kappa>0$ for all large $N$.
+$N$, so $\tilde V_N(c)-\Vd(c)\ge\gamma>0$ for all large $N$, with $\gamma$ independent of $N$.
 \end{proof}
 
 \section{The golden angle}\label{sec:golden}
@@ -276,7 +276,7 @@ $N=F_m+\lfloor xF_m\rfloor$ over the Fibonacci limit, for $c=1$ (solid), $2$ (da
 \begin{tikzpicture}[scale=0.85]
 \input{figures/threshold.tex}
 \end{tikzpicture}
-\caption{Golden angle. Solid: oscillation amplitude $\limsup V_N(c)-\liminf V_N(c)=\max_xV(x,c)-V(0,c)$, positive exactly for $c<c_*$. Dashed: $\liminf V_N(c)-\Vd(c)=V(0,c)-\Vd(c)$, positive for $c<\pi Q$ as in Theorem~\ref{thm:C}(3).}
+\caption{Golden angle. Solid: oscillation amplitude $\limsup V_N(c)-\liminf V_N(c)=\max_xV(x,c)-V(0,c)$, positive exactly for $c<c_*$. Dashed: $\liminf V_N(c)-\Vd(c)=V(0,c)-\Vd(c)$, positive exactly for $c<Qu$; Theorem~\ref{thm:C}(3) guarantees positivity for $c<\pi Q$, and on $[\pi Q,Qu)$ it follows from $V(0,c)>a^2=\Vd(c)$.}
 \label{fig:threshold}
 \end{figure}
 
@@ -309,9 +309,7 @@ $c_*=5.54700825580342652455\ldots$.}
 
 \paragraph{Monte Carlo.} Four million points uniform in $D$ (NumPy PCG64, seed
 20261115) were tested against the true finite segments for $N=4181=F_{19}$ and
-$N=5574=F_{19}+\lfloor F_{19}/3\rfloor$, using a four-candidate reduction whose
-completeness we prove in the repository (distance to finitely many chords is minimized
-by an angular neighbour of one of two continuous minimizers). Common random numbers
+$N=5574=F_{19}+\lfloor F_{19}/3\rfloor$, using the four-candidate reduction of Lemma~\ref{lem:fourcand}. Common random numbers
 give paired standard errors.
 
 \begin{center}
@@ -382,6 +380,26 @@ All code, saved outputs and verification logs are available at
 
 \appendix
 \section{Reproducibility}\label{app:repro}
+
+\begin{lemma}\label{lem:fourcand}
+Let $x=re^{i\varphi}\in D$ and let $\theta^\pm$ be the circular positions $\varphi\pm\arccos(\min(1,a/r))$.
+Then $\min_{j<N}\dist(x,[p_j,p_{j+1}])$ is attained at a chord whose normal angle $\theta_j$ is the
+nearest orbit point on one side of $\theta^+$ or of $\theta^-$ (four candidates).
+\end{lemma}
+
+\begin{proof}
+Rotate so that a chord has normal angle $0$; its endpoints are $(a,\pm Q)$. For a point at angle
+$\delta\in[0,\pi]$ from the normal, the distance is $|r\cos\delta-a|$ while $r\sin\delta\le Q$
+(perpendicular foot on the chord) and $\sqrt{r^2+1-2r\cos(\delta-\alpha)}$ otherwise. For $r>a$ the
+first expression decreases on $[0,d]$, $d=\arccos(a/r)\le\alpha$, and increases after; on the
+endpoint regime $\delta\ge\arcsin(Q/r)\ge\alpha$ the squared distance has derivative
+$2r\sin(\delta-\alpha)\ge0$; the two pieces join continuously. Hence, as a function of the normal
+angle, the distance has minima only at $\varphi\pm d$ and is monotone between them and the maxima;
+for $r\le a$ it is nondecreasing in $|\delta|$. The minimum over finitely many normals is therefore
+attained at a neighbour of $\varphi+d$ or $\varphi-d$.
+\end{proof}
+
+
 All code is in the accompanying repository: \texttt{circle\_research.py} (geometry,
 Monte Carlo, limit formulas), \texttt{certify.py} (exact $\mathbb Z[\lambda]$ check of
 Lemma~\ref{lem:golden} for $2\le N\le3000$ and interval enclosures),

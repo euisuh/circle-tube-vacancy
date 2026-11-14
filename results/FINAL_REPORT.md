@@ -42,3 +42,16 @@ V(0,2)=0.156461653859154…, V(1/3,2)=0.162173010171056…, c_*=5.54700825580342
 Author metadata (manuscript has placeholder) and whether to pursue venue submission —
 submission, posting and author contact need explicit approval. Before submitting, obtain the
 two unread papers through library access.
+
+## Revision round (same day, after user supplied author metadata)
+
+- Author: Euisuh Jeong, Republic of Korea Air Force.
+- Fable referee round 1: major revision (docs/reviews/FABLE_REVIEW.md); round 2 after revision:
+  **minor revision** (docs/reviews/FABLE_REVIEW_2.md); its remaining must-fixes applied, except
+  repository visibility (user decision).
+- New theorem: coverage threshold for every irrational angle, V_N(c)→a² iff c≥πQκ(β);
+  κ(β)≥1+2/√5 with equality iff noble (docs/DISPERSION.md; adversarial review
+  docs/reviews/DISPERSION_REVIEW.md: no counterexample; not found in literature).
+- Gap lemmas proved self-contained; Dzhalilov–Khomidov 2024 read: no overlap. Coelho 2004 still unread.
+- Venues (Fable): Uniform Distribution Theory, then Monatshefte für Mathematik; Acta Arithmetica borderline.
+- Repo: https://github.com/euisuh/circle-tube-vacancy (PRIVATE).

@@ -1,0 +1,18 @@
+test_convex_order_fibonacci_phase_is_minimal (test_circle_research.Certification.test_convex_order_fibonacci_phase_is_minimal) ... ok
+test_exact_three_gap_law_all_small_n (test_circle_research.Certification.test_exact_three_gap_law_all_small_n) ... ok
+test_interval_limits_contain_float_predictor (test_circle_research.Certification.test_interval_limits_contain_float_predictor) ... ok
+test_center_and_chord (test_circle_research.Distances.test_center_and_chord) ... ok
+test_diameter_analytic (test_circle_research.Distances.test_diameter_analytic) ... ok
+test_fast_against_brute_random_and_adversarial (test_circle_research.Distances.test_fast_against_brute_random_and_adversarial) ... ok
+test_validation (test_circle_research.Distances.test_validation) ... ok
+test_batching_reproducibility_and_uncertainty (test_circle_research.Predictions.test_batching_reproducibility_and_uncertainty) ... ok
+test_exact_finite_fibonacci_gap_counts (test_circle_research.Predictions.test_exact_finite_fibonacci_gap_counts) ... ok
+test_gap_constants_against_real_rotations (test_circle_research.Predictions.test_gap_constants_against_real_rotations) ... ok
+test_monte_carlo_statistics_against_brute_samples (test_circle_research.Predictions.test_monte_carlo_statistics_against_brute_samples) ... ok
+test_prediction_validation (test_circle_research.Predictions.test_prediction_validation) ... ok
+test_primitive_against_independent_quadrature (test_circle_research.Predictions.test_primitive_against_independent_quadrature) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.334s
+
+OK

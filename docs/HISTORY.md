@@ -135,3 +135,93 @@ finite segments versus infinite lines; finite N evidence versus asymptotic proof
 fixed positive w versus c/N; fixed irrational versus averaged frequencies; grid
 bound versus exact optimizer; model reports versus independent audit; bibliographic
 search absence versus originality; numerical agreement versus proof correctness.
+
+## 7. Parked variants and why they were not promoted
+
+These were discussed, not established research gaps. Preserve them so a future
+model does not restart the same novelty loop.
+
+| Direction | What was learned | Status / useful next discriminator |
+|---|---|---|
+| Finite beam width, central disk only | For a geometric distance tube of fixed half-width w, protected central radius is max(0,a-w); its area fraction is the square. | Elementary extension; rejected as standalone novelty. This is not the propagation law of an optical beam. |
+| Near-rational stabilization time | Near a rational star with offcenter holes, irrational finite-prefix disk stabilization may take very long; a candidate scale is inverse distance to the rational angle. | Unproved; finite-hole survivor papers already analyze near-periodic neighborhoods. Needs a theorem beyond standard rotation hitting times. |
+| Shrinking width w=c/N | Total trace length grows like N while width decreases like 1/N; nontrivial macroscopic spatial vacancy survives. | Active direction. Radial dephasing, not single-target gap arithmetic, is the candidate additional result. |
+| Shrinking width w=c/N² / caustic boundary layer | Chord sagitta from angular gaps of order 1/N is of order 1/N². Near r=a+y/N², local line distance scales like abs(a*z²/2-y)/N². | Scaling heuristic only; global tube area tends to zero at this width, so a rescaled local observable is needed. No theorem or experiment saved. |
+| Bounded reflection-angle errors | Could ask worst-case protected area or robustness of a caustic. | No precise nontrivial model or contribution established; no experiments. Distinguish adversarial errors, independent noise, and actual rough boundaries. |
+| Multiple rays / variable initial cone | Extra rays or an angular beam can change coverage. | Chernov–Galperin already treats eventual search-light illumination. No finite-time quantitative gap established here. |
+| Other regular stars (n,k), even counts | Even counts can form connected stars when gcd(n,k)=1. General jump classification could be studied. | Not excluded mathematically, but broad obstacle-avoidance literature overlaps. Odd maximal-jump family was a scope choice. |
+| Largest empty disk allowed to move | Introduced to escape the elementary central caustic question. | Exact odd-family formula internally derived, strong Altmann overlap. Retain as baseline, not confirmed new theorem. |
+| General-purpose largest-empty-circle algorithm | Voronoi and segment-site geometry already provide established methods. | Reimplementing an optimizer is not research novelty. |
+
+## 8. Source and communication corrections
+
+Early voice replies claimed formulas/notes had been displayed, literature had been
+checked, and simulations had run without visible supporting tool artifacts in the
+retained conversation. Later numerical reports and agent derivations were supplied,
+but original raw outputs were not retained. Do not upgrade those early statements
+into verified observations. This archive distinguishes historical claims from
+saved files and command outputs observed during reconstruction.
+
+The user explicitly corrected repeated offers and either/or questions: pursue
+proof, novelty checks, and experiments in parallel when authorized; report concrete
+progress and durable results. This is a project-specific authorization, not authority
+to contact authors, publish, submit, or purchase compute.
+
+A literature result found after the first search materially changed the picture:
+Dettmann–Fain modifies the orbit by a collision, whereas Altmann et al. directly
+studies unchanged regular stars avoiding an eccentric obstacle. Therefore the earlier
+statement that the closest literature necessarily changes the orbit was incomplete.
+
+DMS f-regularity excludes a single fixed frequency from that particular theorem.
+Coelho–de Faria and Coelho nevertheless establish fixed-frequency entrance-time
+laws. Hypothesis exclusion alone was explicitly rejected as a novelty argument.
+
+## 9. Archive-task verification recorded on 2026-11-14
+
+The current geometry executor preserved the existing implementation, added a
+finite Fibonacci gap-count test, and saved a new 4m paired run under
+`results/verified-full`. The documentation executor read the saved JSON and test
+outputs. Ten tests and syntax compilation exited 0. Current c=2 vacancy difference
+is 0.00573625, paired SE 0.000101772241; this is newly observed numerical evidence,
+not the unsaved historical 0.005767 claim. Full metadata and limits are in
+`results/REPORT.md`. Lint/typecheck unavailable; no publication or author contact.
+
+Files already existed when this documentation executor arrived. They were
+inspected and preserved; this pass enriched the ledger, hypothesis comparison,
+protocol, plan, and observed report rather than claiming authorship or fresh
+verification of every preexisting artifact. Git commits were left to the owning
+executor to avoid conflicting with concurrent work.
+
+## 10. Claude Code goal session — 2026-11-14 (Asia/Seoul)
+
+Goal prompt: CLAUDE_GOAL.md. Lanes: independent literature agent
+(docs/reviews/LITERATURE_REVIEW.md), adversarial proof agent (docs/reviews/PROOF_REVIEW.md),
+independent deterministic-numerics agent (independent/, results/indep-*). Main thread wrote
+docs/THEOREM.md, certify.py, three new tests, manuscript/.
+
+Discoveries (labels: audited argument unless stated):
+- Theorem A two-branch reduction is EXACT on the trimmed annulus (no band approximation).
+  Adversarial review: no error; gaps fixed (need w<a; x_N may exceed λ by λ^m/F_m).
+- Golden convex order: every phase-x gap law dominates the Fibonacci law in convex order,
+  so liminf V_N(c)=V(0,c) (Fibonacci times) and limit set = V([0,λ],c). Divergence iff
+  c<c_*=πQ/(√5λ³)≈5.547; for c≥c_* V_N→a². Strict separation is now a proof, not a float
+  comparison. Extends to noble β (reviewer checked two noble examples numerically).
+- Theorem C (all irrationals): Jensen gives m_N(s)≥(1−s/π)_+, so liminf V_N≥V_δ(c);
+  equality iff unbounded partial quotients (then divergence for every c>0); bounded type
+  gives strict gap for c<πQ. Round-2 review: no error; two cosmetic index/exposition gaps fixed.
+- certify.py: exact Z[λ] verification of the golden three-distance law for all N≤3000;
+  50-digit interval enclosures reproduce the historical predictions to 12+ digits.
+
+Rejected in this session:
+- Block-wise convex-order domination for non-golden angles: FAILS numerically (silver,
+  √3-type, e-type, π−3). So the golden liminf argument does not extend; open conjecture:
+  liminf attained at convergent-type two-distance times for all bounded-type β.
+- Literature verdict: dephasing is a routine Fourier argument for a specialist; gap laws
+  classical; Coelho–de Faria / Dzhalilov–Khomidov full texts unread (risk that golden
+  hitting-time laws already tabulated). Rating: short note, not specialist paper, unless
+  broadened (Theorem C partly answers this).
+- Numerics flag: independent verifier saw +2.6σ pooled c=2 paired excess over 4 seeds;
+  16 more seeds (results/seedsweep/) gave pooled z=1.43 over 20 → chance. Comparison must
+  use deterministic finite-N values, not limits (offset ≈ −2ac/N).
+- Literature round 2: Coelho–de Faria full text read (no phase-x continuum/convex order);
+  rating upper-end short note. Manuscript created (author placeholder; no submission).

@@ -113,5 +113,33 @@ class Predictions(unittest.TestCase):
             cr.experiment(100, 10, 1, [1, 2], [])
 
 
+class Certification(unittest.TestCase):
+    def test_exact_three_gap_law_all_small_n(self):
+        import certify
+        self.assertEqual(certify.three_gap_exact(400), 400)
+
+    def test_interval_limits_contain_float_predictor(self):
+        import certify
+        for x, xs in [(0, '0'), (1/3, '1/3'), (0.5, '1/2')]:
+            for c in [1, 2, 3]:
+                enclosure = certify.certified_limit(xs, str(c))
+                value = cr.predictor(c, x)
+                with self.subTest(x=x, c=c):
+                    self.assertLessEqual(float(enclosure.a) - 1e-12, value)
+                    self.assertGreaterEqual(float(enclosure.b) + 1e-12, value)
+
+    def test_convex_order_fibonacci_phase_is_minimal(self):
+        # V(x,c) >= V(0,c), strict iff c < sin(alpha)*u*(1+x)  (docs/THEOREM.md B.3-B.4)
+        u = math.pi/(math.sqrt(5)*cr.LAMBDA**2)
+        q = math.sin(cr.ALPHA)
+        for c in [0.5, 1, 2, 3, 4, 5]:
+            for x in np.linspace(0.01, cr.LAMBDA-0.01, 17):
+                gap = cr.predictor(c, x) - cr.predictor(c, 0)
+                with self.subTest(c=c, x=x):
+                    self.assertGreaterEqual(gap, -1e-13)
+                    if c > q*u*(1+x):
+                        self.assertAlmostEqual(gap, 0, places=13)
+
+
 if __name__ == '__main__':
     unittest.main()

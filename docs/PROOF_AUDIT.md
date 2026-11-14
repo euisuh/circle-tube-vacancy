@@ -1,5 +1,10 @@
 # Proof audit — 2026-11-14
 
+> Superseded for Theorem A by docs/THEOREM.md (exact two-branch reduction; adversarially
+> reviewed, see docs/reviews/PROOF_REVIEW.md). Golden gates 1–3 below are now closed there:
+> three-distance law cited (Leong Thm 3) and exactly verified N≤3000; strict separation
+> proved by convex order (THEOREM.md B.3–B.4) and digits interval-certified.
+
 This is a new internal audit of inherited reasoning. It is not an external referee report, formal verification, or novelty certificate. No historical Monte Carlo output was used to validate a proof. Scope: dephasing limit exchanges and geometric reductions; conditional golden-limit evaluation; bounded review of earlier directions.
 
 ## Audit outcome

@@ -1,14 +1,9 @@
-# Handoff — 2026-11-14 Asia/Seoul
+# Handoff — 2026-11-14 Asia/Seoul (updated by Claude Code goal session)
 
-Status: continuity package/code/tests/actual baseline and larger experiments complete.
-Branch: codex/research-continuity.
-Worktree: /Users/uiseo/Documents/Circle Research (standalone Git checkout).
-Issue#: none. No remote.
-Files: README.md and AGENTS.md entry points; docs/* history, mathematics, audit,
-literature, plan, protocol; circle_research.py, test_circle_research.py,
-requirements.txt; results/* saved outputs/report/tests.
-Next: exact Fibonacci/intermediate gap derivation; certified integral separation;
-independent expert proof/originality review. See docs/PLAN.md gates.
-Blocked: no execution blocker. Lint/typecheck tools absent; not claimed passed.
-Evidence: 10 tests, syntax compilation, 24 quadrature checks; two 4m-point MC pairs.
-Do not write this research into phd-prep. No manuscript/publication authorized.
+Status: theorems A/B/C proved and adversarially reviewed (docs/THEOREM.md, docs/reviews/);
+certified constants; independent numerics; manuscript draft compiled (manuscript/main.pdf).
+Branch: codex/research-continuity. Worktree: /Users/uiseo/Documents/Circle Research. Issue#: none. No remote.
+Files: see results/FINAL_REPORT.md.
+Next: read Coelho 2004 + Dzhalilov–Khomidov 2024 in full; user supplies author metadata
+and decides on submission; open math in docs/PLAN.md.
+Blocked: paywalled sources; author/venue decisions need user. Lint/typecheck tools absent.

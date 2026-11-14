@@ -3,18 +3,24 @@
 Standalone research continuity workspace. Created 2026-11-14 Asia/Seoul.
 No research files belong in phd-prep. Start here, then read AGENTS.md.
 
-**Current status:** reproducible finite-chord experiments support distinct
-subsequential shrinking-tube area limits at a fixed golden irrational angle.
-An internal spatial-dephasing argument is recorded. The complete nonconvergence
-example is not yet a certified theorem: exact golden gap derivation, rigorous
-separation of integral values, independent proof review and originality audit remain.
-No publication suitability or novelty guarantee. No manuscript/PDF produced.
+**Current status (2026-11-14, Claude Code goal session):** three theorems with complete
+proofs in [docs/THEOREM.md](docs/THEOREM.md), each passed an independent adversarial
+review (no errors; small gaps fixed; [review](docs/reviews/PROOF_REVIEW.md)):
+A spatial dephasing V_N(c)=a²+2∫q m_N(c/q)²dq+o(1); B golden/noble angle: exact limit
+set, liminf along Fibonacci N (convex order), divergence iff c<c_*≈5.547; C all
+irrationals: liminf V_N ≥ uniform-gap value V_δ(c), equality iff unbounded partial
+quotients. Interval-certified constants (certify.py), exact three-distance check N≤3000,
+independent deterministic integrator and 20-seed MC agree. Editable manuscript in
+manuscript/ (PDF compiled). Independent literature rating: upper-end short note; key
+risk: Coelho 2004 / Dzhalilov–Khomidov 2024 full texts unread. No novelty guarantee, no
+submission. Final summary: [results/FINAL_REPORT.md](results/FINAL_REPORT.md).
 
 ## Read in order
 
 - [History, all explored/rejected directions and corrections](docs/HISTORY.md).
 - [Definitions and mathematical results, with evidence labels](docs/MATHEMATICS.md).
-- [Detailed proof audit and remaining proof gates](docs/PROOF_AUDIT.md).
+- [Theorems and complete proofs (current)](docs/THEOREM.md); [reviews](docs/reviews/).
+- [Earlier proof audit](docs/PROOF_AUDIT.md).
 - [Annotated primary bibliography and overlap](docs/BIBLIOGRAPHY.md).
 - [Research plan and acceptance gates](docs/PLAN.md).
 - [Experiment protocol](docs/EXPERIMENTS.md).
@@ -28,10 +34,12 @@ Run from this directory:
 
 ```sh
 python3 -m unittest -v
-python3 -m py_compile circle_research.py test_circle_research.py
-python3 circle_research.py --output results/smoke
-python3 circle_research.py --full --output results/full
-python3 circle_research.py --full --ns 75025 100033 --seed 20261116 --output results/large
+python3 -m py_compile circle_research.py test_circle_research.py certify.py
+python3 certify.py 3000            # exact three-gap check + interval limits
+python3 manuscript/make_figures.py && (cd manuscript && pdflatex main.tex && pdflatex main.tex)
+python3 circle_research.py --output results/smoke-reproduction
+python3 circle_research.py --full --seed 20261115 --ns 4181 5574 --batch 100000 --cs 1 2 --output results/reproduction
+python3 circle_research.py --full --ns 75025 100033 --seed 20261116 --output results/large-reproduction
 ```
 
 Smoke uses 20,000 points; full uses 4,000,000 common disk points per pair.
@@ -42,9 +50,15 @@ Do not overwrite old results when investigating changes: choose a new output ste
 Original per-point samples are regenerated from config, not stored.
 
 Observed validation: 10 unittest tests passed, including brute finite-segment,
-endpoint/caustic/periodic cases, analytical diameter, quadrature and paired SE.
+endpoint/caustic/periodic cases, analytical diameter, finite Fibonacci gap counts,
+quadrature and paired SE. Current evidence is results/verified-checks.json and
+results/verified-tests.log; earlier preexisting logs are retained separately.
 Syntax compilation passed. No lint/typecheck config or tools available; these
 checks were not run. No npm project or lint:slop:changed script exists here.
+
+Current saved 4m-point paired experiment: c=2 gives vacancy 0.15617325 versus
+0.16190950, difference 0.00573625 with paired SE 0.00010177224. See the observed
+report for raw counts, source hashes, and the distinction from unsaved historical claims.
 
 ## Interpretation limits
 

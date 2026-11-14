@@ -70,3 +70,45 @@ not enough. No physical-optics claim; no manuscript until evidence gates reviewe
 README/status, complete historical ledger, definitions/derivations/audit, primary
 bibliography, executable code/tests, JSON/CSV results, experiment protocol and observed
 report. No PDF, external service, paid compute, or publication in this stage.
+
+## Current handoff: concrete remaining work
+
+The current 4m paired rerun and ten tests are saved and passed; see
+`../results/REPORT.md`. Do not repeat that full run solely because a new model
+starts. Repeat only after code changes, a failed check, an independent-seed
+question, or a planned finite-N scaling experiment.
+
+Priority order:
+
+1. Supply a written finite Fibonacci gap-length/count derivation. Existing tests
+   check selected indices, including phase rollover, but do not prove all cases.
+2. Independently review the radial dephasing argument, particularly finite-chord
+   endpoints and the order of caustic/mesh/Fourier cutoffs.
+3. Establish strict inequality between the two c=2 limiting integrals with exact
+   algebra or rigorous interval bounds; ordinary float precision is insufficient
+   for a mathematical certificate.
+4. Audit full fixed-frequency hitting-time literature and deterministic spatial
+   coverage. Test whether the radial dephasing identity is an immediate known
+   corollary. Record exact source theorem/hypothesis mapping if it is.
+5. Only if the preceding gates survive, package a short-paper claim: fixed-action
+   spatial coverage law plus explicit unequal subsequential spatial area limits.
+   Keep elementary caustic and standard three-gap facts as background.
+
+A manuscript is deliberately not created in this archive request. The user asked
+for durable research continuity; the absence of a manuscript is not permission
+to omit any proof or novelty gap from later reports.
+
+## Status update — 2026-11-14 (Claude Code goal session)
+
+Gates A–D passed (see docs/THEOREM.md, docs/reviews/PROOF_REVIEW.md, results/indep-REPORT.md,
+results/certify-golden.json, results/seedsweep/SUMMARY.md). Gate E: independent literature
+review rated A+B+C an upper-end short note (docs/reviews/LITERATURE_REVIEW.md). Manuscript
+draft exists (manuscript/main.tex, main.pdf).
+
+Remaining, in priority order:
+1. Read Coelho 2004 (Trans. AMS) and Dzhalilov–Khomidov 2024 in full (library access);
+   check whether the golden phase-x family / convex-order minimality is stated there.
+2. Author metadata (placeholder in manuscript) and target venue — user decision.
+3. Open math: divergence for every bounded-type non-noble β below its coverage threshold;
+   is liminf attained at two-distance times? (block-wise convex order fails; needs new idea.)
+4. Optional: rate in Theorem A (numerics suggest O(1/N), dominated by −2ac/N).

@@ -1,0 +1,15 @@
+test_center_and_chord (test_circle_research.Distances.test_center_and_chord) ... ok
+test_diameter_analytic (test_circle_research.Distances.test_diameter_analytic) ... ok
+test_fast_against_brute_random_and_adversarial (test_circle_research.Distances.test_fast_against_brute_random_and_adversarial) ... ok
+test_validation (test_circle_research.Distances.test_validation) ... ok
+test_batching_reproducibility_and_uncertainty (test_circle_research.Predictions.test_batching_reproducibility_and_uncertainty) ... ok
+test_exact_finite_fibonacci_gap_counts (test_circle_research.Predictions.test_exact_finite_fibonacci_gap_counts) ... ok
+test_gap_constants_against_real_rotations (test_circle_research.Predictions.test_gap_constants_against_real_rotations) ... ok
+test_monte_carlo_statistics_against_brute_samples (test_circle_research.Predictions.test_monte_carlo_statistics_against_brute_samples) ... ok
+test_prediction_validation (test_circle_research.Predictions.test_prediction_validation) ... ok
+test_primitive_against_independent_quadrature (test_circle_research.Predictions.test_primitive_against_independent_quadrature) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.226s
+
+OK

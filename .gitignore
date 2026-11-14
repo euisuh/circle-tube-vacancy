@@ -1,5 +1,8 @@
-__pycache__/
 *.pyc
-.venv/
 .env*
+.venv/
 CLAUDE.md
+__pycache__/
+manuscript/*.aux
+manuscript/*.log
+manuscript/*.out

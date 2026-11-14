@@ -60,3 +60,63 @@ No matching spatial tube-area theorem was located in those returned primary text
 4. Retrieve stable Tabachnikov and open-circle versions; resolve Altmann arrangement conventions. Cite exact theorem/page support, not search-match absence.
 5. Give an independent specialist the exact candidate statement and proof. Record whether known results imply it, which lemma is genuinely additional, and any counterexample or missing uniformity.
 6. Only after proof and comparison gates pass, formulate a narrow originality claim with a dated search scope. Publication suitability and peer review remain external judgments.
+
+## Scoped claim to test against the closest works
+
+The strongest candidate is **spatially integrated shrinking tube vacancy at one
+fixed irrational angle**, specifically the radial dephasing of two coupled angular
+target branches. It is not a claim to have discovered arithmetic nonconvergence,
+small-target laws, or gap statistics. In the proposed theorem, the vacancy of the
+actual finite-segment union has an asymptotic radial integral of the **square** of
+one-branch vacancy. The square is justified after radial integration; branches
+need not be independent at any fixed radius.
+
+| Comparator | Precisely known here | Why it does not directly state the candidate | What still could defeat novelty |
+|---|---|---|---|
+| DMS 2017, eq. (2.11), Theorem 1 | Absolutely continuous frequency-direction pushforward; transverse targets; genericity assumptions. | Fixed alpha has a point-mass frequency direction. Disk tube area averages target location spatially rather than randomizing the action. | A singular-parameter extension, application of another theorem, or routine adaptation could already imply the identity. |
+| Coelho–de Faria 1996 abstract | Fixed irrational rotation, descending renormalization intervals, subsequential entrance point processes. | No inspected theorem states the disk's two radial branches or the radially integrated square. | Their full point-process framework plus an elementary averaging step may suffice. Full-text comparison still required. |
+| Coelho 2004 abstract | Fixed irrational interval hitting processes and bounded-type tightness. | No inspected spatial tube observable. | A simple conversion of their results could yield the same limits. |
+| Polanco et al. 2015, Thm 1.1, Lemma 2.1 | Rotation-parameter-averaged gap distributions and exact Farey gap data; joint neighboring gaps. | Neither a fixed-angle spatial integration theorem nor finite chord endpoints appear in inspected claims. | Existing deterministic gap functional results may make explicit constants routine. |
+| Altmann et al. 2008, Section II | Periodic-star noncollision with a disk obstacle. | Does not give finite-prefix shrinking-width spatial area laws. | A related work on small scatterers or first-collision distributions may overlap. |
+
+The current theorem-plus-experiment package has a specific additional lemma to
+present to a specialist: radial dephasing for almost-rotation-invariant vacancy
+indicators with N-dependent interval widths. Publication suitability remains an
+editorial/expert judgment even if that lemma is new. No journal acceptance or
+originality certificate can be inferred from this archive.
+
+## Source-version caution
+
+Zhao arXiv v2 (2025-01-02), Section 5, Theorem 5.4 explicitly assumes Diophantine
+type eta>1. A publisher-indexed 2026 version located in the earlier search states
+the broader all-irrational formula with a weak inequality. Do not silently mix
+these versions; resolve the final published statement before citing precise
+hypotheses. This difference does not affect the project's point: cover time is
+not spatial tube vacancy, and the golden bounded-type example needs its own
+arithmetic argument.
+
+Additional discovery leads, **not full-text audited**:
+
+- Slater, *Gaps and steps for the sequence n theta mod 1* (1967),
+  [DOI](https://doi.org/10.1017/S0305004100042195): classical gap/step arithmetic.
+- Dzhalilov and Khomidov, *Limit law of rescaled hitting time functions for
+  quadratic irrational rotations* (2024),
+  [DOI](https://doi.org/10.29229/uzmj.2024-2-7): surfaced through author/institute
+  metadata and discovery abstracts. Publisher text unavailable in this audit.
+  Relevant to why quadratic-angle subsequential hitting laws alone are weak novelty.
+- Dettmann, *Kronecker Sequences with Many Distances* (2025),
+  [DOI](https://doi.org/10.1080/10586458.2024.2340742): higher-dimensional distance
+  statistics, discovery-level comparison only; not evidence of this tube theorem.
+
+No matching spatial tube-area theorem was located. This is a dated bounded search
+outcome, not evidence that the mathematical literature contains none.
+
+## Update — 2026-11-14 (goal session)
+
+Independent review with exact retrieval status: docs/reviews/LITERATURE_REVIEW.md (rounds 1–2).
+Newly retrieved full texts: Leong arXiv:1712.03758 Thm 3 (explicit three-distance counts;
+apply with N'=N−1), Marklof–Strömbergsson Monthly 2017 (no counts), Coelho–de Faria 1996
+(author copy; Thm I uniform vs piecewise-linear entrance laws at renormalization times; no
+phase-x continuum or convex order found), Ramírez arXiv:1405.7277 §4 (bounded gap ratio iff
+badly approximable), Dzhalilov–Khomidov 2023 (different observable). Still unread: Coelho
+2004 full text, Dzhalilov–Khomidov 2024, Fan–Schmeling 2002, Alessandri–Berthé 1998.

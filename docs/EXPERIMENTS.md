@@ -39,3 +39,25 @@ finite-N error. Integrate limiting vacancy square analytically by active thresho
 then cross-check numerical quadrature. Numerical quadrature tolerance is not a
 rigorous interval certificate. Historical predictions remain labeled historical
 until observed new code reproduces them.
+
+## Current verified artifact map
+
+- `../results/verified-full.json`: complete metadata, raw integer counts, paired
+  moments, finite gap checks, limiting predictions.
+- `../results/verified-full.csv`: compact numerical rows.
+- `../results/verified-full.stdout.log`: current CLI output.
+- `../results/verified-checks.json`: observed test/compilation exit codes and
+  code/test hashes, plus unavailable lint/typecheck status.
+- `../results/verified-tests.log`: ten-test output.
+- `../results/REPORT.md`: human-readable evidence and limits.
+
+These files were newly observed in this archive task. Earlier output stems found
+on disk remain preserved as preexisting artifacts; do not silently merge their
+provenance with verified-full. New runs should use a unique stem and retain the
+code hash; changing code after a run does not retroactively validate that run.
+
+## Added 2026-11-14
+
+- Deterministic exact-arc radial integrator: independent/geom.py (see results/indep-REPORT.md).
+- Exact/interval certification: certify.py → results/certify-golden.json.
+- Seed sweep 9001–9016: results/seedsweep/ (compare paired MC with deterministic finite-N, not limits).

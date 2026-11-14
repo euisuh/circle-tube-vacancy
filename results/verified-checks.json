@@ -1,0 +1,43 @@
+{
+  "completed_at_utc": "2026-11-14T04:14:23.265669+00:00",
+  "python": "3.14.7",
+  "checks": [
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-m",
+        "unittest",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_center_and_chord (test_circle_research.Distances.test_center_and_chord) ... ok\ntest_diameter_analytic (test_circle_research.Distances.test_diameter_analytic) ... ok\ntest_fast_against_brute_random_and_adversarial (test_circle_research.Distances.test_fast_against_brute_random_and_adversarial) ... ok\ntest_validation (test_circle_research.Distances.test_validation) ... ok\ntest_batching_reproducibility_and_uncertainty (test_circle_research.Predictions.test_batching_reproducibility_and_uncertainty) ... ok\ntest_exact_finite_fibonacci_gap_counts (test_circle_research.Predictions.test_exact_finite_fibonacci_gap_counts) ... ok\ntest_gap_constants_against_real_rotations (test_circle_research.Predictions.test_gap_constants_against_real_rotations) ... ok\ntest_monte_carlo_statistics_against_brute_samples (test_circle_research.Predictions.test_monte_carlo_statistics_against_brute_samples) ... ok\ntest_prediction_validation (test_circle_research.Predictions.test_prediction_validation) ... ok\ntest_primitive_against_independent_quadrature (test_circle_research.Predictions.test_primitive_against_independent_quadrature) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.226s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-m",
+        "py_compile",
+        "circle_research.py",
+        "test_circle_research.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "lint": {
+    "status": "not run",
+    "reason": "No lint configuration; ruff not installed",
+    "module_available": false
+  },
+  "typecheck": {
+    "status": "not run",
+    "reason": "No typecheck configuration; mypy not installed",
+    "module_available": false
+  },
+  "files_sha256": {
+    "circle_research.py": "bf1d0bf8b02afbf9dde81806850906e1e9cac5be6d05c66169e0099994f5d4be",
+    "test_circle_research.py": "8dcdfafe3a9763cf4f437cb1712ed1c443150a6ce63493124ce3f450a034f691"
+  }
+}

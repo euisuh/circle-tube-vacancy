@@ -1,0 +1,98 @@
+{
+  "samples": 4000000,
+  "batch": 100000,
+  "seed": 9003,
+  "alpha": 1.1999816148643268,
+  "completed_at_utc": "2026-11-14T04:44:52.515356+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "source_sha256": "bf1d0bf8b02afbf9dde81806850906e1e9cac5be6d05c66169e0099994f5d4be",
+  "halfwidth": "c/N",
+  "rng": "numpy.default_rng / PCG64; interleaved radius-angle",
+  "python": "3.14.7",
+  "numpy": "2.5.3",
+  "elapsed_seconds": 3.934667124878615,
+  "rows": [
+    {
+      "c": 1.0,
+      "n0": 4181,
+      "n1": 5574,
+      "uncovered_count0": 1344579,
+      "uncovered_count1": 1351051,
+      "paired_sum": 6472,
+      "paired_sum_squares": 582710,
+      "uncovered0": 0.33614475,
+      "uncovered1": 0.33776275,
+      "se0": 0.00023619457700978008,
+      "se1": 0.00023647364051423373,
+      "paired_difference": 0.001618,
+      "paired_se": 0.00019083691892210586,
+      "predicted0": 0.33622612952297226,
+      "predicted1": 0.338140371722239,
+      "predicted_difference": 0.0019142421992667247
+    },
+    {
+      "c": 2.0,
+      "n0": 4181,
+      "n1": 5574,
+      "uncovered_count0": 623682,
+      "uncovered_count1": 647476,
+      "paired_sum": 23794,
+      "paired_sum_squares": 166082,
+      "uncovered0": 0.1559205,
+      "uncovered1": 0.161869,
+      "se0": 0.00018139000150372306,
+      "se1": 0.00018416532026678176,
+      "paired_difference": 0.0059485,
+      "paired_se": 0.00010183948855801396,
+      "predicted0": 0.15646165385915423,
+      "predicted1": 0.16217301017105662,
+      "predicted_difference": 0.005711356311902394
+    }
+  ],
+  "gap_checks": [
+    {
+      "n": 4181,
+      "x": 0,
+      "predicted_lengths": [
+        7.356481492214227,
+        4.546555599797938,
+        2.8099258924162904
+      ],
+      "predicted_frequencies": [
+        0.6180339887498949,
+        0.3819660112501052,
+        0.0
+      ],
+      "observed_frequencies": [
+        0.6180339631667066,
+        0.38196603683329344,
+        0.0
+      ],
+      "max_scaled_length_error": 8.759184488837946e-08,
+      "scaled_mean": 6.283185307179586
+    },
+    {
+      "n": 5574,
+      "x": 0.3333333333333333,
+      "predicted_lengths": [
+        9.80864198961897,
+        6.062074133063917,
+        3.7465678565550538
+      ],
+      "predicted_frequencies": [
+        0.2135254915624212,
+        0.5364745084375789,
+        0.25
+      ],
+      "observed_frequencies": [
+        0.21367061356297093,
+        0.5364190886257625,
+        0.24991029781126659
+      ],
+      "max_scaled_length_error": 0.001172895276063457,
+      "scaled_mean": 6.283185307179585
+    }
+  ],
+  "prediction_scope": "limits x=0 and x=1/3; arbitrary CLI n need not approximate these subsequences"
+}

@@ -1,0 +1,1 @@
+Scratch outputs: s1 A.1 brute check, s2 D-table sympy, s3 noble B.6, s4 certify mutation, s5 V(x,c) quad vs certify, s6 V_N brute vs Vtilde_N.

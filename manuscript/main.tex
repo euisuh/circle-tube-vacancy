@@ -17,7 +17,8 @@
 
 \title[Shrinking tubes around a circular billiard orbit]{Shrinking tubes around a circular billiard orbit:\\ spatial dephasing and arithmetic oscillation of the uncovered area}
 \author{Euisuh Jeong}
-\address{Republic of Korea Air Force}
+\address{Republic of Korea Air Force, Seoul, Republic of Korea}
+\email{euisuh@uiseoya.com}
 \date{14 November 2026}
 \subjclass[2020]{Primary 37E10, 11K06; Secondary 11J70, 37C83}
 \keywords{circular billiard, irrational rotation, three-distance theorem, shrinking targets, coverage, convex order, badly approximable numbers}
@@ -30,7 +31,7 @@ billiard orbit in the unit disk. We study the normalized area $V_N(c)$ of the pa
 the disk at distance more than $c/N$ from these chords. We prove that, as
 $N\to\infty$, $V_N(c)$ is asymptotically equal to the area $a^2$ of the caustic disk
 plus a radial integral of the \emph{square} of the uncovered length of the circle by
-$N$ arcs of half-length proportional to $1/N$ centred at the rotation orbit. The
+$N$ arcs of half-length proportional to $1/N$ centered at the rotation orbit. The
 square arises only after radial integration; the two angular branches through a
 point are not independent. Combined with the three-distance theorem this gives: (i)
 for every irrational angle, $\liminf V_N(c)$ is at least an explicit uniform-gap value
@@ -56,11 +57,11 @@ visits $p_j=(\cos 2j\alpha,\sin 2j\alpha)$. Let
 \Gamma_N=\bigcup_{j=0}^{N-1}[p_j,p_{j+1}]
 \]
 be the union of its first $N$ complete chords. Every chord is tangent to the caustic
-circle of radius $a=\cos\alpha$, the chord normals are $u_j=(\cos\theta_j,\sin\theta_j)$
-with $\theta_j=(2j+1)\alpha$, and chord $j$ lies on the line $u_j\cdot x=a$. Put
+circle of radius $a=\cos\alpha$, the chord normals are $\mathbf n_j=(\cos\theta_j,\sin\theta_j)$
+with $\theta_j=(2j+1)\alpha$, and chord $j$ lies on the line $\mathbf n_j\cdot z=a$. Put
 $Q=\sin\alpha$. For $c>0$ define the vacancy
 \[
-V_N(c)=\frac{1}{\pi}\,\bigl|\{x\in D:\dist(x,\Gamma_N)>c/N\}\bigr|,
+V_N(c)=\frac{1}{\pi}\,\bigl|\{z\in D:\dist(z,\Gamma_N)>c/N\}\bigr|,
 \]
 where $\dist$ is distance to the finite segments and $c/N$ is a tube \emph{half}-width.
 The caustic disk is never entered, so $V_N(c)\ge (a-c/N)^2$. The total length of
@@ -69,7 +70,7 @@ fraction of the outer annulus $a<|x|<1$ is nontrivial.
 
 The rotation orbit $\{\theta_j\}_{j<N}$ has circular gaps $g_{N,0},\dots,g_{N,N-1}$
 summing to $2\pi$. The uncovered fraction of the circle by the closed arcs of
-half-length $s/N$ centred at these points is
+half-length $s/N$ centered at these points is
 \begin{equation}\label{eq:mN}
 m_N(s)=\frac{1}{2\pi}\sum_{j=0}^{N-1}\Bigl(g_{N,j}-\frac{2s}{N}\Bigr)_+ .
 \end{equation}
@@ -89,43 +90,53 @@ circle vacancy indicator, not a product. Radial averaging over the lag $2\arccos
 removes every nonzero Fourier mode, which is why only the square of the mean survives.
 No rate is claimed.
 
-Write $\Vd(c)=a^2+2\int_0^Q q\,(1-c/(\pi q))_+^2\,dq$, the value the right-hand side of
-Theorem~\ref{thm:A} would take if all gaps were equal. Explicitly,
-$\Vd(c)=a^2+Q^2-4cQ/\pi+3(c/\pi)^2+2(c/\pi)^2\log(\pi Q/c)$ for $0<c<\pi Q$ and
-$\Vd(c)=a^2$ for $c\ge\pi Q$.
+Write
+\begin{equation}\label{eq:Vd}
+\Vd(c)=a^2+2\int_0^Q q\Bigl(1-\frac{c}{\pi q}\Bigr)_+^2dq ,
+\end{equation}
+the value the right-hand side of Theorem~\ref{thm:A} would take if all gaps were equal.
+Explicitly,
+\[
+\Vd(c)=\begin{cases}
+a^2+Q^2-\dfrac{4cQ}{\pi}+3\Bigl(\dfrac c\pi\Bigr)^2+2\Bigl(\dfrac c\pi\Bigr)^2\log\dfrac{\pi Q}{c}, & 0<c<\pi Q,\\[1.5ex]
+a^2, & c\ge\pi Q .
+\end{cases}
+\]
 
 \begin{mainthm}[Uniform-gap envelope]\label{thm:C}
-Let $\beta\in(0,1/2)$ be irrational with partial quotients $(a_k)$ and let $c>0$.
+Let $\beta\in(0,1/2)$ be irrational with partial quotients $(a_k)$ and let $c>0$. Put
+\begin{equation}\label{eq:W}
+W(c)=a^2+2\int_0^Q q\,\Bigl[\Bigl(\frac12-\frac{c}{\pi q}\Bigr)_++\frac12\Bigr]^2dq .
+\end{equation}
 \begin{enumerate}
-\item $\liminf_N V_N(c)\ge \Vd(c)$.
-\item If $(a_k)$ is unbounded, then $\liminf_N V_N(c)=\Vd(c)$ and $\limsup_N V_N(c)\ge W(c)>\Vd(c)$, where
-$W(c)=a^2+2\int_0^Q q\,[(\tfrac12-\tfrac{c}{\pi q})_++\tfrac12]^2dq$. In particular $V_N(c)$ diverges for every $c>0$.
-\item If $(a_k)$ is bounded and $0<c<\pi Q$, then $\liminf_N V_N(c)>\Vd(c)$.
+\item $\liminf_{N\to\infty} V_N(c)\ge \Vd(c)$.
+\item If $(a_k)$ is unbounded, then $\liminf_{N\to\infty} V_N(c)=\Vd(c)$ and $\limsup_{N\to\infty} V_N(c)\ge W(c)>\Vd(c)$. In particular $V_N(c)$ diverges for every $c>0$.
+\item If $(a_k)$ is bounded and $0<c<\pi Q$, then $\liminf_{N\to\infty} V_N(c)>\Vd(c)$.
 \end{enumerate}
 \end{mainthm}
 
 \begin{corollary}
 For any fixed $c\in(0,\pi\sin\alpha)$, the angle $\beta$ is badly approximable if and
-only if $\liminf_N V_N(c)>\Vd(c)$.
+only if $\liminf_{N\to\infty} V_N(c)>\Vd(c)$.
 \end{corollary}
 
 For the golden angle the limit set can be computed exactly. Let $\lambda=(\sqrt5-1)/2$,
-$\beta=\lambda^2$, $u=\pi/(\sqrt5\lambda^2)$, and for $x\in[0,\lambda]$ let $\mu_x$ be the
-law with atoms $\ell_i=u(1+x)\lambda^i$ and weights
-$f=(\lambda-x,\lambda^2+x,x)/(1+x)$, $i=0,1,2$. Put
-\[
+$\beta=\lambda^2$ and $u=\pi/(\sqrt5\lambda^2)$. For $x\in[0,\lambda]$ let $\mu_x$ be the
+probability measure with atoms $\ell_i=u(1+x)\lambda^i$ and weights
+$f_i$, $i=0,1,2$, where $(f_0,f_1,f_2)=(\lambda-x,\lambda^2+x,x)/(1+x)$. Put
+\begin{equation}\label{eq:Vx}
 M_x(s)=\frac1\pi\sum_{i=0}^{2}f_i(\ell_i-s)_+,\qquad
-V(x,c)=a^2+2\int_0^Q q\,M_x(c/q)^2\,dq .
-\]
+V(x,c)=a^2+2\int_0^Q q\,M_x\Bigl(\frac cq\Bigr)^2dq .
+\end{equation}
 
 \begin{mainthm}[Golden angle]\label{thm:B}
 Let $\beta=\lambda^2$ and $c>0$. Then
 \begin{enumerate}
 \item the set of limit points of $V_N(c)$ is the interval $\{V(x,c):x\in[0,\lambda]\}$;
-\item $\liminf_N V_N(c)=V(0,c)=\lim_{m\to\infty}V_{F_m}(c)$, where $F_m$ are the Fibonacci numbers;
+\item $\liminf_{N\to\infty} V_N(c)=V(0,c)=\lim_{m\to\infty}V_{F_m}(c)$, where $F_m$ are the Fibonacci numbers;
 \item for $x\in[0,\lambda]$ we have $V(x,c)\ge V(0,c)$, with strict inequality exactly when
 $0<x<\lambda$ and $c<Qu(1+x)$. Consequently
-$\limsup_N V_N(c)>\liminf_N V_N(c)$ if and only if
+$\limsup_{N\to\infty} V_N(c)>\liminf_{N\to\infty} V_N(c)$ if and only if
 \[c<c_*=\frac{Qu}{\lambda}=\frac{\pi Q}{\sqrt5\lambda^3}\approx 5.547,\]
 and $V_N(c)\to a^2$ for $c\ge c_*$.
 \end{enumerate}
@@ -134,7 +145,11 @@ noble $\beta\in(0,1/2)$, i.e.\ every $\beta$ whose partial quotients are eventua
 \end{mainthm}
 
 Section~\ref{disp:sec} extends the threshold to every irrational angle
-(Theorem~\ref{disp:thm:iff}) and shows that noble angles minimize the normalized threshold
+(Theorem~\ref{disp:thm:iff}). Let $\gamma_N$ be the largest circular gap, in turns, of $\{n\beta\}_{n<N}$ and
+\[
+\kappa(\beta)=\limsup_{N\to\infty}N\gamma_N .
+\]
+The coverage threshold is $\pi Q\,\kappa(\beta)$. Section~\ref{disp:sec} also shows that noble angles minimize the normalized threshold
 (Proposition~\ref{disp:prop:min}).
 
 For $Qu\le c<c_*$ (about $3.428\le c<5.547$) the outer annulus is asymptotically fully
@@ -148,17 +163,54 @@ theorem, fixed-angle hitting laws and almost invariance. What we add is the exac
 the planar observable to the one-dimensional gap law and its arithmetic consequences.
 Section~\ref{sec:related} compares the results with the literature in detail.
 
+\subsection*{Notation}
+The symbols below recur throughout. The unsubscripted $q$ denotes the radial variable
+$q=\sqrt{r^2-a^2}$ of Section~\ref{sec:geometry}; the denominators $q_k$ always carry an index.
+\begin{center}
+\small
+\begin{tabular}{@{}lp{0.78\textwidth}@{}}
+\toprule
+$D$ & closed unit disk; $z=re^{i\varphi}$ is a point of $D$\\
+$\Gamma_N$ & union of the first $N$ complete chords $[p_j,p_{j+1}]$\\
+$\alpha$, $\beta$ & $\alpha\in(0,\pi/2)$ reflection angle; $\beta=\alpha/\pi\notin\mathbb Q$\\
+$a$, $Q$ & $a=\cos\alpha$ radius of the caustic; $Q=\sin\alpha$ half-length of a chord\\
+$\theta_j$ & $(2j+1)\alpha$, the angle of the normal $\mathbf n_j$ to chord $j$\\
+$w$ & tube half-width $c/N$\\
+$g_{N,j}$ & circular gaps of $\{\theta_j\}_{j<N}$, summing to $2\pi$\\
+$m_N(s)$ & uncovered fraction of the circle at arc half-length $s/N$, \eqref{eq:mN}\\
+$\mu_N$ & scaled half-gap law $N^{-1}\sum_j\delta_{Ng_{N,j}/2}$ (Section~\ref{gap:sec:mu}); $\pi m_N(s)=\int(\ell-s)_+d\mu_N(\ell)$\\
+$\widetilde V_N(c)$ & $a^2+2\int_0^Q q\,m_N(c/q)^2dq$; $V_N-\widetilde V_N\to0$ by Theorem~\ref{thm:A}\\
+$\Vd(c)$ & uniform-gap value \eqref{eq:Vd}\\
+$\lambda$, $u$ & $\lambda=(\sqrt5-1)/2$; $u=\pi/(\sqrt5\lambda^2)$\\
+$\mu_x$, $M_x$, $V(x,c)$ & golden-angle limit law, its transform and limit vacancy, \eqref{eq:Vx}; $x\in[0,\lambda]$ is the phase\\
+$c_*$ & $\pi Q/(\sqrt5\lambda^3)$, the golden-angle threshold in Theorem~\ref{thm:B}\\
+$\kappa(\beta)$ & $\limsup_{N\to\infty}N\gamma_N$, $\gamma_N$ the largest circular gap of $\{n\beta\}_{n<N}$ (in turns)\\
+$a_k$, $q_k$, $\eta_k$ & partial quotients of $\beta$, convergent denominators, $\eta_k=|q_k\beta-p_k|$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Throughout, $(y)_+=\max(y,0)$ and $\dist$ is Euclidean distance to a finite segment.
+
+\subsection*{Roadmap}
+Section~\ref{sec:related} places the results in the literature. Sections~\ref{sec:geometry} and~\ref{sec:proofA} prove
+Theorem~\ref{thm:A}: the two angular branches through a point of the annulus give a
+circle autocorrelation, and radial integration kills all nonzero Fourier modes. Section~\ref{sec:gap} collects the
+arithmetic input (the three-distance theorem in the $N$-point convention) and proves Theorem~\ref{thm:C}.
+Section~\ref{sec:golden} treats the golden angle (Theorem~\ref{thm:B}) by a convex-order comparison.
+Section~\ref{disp:sec} proves the coverage threshold for every irrational angle, Section~\ref{sec:numerics}
+reports the numerical checks, and Section~\ref{sec:open} lists limitations and open questions.
+
 \input{sections/related}
 
 \input{sections/dephasing}
 
-\section{Gap laws and Theorem~\ref{thm:C}}
+\section{Gap laws and Theorem~\ref{thm:C}}\label{sec:gap}
 
-Write $\tilde V_N(c)=a^2+2\int_0^Qq\,m_N(c/q)^2dq$; by Theorem~\ref{thm:A},
-$V_N(c)-\tilde V_N(c)\to0$. The quantities below depend only on the multiset of gaps.
+Recall $\widetilde V_N(c)=a^2+2\int_0^Qq\,m_N(c/q)^2dq$; by Theorem~\ref{thm:A},
+$V_N(c)-\widetilde V_N(c)\to0$. The quantities below depend only on the multiset of gaps.
 
 \begin{lemma}[Jensen]\label{lem:jensen}
-For all $N$ and $s\ge0$, $m_N(s)\ge(1-s/\pi)_+$; hence $\tilde V_N(c)\ge\Vd(c)$. For
+For all $N$ and $s\ge0$, $m_N(s)\ge(1-s/\pi)_+$; hence $\widetilde V_N(c)\ge\Vd(c)$. For
 $s\le\pi$, $2\pi\bigl(m_N(s)-(1-s/\pi)\bigr)=\sum_j(2s/N-g_{N,j})_+$.
 \end{lemma}
 
@@ -173,66 +225,75 @@ $N'+1$ gaps of $N'+1$ points) in a remark.
 
 \input{sections/gaplemmas}
 
-\begin{proof}[Proof of Theorem~\ref{thm:C}]
-Part (1) is Lemma~\ref{lem:jensen} with Theorem~\ref{thm:A}.
+\emph{Idea of the proof.} By Theorem~\ref{thm:A} everything is a statement about the gap law $\mu_N$. Part (1) is Jensen's inequality. For (2), at suitable $N$ near a convergent denominator with a huge partial quotient the gaps are either all nearly equal (giving $\Vd$) or split into one tiny class of full mass and one huge sparse class (giving $W$). For (3), bounded type forces two gap classes of definite frequency and definitely different lengths at every $N$, which makes Jensen's inequality strict on a set of radii of positive length.
 
-(2) We use Corollaries~\ref{gap:cor:ineq} and~\ref{gap:cor:two}. Choose $k$ with $a_{k+1}\to\infty$. At $N=q_k$ both scaled gaps $N\eta_{k-1}$ and
-$N(\eta_{k-1}+\eta_k)$ lie in $(1-1/a_{k+1},1+1/a_{k+1})$, so $m_N(s)\to(1-s/\pi)_+$ uniformly
-and $V_N(c)\to\Vd(c)$. At $N=rq_k+q_{k-1}$ with $r=\lceil a_{k+1}/2\rceil$, the class $\eta_k$ has
+\begin{proof}[Proof of Theorem~\ref{thm:C}]
+\emph{Step 1: part (1).} This is Lemma~\ref{lem:jensen} together with Theorem~\ref{thm:A}.
+
+\emph{Step 2: part (2).} We use Corollaries~\ref{gap:cor:ineq} and~\ref{gap:cor:two}. Choose $k$ with $a_{k+1}\to\infty$.
+At $N=q_k$ both scaled gaps $N\eta_{k-1}$ and $N(\eta_{k-1}+\eta_k)$ lie in $(1-1/a_{k+1},1+1/a_{k+1})$, so
+$m_N(s)\to(1-s/\pi)_+$ uniformly and $V_N(c)\to\Vd(c)$. At $N=rq_k+q_{k-1}$ with $r=\lceil a_{k+1}/2\rceil$, the class $\eta_k$ has
 frequency $(N-q_k)/N\to1$ and scaled length $N\eta_k\to1/2$; the other class has frequency
-$q_k/N\to0$, scaled length tending to infinity, and total length
-$q_k\eta_{k-1}-(r-1)q_k\eta_k\to1/2$. Thus $m_N(s)\to(\tfrac12-\tfrac s\pi)_++\tfrac12$ for every
-$s$, and dominated convergence gives $V_N(c)\to W(c)$. The integrands of $W$ and $\Vd$
-satisfy $(\tfrac12-\tfrac s\pi)_++\tfrac12\ge(1-\tfrac s\pi)_+$ with strict inequality for
+$q_k/N\to0$, scaled length tending to infinity, and total length $q_k\eta_{k-1}-(r-1)q_k\eta_k\to1/2$. Thus
+\[
+m_N(s)\to\Bigl(\frac12-\frac s\pi\Bigr)_++\frac12\qquad\text{for every }s,
+\]
+and dominated convergence gives $V_N(c)\to W(c)$. The integrands of $W$ and $\Vd$ satisfy
+$(\tfrac12-\tfrac s\pi)_++\tfrac12\ge(1-\tfrac s\pi)_+$, with strict inequality for
 $s>\pi/2$, a set meeting $(c/Q,\infty)$; hence $W(c)>\Vd(c)$.
 
-(3) Let $a_k\le A_0$ and $\varepsilon=1/((A_0+1)(A_0+2))$. Every $N$ has a unique form
-$N=rq_k+q_{k-1}+s$ with $1\le r\le a_{k+1}$, $0\le s<q_k$, and then the gaps are
-$A=\eta_k$ ($N-q_k$ times), $B=\eta_{k+1}+(a_{k+1}-r)\eta_k$ ($s$ times) and $C=A+B$ ($q_k-s$
-times) by Theorem~\ref{gap:thm:three}; see also Corollary~\ref{gap:cor:bdd}. Since $N-q_k\ge q_{k-1}$ and $N<q_{k+1}+q_k$, class $A$ has
-frequency at least $\varepsilon$, and $B,C$ together have frequency $q_k/N\ge1/(A_0+2)$, so one of
-them, call it $E$, has frequency at least $1/(2(A_0+2))\ge\varepsilon$. We use
-$1/(A_0+2)\le\eta_{k+1}/\eta_k\le(1+1/(A_0+1))^{-1}$. If $E=C$, then $C/A=1+B/A\ge1+\eta_{k+1}/\eta_k\ge1+\varepsilon$.
-If $E=B$ and $r<a_{k+1}$, then $B/A\ge1+\eta_{k+1}/\eta_k\ge1+\varepsilon$; if $E=B$ and $r=a_{k+1}$, then
+\emph{Step 3: part (3), the three gap classes.} Let $a_k\le A_0$ and $\varepsilon=1/((A_0+1)(A_0+2))$. Every $N$ has a unique form
+$N=rq_k+q_{k-1}+t$ with $1\le r\le a_{k+1}$ and $0\le t<q_k$, and then by Theorem~\ref{gap:thm:three} (see also Corollary~\ref{gap:cor:bdd}) the gaps are
+\[
+A=\eta_k\ (N-q_k\text{ times}),\qquad B=\eta_{k+1}+(a_{k+1}-r)\eta_k\ (t\text{ times}),\qquad C=A+B\ (q_k-t\text{ times}).
+\]
+Since $N-q_k\ge q_{k-1}$ and $N<q_{k+1}+q_k$, class $A$ has frequency at least $\varepsilon$, and $B,C$ together have frequency
+$q_k/N\ge1/(A_0+2)$, so one of them, call it $E$, has frequency at least $1/(2(A_0+2))\ge\varepsilon$.
+
+\emph{Step 4: part (3), two separated atoms.} We use $1/(A_0+2)\le\eta_{k+1}/\eta_k\le(1+1/(A_0+1))^{-1}$.
+If $E=C$, then $C/A=1+B/A\ge1+\eta_{k+1}/\eta_k\ge1+\varepsilon$. If $E=B$ and $r<a_{k+1}$, then
+$B/A\ge1+\eta_{k+1}/\eta_k\ge1+\varepsilon$; if $E=B$ and $r=a_{k+1}$, then
 $A/B=\eta_k/\eta_{k+1}\ge1+1/(A_0+1)\ge1+\varepsilon$. In all cases two atoms have frequency at least
 $\varepsilon$ and length ratio at least $1+\varepsilon$.
-A law of mean $\pi$ with two such atoms puts mass at least
-$\varepsilon^2/4$ on $[0,\pi(1-\varepsilon^2/4)]$: otherwise the larger atom exceeds
-$\pi(1+\varepsilon/2)$, forcing $\int(\pi-\ell)_+\ge\pi\varepsilon^2/2$, while this integral is at most
+
+\emph{Step 5: part (3), conclusion.} A law of mean $\pi$ with two such atoms puts mass at least $\varepsilon^2/4$ on $[0,\pi(1-\varepsilon^2/4)]$:
+otherwise the larger atom exceeds $\pi(1+\varepsilon/2)$, forcing $\int(\pi-\ell)_+\ge\pi\varepsilon^2/2$, while this integral is at most
 $\pi\mu([0,\pi(1-\tau)])+\pi\tau$ with $\tau=\varepsilon^2/4$. By Lemma~\ref{lem:jensen}, for
 $s\in[\pi(1-\varepsilon^2/8),\pi]$ we get $m_N(s)-(1-s/\pi)\ge\varepsilon^4/32$. As $c/Q<\pi$, this
-range of $s=c/q$ corresponds to a set of $q\in(0,Q]$ of positive length independent of
-$N$, so $\tilde V_N(c)-\Vd(c)\ge\gamma>0$ for all large $N$, with $\gamma$ independent of $N$.
+range of $s=c/q$ corresponds to a set of $q\in(0,Q]$ of positive length independent of $N$, so
+$\widetilde V_N(c)-\Vd(c)\ge\gamma>0$ for all large $N$, with $\gamma$ independent of $N$.
 \end{proof}
 
 \section{The golden angle}\label{sec:golden}
 
 \begin{lemma}\label{lem:golden}
-For $\beta=\lambda^2$, $m\ge3$, $N=F_m+k$ and $0\le k<F_{m-1}$, the $N$ gaps of
+For $\beta=\lambda^2$, $m\ge3$, $N=F_m+t$ and $0\le t<F_{m-1}$, the $N$ gaps of
 $\{j\beta\bmod1\}_{j<N}$ are $\lambda^{m-2},\lambda^{m-1},\lambda^m$ with multiplicities
-$F_{m-1}-k$, $F_{m-2}+k$, $k$.
+$F_{m-1}-t$, $F_{m-2}+t$, $t$.
 \end{lemma}
 
 This is Corollary~\ref{gap:cor:golden}. We also verified it in exact arithmetic in
 $\mathbb Z[\lambda]$ for every $2\le N\le3000$ (Appendix~\ref{app:repro}).
 
 \begin{proof}[Proof of Theorem~\ref{thm:B}]
-\emph{Reduction to the phase.} For $N=F_m+k$ put $x_N=k/F_m$. By Lemma~\ref{lem:golden},
-the scaled half-gaps $Ng/2$ equal $\pi F_m\lambda^{m-2}(1+x_N)\lambda^i$ with frequencies
-$(F_{m-1}-k,F_{m-2}+k,k)/N$. Since $F_m\lambda^{m-2}\to1/(\sqrt5\lambda^2)$, $F_{m-1}/F_m\to\lambda$ and
-$F_{m-2}/F_m\to\lambda^2$, all atoms and weights converge to those of $\mu_{x_N}$ uniformly in
-$k$. Because $y\mapsto(y-s)_+$ is $1$-Lipschitz, $\sup_s|m_N(s)-M_{x_N}(s)|\to0$, so
-$V_N(c)-V(x_N,c)\to0$ by Theorem~\ref{thm:A}. (Since $F_{m-1}/F_m$ alternates around $\lambda$, $x_N$ may exceed $\lambda$ by at most $\lambda^m/F_m$; the formulas for atoms and weights are polynomial in $x$ near $[0,\lambda]$, so we may replace $x_N$ by $\min(x_N,\lambda)$ at cost $o(1)$.) The map $x\mapsto V(x,c)$ is continuous and the
-grids $\{k/F_m\}$ fill $[0,\lambda]$, which gives (1); (2) follows from (3).
+\emph{Idea of the proof.} Along $N=F_m+t$ the gap law is a three-atom law that depends, up to $o(1)$, only on the phase $t/F_m$. This reduces $V_N(c)$ to $V(x,c)$, and $V(x,c)\ge V(0,c)$ is a convex-order comparison of the laws $\mu_x$ and $\mu_0$, which have the same mean.
 
-\emph{Convex order.} For $0\le x\le\lambda$ the atoms are ordered
+\emph{Step 1: reduction to the phase.} For $N=F_m+t$ put $x_N=t/F_m$. By Lemma~\ref{lem:golden},
+the scaled half-gaps $Ng/2$ equal $\pi F_m\lambda^{m-2}(1+x_N)\lambda^i$ with frequencies
+$(F_{m-1}-t,F_{m-2}+t,t)/N$. Since $F_m\lambda^{m-2}\to1/(\sqrt5\lambda^2)$, $F_{m-1}/F_m\to\lambda$ and
+$F_{m-2}/F_m\to\lambda^2$, all atoms and weights converge to those of $\mu_{x_N}$ uniformly in
+$t$. Because $y\mapsto(y-s)_+$ is $1$-Lipschitz, $\sup_s|m_N(s)-M_{x_N}(s)|\to0$, so
+$V_N(c)-V(x_N,c)\to0$ by Theorem~\ref{thm:A}. (Since $F_{m-1}/F_m$ alternates around $\lambda$, $x_N$ may exceed $\lambda$ by at most $\lambda^m/F_m$; the formulas for atoms and weights are polynomial in $x$ near $[0,\lambda]$, so we may replace $x_N$ by $\min(x_N,\lambda)$ at cost $o(1)$.) The map $x\mapsto V(x,c)$ is continuous and the
+grids $\{t/F_m\}$ fill $[0,\lambda]$, which gives (1); (2) follows from (3).
+
+\emph{Step 2: convex order.} For $0\le x\le\lambda$ the atoms are ordered
 $u\lambda^2(1+x)\le u\lambda\le u\lambda(1+x)\le u\le u(1+x)$. Using $\pi M=\int(\ell-s)_+d\mu$,
 $\int\ell\,d\mu=\pi$, $1-\lambda=\lambda^2$ and $1/(1+\lambda)=\lambda$, the difference
-$D(x,s)=\pi(M_x(s)-M_0(s))$ is
+$\Phi(x,s)=\pi(M_x(s)-M_0(s))$ is
 \begin{center}
 \begin{tabular}{@{}ll@{}}
 \toprule
-range of $s$ & $D(x,s)$\\
+range of $s$ & $\Phi(x,s)$\\
 \midrule
 $s\le u\lambda^2(1+x)$ & $0$\\
 $[u\lambda^2(1+x),\,u\lambda]$ & $\frac{x}{1+x}\,(s-u\lambda^2(1+x))$\\
@@ -243,20 +304,20 @@ $s\ge u(1+x)$ & $0$\\
 \bottomrule
 \end{tabular}
 \end{center}
-The pieces agree at the breakpoints. Hence $D\ge0$, that is, $\mu_x$ dominates $\mu_0$ in
-the convex order, and for $0<x<\lambda$ we have $D>0$ on $(u\lambda^2(1+x),u(1+x))$ except at
+The pieces agree at the breakpoints. Hence $\Phi\ge0$, that is, $\mu_x$ dominates $\mu_0$ in
+the convex order, and for $0<x<\lambda$ we have $\Phi>0$ on $(u\lambda^2(1+x),u(1+x))$ except at
 $s=u\lambda(1+x)$; for $x\in\{0,\lambda\}$, $\mu_x=\mu_0$.
 
-\emph{Strictness and threshold.} $V(x,c)-V(0,c)=2\int_0^Qq\,(M_x-M_0)(M_x+M_0)(c/q)\,dq\ge0$,
+\emph{Step 3: strictness and threshold.} $V(x,c)-V(0,c)=2\int_0^Qq\,(M_x-M_0)(M_x+M_0)(c/q)\,dq\ge0$,
 and the integrand is positive on a set of positive measure exactly when $(c/Q,\infty)$ meets
 $(u\lambda^2(1+x),u(1+x))$ with $0<x<\lambda$, i.e.\ when $c<Qu(1+x)$. Letting $x\uparrow\lambda$
 gives strictness for some $x$ iff $c<Qu(1+\lambda)=c_*$. If $c\ge c_*$ then $c/q\ge u(1+x)$ for all
 $q\le Q$ and all $x$, so $M_x(c/q)=0$ and $V(x,c)=a^2$; by the reduction $V_N(c)\to a^2$.
 
-\emph{Noble angles.} If $a_k=1$ for all $k\ge k_0$, Corollary~\ref{gap:cor:noble} gives for $N=q_k+s$,
-$0\le s<q_{k-1}$, gaps $\eta_{k-1},\eta_k,\eta_{k-2}$ with counts $N-q_{k-1}$, $s$, $q_{k-1}-s$.
+\emph{Step 4: noble angles.} If $a_k=1$ for all $k\ge k_0$, Corollary~\ref{gap:cor:noble} gives for $N=q_k+t$,
+$0\le t<q_{k-1}$, gaps $\eta_{k-1},\eta_k,\eta_{k-2}$ with counts $N-q_{k-1}$, $t$, $q_{k-1}-t$.
 From $q_{k-1}/q_k\to\lambda$, $\eta_k/\eta_{k-1}\to\lambda$ and $q_k\eta_{k-1}+q_{k-1}\eta_k=1$ one gets
-$q_k\eta_{k-2}\to1/(\sqrt5\lambda^2)$, so $x_N=s/q_k$ produces the same family $\mu_x$ and the
+$q_k\eta_{k-2}\to1/(\sqrt5\lambda^2)$, so $x_N=t/q_k$ produces the same family $\mu_x$ and the
 argument applies verbatim.
 \end{proof}
 
@@ -349,7 +410,7 @@ $m$ & $N$ & $V_N$ & $N(V_N-V(0,1))$ & $m$ & $N$ & $V_N$ & $N(V_N-V(\tfrac13,1))$
 \end{center}
 For $m=12,\dots,21$ and $c\in\{0.5,1,2,3\}$ the log--log slope of $|V_N-V(x_N,c)|$ against
 $N$ lies between $-0.93$ and $-1.01$. The offset at $c=1$ is close to $-2ac/N\approx-0.725/N$,
-the deficit of the caustic disk of radius $a-c/N$; at these $N$, $\tilde V_N$ agrees with
+the deficit of the caustic disk of radius $a-c/N$; at these $N$, $\widetilde V_N$ agrees with
 $V(x,c)$ to six digits, so the error is dominated by geometry, not arithmetic. Within the
 Fibonacci blocks $m=20,21$ ($15$--$17$ phases each, $c=1,2$), the smallest $V_N$ occurs at
 $x=0$, as Theorem~\ref{thm:B} predicts. Near the threshold, after adding back $2ac/N$, the
@@ -358,11 +419,11 @@ $5.93\times10^{-5}$); for $c\ge5.4$ the predicted excess is below $10^{-9}$ and 
 resolvable at $N\approx10^4$, so the numerics support the shape of the threshold, not its
 exact location. These are double-precision computations, not certified bounds.
 
-\section{Limitations and open questions}
+\section{Limitations and open questions}\label{sec:open}
 
 Theorem~\ref{thm:A} gives no rate. We do not know whether $V_N(c)$ diverges for every
 badly approximable non-noble angle and every $c$ below the corresponding coverage
-threshold; numerically the deepest minima of $\tilde V_N$ occur at convergent
+threshold; numerically the deepest minima of $\widetilde V_N$ occur at convergent
 denominators, but the block-wise convex-order domination used for the golden angle
 fails for other quadratic irrationals (e.g.\ $\sqrt2$-type), so a different argument
 would be needed. The tube is geometric; no optical beam model is intended.
@@ -382,8 +443,8 @@ All code, saved outputs and verification logs are available at
 \section{Reproducibility}\label{app:repro}
 
 \begin{lemma}\label{lem:fourcand}
-Let $x=re^{i\varphi}\in D$ and let $\theta^\pm$ be the circular positions $\varphi\pm\arccos(\min(1,a/r))$.
-Then $\min_{j<N}\dist(x,[p_j,p_{j+1}])$ is attained at a chord whose normal angle $\theta_j$ is the
+Let $z=re^{i\varphi}\in D$ and let $\theta^\pm$ be the circular positions $\varphi\pm\arccos(\min(1,a/r))$.
+Then $\min_{j<N}\dist(z,[p_j,p_{j+1}])$ is attained at a chord whose normal angle $\theta_j$ is the
 nearest orbit point on one side of $\theta^+$ or of $\theta^-$ (four candidates).
 \end{lemma}
 

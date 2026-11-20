@@ -38,8 +38,9 @@ theorem this gives three results. For every irrational angle, $\liminf V_N(c)$ i
 least an explicit uniform-gap value, and for $c$ below $\pi\sin\alpha$ equality holds
 exactly when the angle has unbounded partial quotients, in which case $V_N(c)$ diverges
 for every $c>0$. For the golden angle, and for every noble angle, the set of limit points
-of $V_N(c)$ is an explicit interval, its lower end is attained along Fibonacci times by a
-convex-order argument, and $V_N(c)$ converges if and only if $c$ is at least an explicit
+of $V_N(c)$ is an explicit interval, its lower end is attained along Fibonacci times
+(convergent denominators for noble angles) by a convex-order argument, and $V_N(c)$
+converges if and only if $c$ is at least an explicit
 threshold. For every irrational angle, the outer annulus becomes asymptotically fully
 covered exactly when $c$ is at least a threshold proportional to the limsup of $N$ times
 the largest circular gap of $\{n\beta\}$; noble angles have the smallest normalized
@@ -48,7 +49,7 @@ threshold. Finite-$N$ Monte Carlo and deterministic computations agree with the 
 
 \maketitle
 
-\section{Introduction}
+\section{Introduction}\label{sec:intro}
 
 Let $D$ be the closed unit disk, $0<\alpha<\pi/2$, and $\beta=\alpha/\pi\notin\mathbb Q$.
 The billiard orbit starting at $p_0=(1,0)$ with reflection angle determined by $\alpha$
@@ -170,8 +171,9 @@ c<c_*=\frac{Qu}{\lambda}=\frac{\pi Q}{\sqrt5\lambda^3}\approx 5.547,
 \]
 and $V_N(c)\to a^2$ for $c\ge c_*$.
 \end{enumerate}
-The same conclusions hold, with $a=\cos\pi\beta$ and $Q=\sin\pi\beta$, for every
-noble $\beta\in(0,1/2)$, i.e.\ every $\beta$ whose partial quotients are eventually $1$.
+The same conclusions hold, with $a=\cos\pi\beta$, $Q=\sin\pi\beta$ and the convergent
+denominators $q_k$ in place of $F_m$ in (2), for every noble $\beta\in(0,1/2)$, i.e.\ every
+$\beta$ whose partial quotients are eventually $1$.
 \end{mainthm}
 
 Section~\ref{disp:sec} extends the threshold to every irrational angle
@@ -451,6 +453,7 @@ q_k\eta_{k-2}\to\frac1{\sqrt5\lambda^2},\qquad \frac{\eta_k}{\eta_{k-1}}=\lambda
 Hence $x_N=t/q_k$ produces the same family $\mu_x$, and the argument applies verbatim.
 \end{proof}
 
+Figure~\ref{fig:phase} shows $x\mapsto V(x,c)-V(0,c)$ for three values of $c$.
 Figure~\ref{fig:threshold} shows the two quantities that Theorem~\ref{thm:C} controls. The
 oscillation amplitude $\max_xV(x,c)-V(0,c)$ is positive exactly for $c<c_*$ by
 Theorem~\ref{thm:C}(4). The gap $V(0,c)-\Vd(c)$ between the Fibonacci limit and the
@@ -510,7 +513,7 @@ difference & $0.001914242199\ldots$ & $0.005711356311\ldots$\\
 \paragraph{Monte Carlo.} Four million points uniform in $D$ (NumPy PCG64, seed
 20261115) were tested against the true finite segments for $N=4181=F_{19}$ and
 $N=5574=F_{19}+\lfloor F_{19}/3\rfloor$, using the four-candidate reduction of Lemma~\ref{lem:fourcand}. Common random numbers
-give paired standard errors.
+give paired standard errors (Table~\ref{tab:mc}).
 
 \begin{table}[ht]
 \centering
@@ -536,7 +539,7 @@ projection arcs and endpoint arcs of every finite chord, merged exactly). It the
 integrates $2rU_N(r)$ by composite Gauss--Legendre quadrature with breakpoints at $a\pm w$,
 $a$ and the endpoint radii. Halving the panel width changes $V_N$ by at most
 $2.4\times10^{-6}$ at $N\approx4000$, and per-chord arcs agreed with dense brute angular
-sampling at every test point. Selected values at $c=1$:
+sampling at every test point. Selected values at $c=1$ are given in Table~\ref{tab:det}.
 \begin{table}[ht]
 \centering
 \begin{tabular}{@{}rrllrrll@{}}
@@ -641,6 +644,7 @@ Python 3.14.7, NumPy 2.5.3, mpmath 1.3.0. Saved outputs and hashes are in
 \bibitem{Dup79} Y.~Dupain, Discr\'epance de la suite $(\{n\alpha\})$, $\alpha=(1+\sqrt5)/2$, \emph{Ann. Inst. Fourier (Grenoble)} \textbf{29} (1979), no.~1, 81--106.
 \bibitem{DK24} A.~Dzhalilov and J.~Khomidov, Limit law of rescaled hitting time functions for quadratic irrational rotations, \emph{Uzbek Math. J.} \textbf{68} (2024), no.~2, 61--68.
 \bibitem{FS02} A.-H.~Fan and J.~Schmeling, Coverings of the circle driven by rotations, in: \emph{Dynamical Systems from Number Theory to Probability II} (A.~Khrennikov, ed.), V\"axj\"o University Press, 2002, 7--15.
+\bibitem{Khi64} A.~Ya.~Khinchin, \emph{Continued Fractions}, University of Chicago Press, Chicago, 1964.
 \bibitem{Leong17} V.~Beresnevich and N.~Leong, Sums of reciprocals and the three distance theorem, arXiv:1712.03758.
 \bibitem{Nie84} H.~Niederreiter, On a measure of denseness for sequences, in: \emph{Topics in Classical Number Theory, Vol.~II (Budapest, 1981)}, Colloq. Math. Soc. J\'anos Bolyai \textbf{34}, North-Holland, Amsterdam, 1984, 1163--1208.
 \bibitem{Slater67} N.~B.~Slater, Gaps and steps for the sequence $n\theta$ mod 1, \emph{Proc. Cambridge Philos. Soc.} \textbf{63} (1967), 1115--1123.

@@ -6,3 +6,4 @@ __pycache__/
 manuscript/*.aux
 manuscript/*.log
 manuscript/*.out
+etc/

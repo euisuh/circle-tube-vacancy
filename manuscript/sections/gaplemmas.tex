@@ -97,14 +97,14 @@ $N-\mathrm d_+$, $N-\mathrm d_-$, $\mathrm d_++\mathrm d_--N$.
 
 \emph{Step 2: identifying $\mathrm d_\pm$.} Let $k\ge1$, $0\le\rho\le a_{k+1}$, $\mathrm d_\rho=\rho q_k+q_{k-1}\ge1$ and
 $\nu=\eta_{k-1}-\rho\eta_k>0$ (by (F1), $\nu\ge\eta_{k+1}$). Let $\sigma=(-1)^k$. Then
-$q_k\beta\equiv\sigma\eta_k$ and $\mathrm d_\rho\beta\equiv-\sigma \nu\pmod 1$, and $q_kw+\mathrm d_\rho\eta_k=1$ by (F2).
+$q_k\beta\equiv\sigma\eta_k$ and $\mathrm d_\rho\beta\equiv-\sigma \nu\pmod 1$, and $q_k\nu+\mathrm d_\rho\eta_k=1$ by (F2).
 \emph{Claim:} if $N\le \mathrm d_\rho+q_k$ there is no $d\in[1,N-1]$ and $p\in\mathbb Z$ with
 $e=\sigma(d\beta-p)\in(-\nu,\eta_k)\setminus\{0\}$.
 The vectors $b_1=(q_k,\sigma\eta_k)$, $b_2=(\mathrm d_\rho,-\sigma \nu)$ have determinant $-\sigma$ and span
-$\Lambda=\{(d,d\beta-p)\}$ (unimodularity from (F1): $(\mathrm d_\rho,\cdot)=\rho(q_k,\cdot)+(q_{k-1},\cdot)$). Write
-$(d,d\beta-p)=mb_1+nb_2$, $m,n\in\mathbb Z$. Cramer't rule gives $m=dw+\mathrm d_\rho e$, $n=\eta_kd-q_ke$ with $e=\sigma(d\beta-p)$.
-If $e\in(0,\eta_k)$ then $m\ge1$, and $d=mq_k+nd_\rho\le N-1<q_k+\mathrm d_\rho$ forces $n\le0$, so $e=\sigma(\cdot)$ equals
-$m\eta_k-nw\ge\eta_k$: contradiction. If $e\in(-\nu,0)$ then $n\ge1$, forcing $m\le0$ and $e=m\eta_k-nw\le-\nu$: contradiction.
+$\mathcal L=\{(d,d\beta-p)\}$ (unimodularity from (F1): $(\mathrm d_\rho,\cdot)=\rho(q_k,\cdot)+(q_{k-1},\cdot)$). Write
+$(d,d\beta-p)=mb_1+nb_2$, $m,n\in\mathbb Z$. Cramer's rule gives $m=d\nu+\mathrm d_\rho e$, $n=\eta_kd-q_ke$ with $e=\sigma(d\beta-p)$.
+If $e\in(0,\eta_k)$ then $m\ge1$, and $d=mq_k+n\mathrm d_\rho\le N-1<q_k+\mathrm d_\rho$ forces $n\le0$, so $e=\sigma(\cdot)$ equals
+$m\eta_k-n\nu\ge\eta_k$: contradiction. If $e\in(-\nu,0)$ then $n\ge1$, forcing $m\le0$ and $e=m\eta_k-n\nu\le-\nu$: contradiction.
 Consequently, for $d\in[1,N-1]$, $\{d\beta\}\notin(0,\eta_k)$ and $\notin(1-\nu,1)$ if $\sigma=1$ (and $\{d\beta\}\notin(0,\nu)$,
 $\notin(1-\eta_k,1)$ if $\sigma=-1$). If also $q_k\le N-1$ and $\mathrm d_\rho\le N-1$, the values attained there are
 extremal: $\{\{q_k\beta\},\{\mathrm d_\rho\beta\}\}=\{\eta_k,1-\nu\}$ ($\sigma=1$) or $\{1-\eta_k,\nu\}$ ($\sigma=-1$). Hence $\{\mathrm d_+,\mathrm d_-\}=\{q_k,\mathrm d_\rho\}$,
@@ -120,7 +120,7 @@ $q_k$ for $C$, and $0$ for $C+A$. This is the claim with $t=0$.
 \begin{remark}[Relation to Leong]
 Leong \cite[Thm.~3]{Leong17} treats $N'+1$ points $0,\beta,\dots,N'\beta$, i.e.\ $N=N'+1$. Under that shift the
 ranges $q_k+q_{k-1}\le N'<q_{k+1}+q_k$ become $q_k+q_{k-1}<N\le q_{k+1}+q_k$, so the boundary values
-$N=q_k+q_{k-1}$ ($r=1,t=0$) fall at the end of the previous level't range, and a direct citation needs the level drop
+$N=q_k+q_{k-1}$ ($r=1,t=0$) fall at the end of the previous level's range, and a direct citation needs the level drop
 $k\to k-1$ (with $r'=a_k$) for $r=1$ and for $N=q_k$. Theorem~\ref{gap:thm:three} avoids this: every $N\ge2$ is covered
 exactly once with $t=0$ allowed, and its proof is self-contained apart from (F1)--(F2).
 \end{remark}

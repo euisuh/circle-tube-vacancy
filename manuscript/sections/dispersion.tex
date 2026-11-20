@@ -45,6 +45,11 @@ $q\in[q_\delta,Q]$ contributes at most $Q^2-q_\delta^2$, which tends to $0$ with
 $q<q_\delta$ contributes at most $Q^2m_N(c/Q+\delta)^2\to0$ as $N\to\infty$.
 \end{proof}
 
+Since $m_N(\sigma)$ is nonincreasing in $\sigma$, the set $\{\sigma\ge0: m_N(\sigma)\to0\}$ is an up-set; put
+\[
+\Lambda=\inf\{\sigma\ge 0:\ m_N(\sigma)\to0\}.
+\]
+
 \begin{theorem}[Coverage threshold, every irrational angle]\label{disp:thm:iff}
 Let $\beta\in(0,\frac12)$ be irrational, $c>0$, and $L=L(\beta)=\pi\limsup_{N\to\infty} N \gamma_N\in[\pi,\infty]$. Then
 \begin{enumerate}
@@ -60,7 +65,7 @@ By Theorem~\ref{thm:A}, $V_N(c)-a^2-E_N(c)\to0$, so it suffices to treat $E_N(c)
 (i) For $c\ge QL$ and $\delta>0$: $\mathcal D_N\le L+\delta/2<c/Q+\delta$ for large $N$ (if $L<\infty$), hence
 $m_N(c/Q+\delta)=0$ by Lemma~\ref{disp:lem:mass}; apply Lemma~\ref{disp:lem:reduction}.
 
-(ii) Let $\Lambda=\inf\{\sigma\ge 0:\ m_N(\sigma)\to0\}$ (the set is an up-set by monotonicity). If $c/Q<\Lambda$, choose
+(ii) If $c/Q<\Lambda$, choose
 $\delta>0$ with $c/Q+\delta<\Lambda$; then $m_N(c/Q+\delta)\not\to0$ and Lemma~\ref{disp:lem:reduction} gives
 $\limsup E_N>0$. So (ii) follows from $\Lambda\ge L$, which is Proposition~\ref{disp:prop:lambda} below. (Trivially $\Lambda\le L$.)
 \end{proof}
@@ -73,7 +78,8 @@ Write $\omega_k=q_{k-1}/q_k=[0;a_k,\dots,a_1]$ and $\xi_k=\eta_k/\eta_{k-1}=[0;a
 $\xi_k<1/a_{k+1}$.
 
 \begin{lemma}[Exact limsup in terms of the expansion]\label{disp:lem:sup}
-Since $N \gamma_N$ increases with $N$ in each block, its supremum over block $(k,r)$ is attained at $N_{k,r}=(r+1)q_k+q_{k-1}-1$, and
+Within each block $(k,r)$ the quantity $N\gamma_N$ is increasing in $N$, so its supremum over the block is attained at
+$N_{k,r}=(r+1)q_k+q_{k-1}-1$. Consequently
 \[
 \kappa(\beta)=\limsup_{k\to\infty}\ \max_{1\le r\le a_{k+1}}\ \frac{(r+1+\omega_k)\,\bigl(1-(r-1)\xi_k\bigr)}{1+\omega_k\xi_k}\ .
 \]
@@ -88,14 +94,15 @@ $\Lambda=L(\beta)$ for every irrational $\beta\in(0,\frac12)$; that is, $\limsup
 \emph{Idea of the proof.} In the bounded case we move a little to the left of the extremal $N_{k,r}$, which keeps the largest gap but gives it positive frequency, so Lemma~\ref{disp:lem:mass} applies.
 
 \begin{proof}
-\emph{Case 1: unbounded partial quotients.} by Theorem~\ref{thm:C}(2), $\limsup V_N(c)>a^2$ for every $c>0$, so by Theorem~\ref{thm:A} and
-Lemma~\ref{disp:lem:reduction}, $\limsup m_N(\sigma)>0$ for every $\sigma$; also $L=\infty$ (take $r=\lceil a_{k+1}/2\rceil$ in
+\emph{Case 1: unbounded partial quotients.} By Theorem~\ref{thm:C}(2), $\limsup V_N(c)>a^2$ for every $c>0$, so by Theorem~\ref{thm:A} and
+Lemma~\ref{disp:lem:reduction} (with $c=Q\sigma$) there is $\delta>0$ with $\limsup m_N(\sigma+\delta)>0$; since $m_N$ is
+nonincreasing, $\limsup m_N(\sigma)>0$ for every $\sigma$; also $L=\infty$ (take $r=\lceil a_{k+1}/2\rceil$ in
 Lemma~\ref{disp:lem:sup}: the bracket is $\ge a_{k+1}/8$).
 
 \emph{Case 2: bounded type, $a_k\le A$.} Let $\sigma<L$ and pick $\varepsilon\in(0,\tfrac12)$ with $(1-\varepsilon)(L-\varepsilon)>\sigma$. By Lemma~\ref{disp:lem:sup} there are
-infinitely many blocks $(k,r)$, $k\to\infty$, with $D_{N_{k,r}}=\pi N_{k,r}\ell_{k,r}\ge L-\varepsilon$. Fix one with $q_k$ large and put
+infinitely many blocks $(k,r)$, $k\to\infty$, with $\mathcal \mathcal D_{N_{k,r}}=\pi N_{k,r}\ell_{k,r}\ge L-\varepsilon$. Fix one with $q_k$ large and put
 $j=\lceil\varepsilon q_k\rceil$, $N'=N_{k,r}-j$. Then $N'$ lies in the same block (its $t'=q_k-1-j\ge0$), the largest gap is still $\ell_{k,r}$, and its
-multiplicity is $j+1\ge\varepsilon q_k$. Since $N_{k,r}\ge 2q_k-1$, $j/N_{k,r}\le\varepsilon$, so $D_{N'}\ge(1-\varepsilon)D_{N_{k,r}}$; and
+multiplicity is $j+1\ge\varepsilon q_k$. Since $N_{k,r}\ge 2q_k-1$, $j/N_{k,r}\le\varepsilon$, so $\mathcal D_{N'}\ge(1-\varepsilon)\mathcal D_{N_{k,r}}$; and
 $N'\le N_{k,r}\le(A+2)q_k$ gives $n_{N'}/N'\ge\varepsilon/(A+2)$. Lemma~\ref{disp:lem:mass} yields
 \[
 m_{N'}(\sigma)\ \ge\ \frac{\varepsilon}{\pi(A+2)}\bigl((1-\varepsilon)(L-\varepsilon)-\sigma\bigr)>0 ,
@@ -108,7 +115,6 @@ For a single $N$ the largest gap may occur once ($n_N=1$ at $N=N_{k,r}$), so Lem
 For the golden angle this is exactly what happens at the extremal phase $x=\lambda$, where the weight $f_0=(\lambda-x)/(1+x)$ of the largest atom vanishes.
 Proposition~\ref{disp:prop:lambda} shows that this degeneration costs nothing for the threshold: a slightly earlier $N'$ carries the same largest gap with positive
 frequency and loses only a factor $1-\varepsilon$ in $\mathcal D_N$. The mechanism needs bounded $N/q_k$; for unbounded type the sparse class takes over (Theorem~\ref{thm:C}(2)) and the threshold is $+\infty$.
-No counterexample to the equivalence exists: the statement of Theorem~\ref{disp:thm:iff} is an exact iff.
 \end{remark}
 
 \begin{proposition}[Smallest threshold]\label{disp:prop:min}
@@ -133,9 +139,9 @@ The normalized threshold $c_{\rm cov}/(\pi Q)$ equals $\kappa(\beta)$. The absol
 \begin{remark}[Relation to Niederreiter's dispersion]\label{disp:rem:nied}
 Niederreiter~\cite{Nie84} defines, for a sequence $(x_n)\subset[0,1]$, $d_N=\sup_{x\in[0,1]}\min_{n\le N}|x-x_n|$ and
 $\mathrm{Disp}=\limsup N d_N$. This differs from $\kappa/2$: the interval metric charges the two end segments in full and does not wrap around, and the constant for $\{n\alpha\}$ is
-given by Drobot's formula (see Tripathi, Acta Arith.\ 63 (1993)). Numerically the interval constant at the golden angle is $(1+3/\sqrt5)/2\approx1.1708$, not $\kappa/2=0.9472$.
+given by Drobot's formula \cite{Dro86}; see also \cite{Tri93}. Numerically the interval constant at the golden angle is $(1+3/\sqrt5)/2\approx1.1708$, not $\kappa/2=0.9472$.
 So $c_*/(\pi Q)=1+2/\sqrt5$ is the \emph{circular} dispersion constant of the golden rotation, and Proposition~\ref{disp:prop:min} (proved above via the three-gap theorem)
-is the circular analogue of the minimality of the golden angle for Niederreiter's constant.
+is a statement about this circular constant, not about Niederreiter's.
 We do not claim that \cite{Nie84} states Proposition~\ref{disp:prop:min}; we know of no source for the circular statement.
 \end{remark}
 

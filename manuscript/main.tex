@@ -2,6 +2,7 @@
 \usepackage[margin=1.1in]{geometry}
 \usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,tikz}
 \usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Shrinking tubes around a circular billiard orbit},pdfauthor={Euisuh Jeong}}
 
 \newtheorem{mainthm}{Theorem}
 \renewcommand{\themainthm}{\Alph{mainthm}}
@@ -19,7 +20,7 @@
 \author{Euisuh Jeong}
 \address{Republic of Korea Air Force, Seoul, Republic of Korea}
 \email{euisuh@uiseoya.com}
-\date{14 November 2026}
+\date{\today}
 \subjclass[2020]{Primary 37E10, 11K06; Secondary 11J70, 37C83}
 \keywords{circular billiard, irrational rotation, three-distance theorem, shrinking targets, coverage, convex order, badly approximable numbers}
 
@@ -66,7 +67,7 @@ V_N(c)=\frac{1}{\pi}\,\bigl|\{z\in D:\dist(z,\Gamma_N)>c/N\}\bigr|,
 where $\dist$ is distance to the finite segments and $c/N$ is a tube \emph{half}-width.
 The caustic disk is never entered, so $V_N(c)\ge (a-c/N)^2$. The total length of
 $\Gamma_N$ grows like $N$, so a width of order $1/N$ is the scale at which the covered
-fraction of the outer annulus $a<|x|<1$ is nontrivial.
+fraction of the outer annulus $a<|z|<1$ is nontrivial.
 
 The rotation orbit $\{\theta_j\}_{j<N}$ has circular gaps $g_{N,0},\dots,g_{N,N-1}$
 summing to $2\pi$. The uncovered fraction of the circle by the closed arcs of
@@ -373,7 +374,8 @@ $c_*=5.54700825580342652455\ldots$.}
 $N=5574=F_{19}+\lfloor F_{19}/3\rfloor$, using the four-candidate reduction of Lemma~\ref{lem:fourcand}. Common random numbers
 give paired standard errors.
 
-\begin{center}
+\begin{table}[ht]
+\centering
 \begin{tabular}{@{}lllll@{}}
 \toprule
 $c$ & $V_{4181}$ & $V_{5574}$ & paired difference (SE) & limit difference\\
@@ -382,9 +384,10 @@ $c$ & $V_{4181}$ & $V_{5574}$ & paired difference (SE) & limit difference\\
 2 & 0.15617325 & 0.16190950 & 0.00573625 (0.00010177) & 0.00571136\\
 \bottomrule
 \end{tabular}
-\end{center}
+\caption{Paired Monte Carlo, $4\times10^6$ common points, seed 20261115. The last column is the difference of the limits $V(\tfrac13,c)-V(0,c)$.}\label{tab:mc}
+\end{table}
 
-Across 20 independent seeds (16 further seeds 9001--9016 and three of an independent
+Across 20 independent seeds of $4\times10^6$ points each (16 further seeds 9001--9016 and three of an independent
 verifier), the pooled $z$-scores of the paired differences against the deterministic
 finite-$N$ values below are $0.91$ ($c=1$) and $1.43$ ($c=2$), and the spread across runs
 matches the paired standard error.
@@ -396,7 +399,8 @@ $2rU_N(r)$ by composite Gauss--Legendre quadrature with breakpoints at $a\pm w$,
 endpoint radii; halving the panel width changes $V_N$ by at most $2.4\times10^{-6}$ at
 $N\approx4000$. Per-chord arcs agreed with dense brute angular sampling at every test point.
 Selected values at $c=1$:
-\begin{center}
+\begin{table}[ht]
+\centering
 \begin{tabular}{@{}rrllrrll@{}}
 \toprule
 \multicolumn{4}{c}{$x=0$ ($N=F_m$)} & \multicolumn{4}{c}{$x\approx1/3$}\\
@@ -407,7 +411,8 @@ $m$ & $N$ & $V_N$ & $N(V_N-V(0,1))$ & $m$ & $N$ & $V_N$ & $N(V_N-V(\tfrac13,1))$
 21 & 10946 & 0.336159 & $-0.74$ & 21 & 14594 & 0.338095 & $-0.67$\\
 \bottomrule
 \end{tabular}
-\end{center}
+\caption{Deterministic finite-$N$ vacancy at $c=1$ and the scaled offset from the limit (exact-arc integrator).}\label{tab:det}
+\end{table}
 For $m=12,\dots,21$ and $c\in\{0.5,1,2,3\}$ the log--log slope of $|V_N-V(x_N,c)|$ against
 $N$ lies between $-0.93$ and $-1.01$. The offset at $c=1$ is close to $-2ac/N\approx-0.725/N$,
 the deficit of the caustic disk of radius $a-c/N$; at these $N$, $\widetilde V_N$ agrees with
@@ -480,7 +485,7 @@ Python 3.14.7, NumPy 2.5.3, mpmath 1.3.0. Saved outputs and hashes are in
 \bibitem{Don12} H.~Don, Polygons in billiard orbits, \emph{J. Number Theory} \textbf{132} (2012), no.~6, 1151--1163; arXiv:1106.2030.
 \bibitem{Dro86} V.~Drobot, On dispersion and Markov constants, \emph{Acta Math. Hungar.} \textbf{47} (1986), 89--93.
 \bibitem{Dup79} Y.~Dupain, Discr\'epance de la suite $(\{n\alpha\})$, $\alpha=(1+\sqrt5)/2$, \emph{Ann. Inst. Fourier (Grenoble)} \textbf{29} (1979), no.~1, 81--106.
-\bibitem{DK24} A.~Dzhalilov and J.~Khomidov, Limit law of rescaled hitting time functions for quadratic irrational rotations, \emph{Uzbek Math. J.} (2024), no.~2.
+\bibitem{DK24} A.~Dzhalilov and J.~Khomidov, Limit law of rescaled hitting time functions for quadratic irrational rotations, \emph{Uzbek Math. J.} \textbf{68} (2024), no.~2, 61--68.
 \bibitem{FS02} A.-H.~Fan and J.~Schmeling, Coverings of the circle driven by rotations, in: \emph{Dynamical Systems from Number Theory to Probability II} (A.~Khrennikov, ed.), V\"axj\"o University Press, 2002, 7--15.
 \bibitem{Leong17} N.~Leong, Sums of reciprocals and the three distance theorem, arXiv:1712.03758.
 \bibitem{Nie84} H.~Niederreiter, On a measure of denseness for sequences, in: \emph{Topics in Classical Number Theory, Vol.~II (Budapest, 1981)}, Colloq. Math. Soc. J\'anos Bolyai \textbf{34}, North-Holland, Amsterdam, 1984, 1163--1208.
@@ -489,6 +494,7 @@ Python 3.14.7, NumPy 2.5.3, mpmath 1.3.0. Saved outputs and hashes are in
 \bibitem{Sos58} V.~T.~S\'os, On the distribution mod 1 of the sequence $n\alpha$, \emph{Ann. Univ. Sci. Budapest. E\"otv\"os Sect. Math.} \textbf{1} (1958), 127--134.
 \bibitem{Swier59} S.~\'Swierczkowski, On successive settings of an arc on the circumference of a circle, \emph{Fund. Math.} \textbf{46} (1959), 187--189.
 \bibitem{Tab05} S.~Tabachnikov, \emph{Geometry and Billiards}, Student Mathematical Library \textbf{30}, Amer. Math. Soc., Providence, RI, 2005.
+\bibitem{Tri93} A.~Tripathi, A comparison of dispersion and Markov constants, \emph{Acta Arith.} \textbf{63} (1993), 193--203.
 \bibitem{vRav88} T.~van Ravenstein, The three gap theorem (Steinhaus conjecture), \emph{J. Austral. Math. Soc. Ser. A} \textbf{45} (1988), 360--370.
 \bibitem{Zhao25} Y.~Zhao, Almost sure convergence of cover times for $\psi$-mixing systems, arXiv:2412.17425.
 \end{thebibliography}

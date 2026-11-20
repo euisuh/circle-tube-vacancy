@@ -112,10 +112,7 @@ Let $\beta\in(0,1/2)$ be irrational with partial quotients $(a_k)$ and let $c>0$
 W(c)=a^2+2\int_0^Q q\,\Bigl[\Bigl(\frac12-\frac{c}{\pi q}\Bigr)_++\frac12\Bigr]^2dq .
 \end{equation}
 \begin{enumerate}
-\item For every such $\beta$,
-\[
-\liminf_{N\to\infty} V_N(c)\ge \Vd(c).
-\]
+\item For every such $\beta$, $\liminf_{N\to\infty} V_N(c)\ge \Vd(c)$.
 \item If $(a_k)$ is unbounded, then
 \begin{align*}
 \liminf_{N\to\infty} V_N(c)&=\Vd(c),\\
@@ -157,10 +154,7 @@ V(x,c)=a^2+2\int_0^Q q\,M_x\Bigl(\frac cq\Bigr)^2dq .
 \begin{mainthm}[Golden angle]\label{thm:C}
 Let $\beta=\lambda^2$ and $c>0$.
 \begin{enumerate}
-\item The set of limit points of $V_N(c)$ is the interval
-\[
-\{V(x,c):x\in[0,\lambda]\}.
-\]
+\item The set of limit points of $V_N(c)$ is the interval $\{V(x,c):x\in[0,\lambda]\}$.
 \item With $F_m$ the Fibonacci numbers,
 \[
 \liminf_{N\to\infty} V_N(c)=V(0,c)=\lim_{m\to\infty}V_{F_m}(c).
@@ -469,10 +463,7 @@ Figure~\ref{fig:threshold} shows the two quantities that Theorem~\ref{thm:C} con
 oscillation amplitude $\max_xV(x,c)-V(0,c)$ is positive exactly for $c<c_*$ by
 Theorem~\ref{thm:C}(4). The gap $V(0,c)-\Vd(c)$ between the Fibonacci limit and the
 uniform-gap value is positive exactly for $c<Qu$: Theorem~\ref{thm:B}(3) gives positivity
-for $c<\pi Q$, and on $[\pi Q,Qu)$ it follows from
-\[
-V(0,c)>a^2=\Vd(c).
-\]
+for $c<\pi Q$, and on $[\pi Q,Qu)$ it follows from $V(0,c)>a^2=\Vd(c)$.
 
 \begin{figure}[t]
 \centering
@@ -500,10 +491,7 @@ On each interval of $q$ on which the same set of gap classes is active, the inte
 \[
 2q\Bigl(A-\frac Bq\Bigr)^2,\qquad A=\frac1\pi\sum_i f_i\ell_i,\qquad B=\frac c\pi\sum_i f_i ,
 \]
-the sums running over the active classes, and it has the primitive
-\[
-A^2q^2-4ABq+2B^2\log q .
-\]
+the sums running over the active classes, and it has the primitive $A^2q^2-4ABq+2B^2\log q$.
 Interval arithmetic at 50 significant digits (\texttt{mpmath.iv}) applied to this
 piecewise primitive gives the enclosures in Table~\ref{tab:limits}. Strict inequality of
 the limits is already proved above; the intervals only certify digits.
@@ -605,6 +593,8 @@ All code, saved outputs and verification logs are available at
 \url{https://github.com/euisuh/circle-tube-vacancy}.
 
 \appendix
+\input{sections/threegap_proof}
+
 \section{Reproducibility}\label{app:repro}
 
 \begin{lemma}\label{lem:fourcand}

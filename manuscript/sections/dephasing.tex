@@ -6,10 +6,7 @@ Let $\mathbb T=\mathbb R/2\pi\mathbb Z$ with the normalized measure $d\varphi/2\
 \hat F(k)=\int_{\mathbb T}F(\varphi)e^{-ik\varphi}\,\frac{d\varphi}{2\pi},
 \]
 so that translating $F$ by $\tau$ multiplies $\hat F(k)$ by $e^{-ik\tau}$.
-Points of the disk are written $z=re^{i\varphi}$, and we set
-\[
-q(r)=\sqrt{r^2-a^2}.
-\]
+Points of the disk are written $z=re^{i\varphi}$, and we set $q(r)=\sqrt{r^2-a^2}$.
 
 Fix $\varepsilon\in(0,(1-a)/3)$ and put
 \[
@@ -91,20 +88,10 @@ is the autocorrelation (substitute $\varphi\mapsto\varphi+\bar d_N$ in \eqref{eq
 \begin{lemma}\label{deph:reg}
 There are constants $\Omega_\varepsilon,c_\varepsilon,c_\varepsilon'$ (depending on $a,\varepsilon,c$) such that for all $N\ge N_0$ and $r\in I_\varepsilon$:
 \begin{enumerate}
-\item
-\[
-|s_N(r)-c/q(r)|\le\frac{c_\varepsilon}{N};
-\]
-\item
-\[
-\psi_N'(r)=\sum_\pm\frac{a\pm w}{r\sqrt{r^2-(a\pm w)^2}}\ \ge a
-\qquad\text{and}\qquad
-|\psi_N''(r)|\le 2\Omega_\varepsilon ;
-\]
+\item $|s_N(r)-c/q(r)|\le c_\varepsilon/N$;
+\item $\psi_N'(r)=\sum_\pm\dfrac{a\pm w}{r\sqrt{r^2-(a\pm w)^2}}\ge a$ and $|\psi_N''(r)|\le 2\Omega_\varepsilon$;
 \item with $\psi=2\arccos(a/r)$, so that $\psi'=2a/(rq)$,
-\[
-\|\psi_N-\psi\|_{C^2(I_\varepsilon)}\le \frac{c_\varepsilon'}{N^2}.
-\]
+$\|\psi_N-\psi\|_{C^2(I_\varepsilon)}\le c_\varepsilon'/N^2$.
 \end{enumerate}
 \end{lemma}
 

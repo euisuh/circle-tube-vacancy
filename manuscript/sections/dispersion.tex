@@ -20,10 +20,7 @@ dispersion of the points on the circle $\mathbb R/\mathbb Z$ with its geodesic m
 \]
 This is \emph{not} Niederreiter's dispersion, which is defined on the interval $[0,1]$ with the Euclidean metric;
 see Remark~\ref{disp:rem:nied}.
-In the language of Lemma~\ref{gap:lem:mu}, $\mathcal D_N$ is the largest atom of $\mu_N$:
-\[
-\mathcal D_N=\max\operatorname{supp}\mu_N .
-\]
+In the language of Lemma~\ref{gap:lem:mu}, $\mathcal D_N$ is the largest atom of $\mu_N$, that is, $\mathcal D_N=\max\operatorname{supp}\mu_N$.
 
 \begin{lemma}\label{disp:lem:mass}
 For all $N$ and $s\ge0$, with $n_N$ the number of indices $j$ with $g_{N,j}=G_N$,
@@ -66,10 +63,7 @@ E_N(c)\;\ge\;\varepsilon^2\Bigl(Q^2-\Bigl(\frac{cQ}{c+\delta Q}\Bigr)^2\Bigr),
 \end{equation}
 a positive constant times $\varepsilon^2$. This proves the ``if'' half of (ii) and the ``only if'' half of (i).
 
-Conversely, suppose $m_N(c/Q+\delta)\to0$ for all $\delta>0$. Split $[0,Q]$ at
-\[
-q_\delta=\frac{c}{c/Q+\delta}.
-\]
+Conversely, suppose $m_N(c/Q+\delta)\to0$ for all $\delta>0$. Split $[0,Q]$ at $q_\delta=c/(c/Q+\delta)$.
 The two parts of the integral are bounded separately:
 \begin{align*}
 2\int_{q_\delta}^{Q}q\,m_N(c/q)^2\,dq&\le Q^2-q_\delta^2, &&\text{which tends to $0$ with $\delta$;}\\
@@ -93,18 +87,10 @@ Let $\beta\in(0,\frac12)$ be irrational, let $c>0$, and let $L=L(\beta)\in[\pi,\
 \item[(i)] if $c\ge QL$, then $V_N(c)\to a^2$;
 \item[(ii)] if $c<QL$, then $\limsup_{N\to\infty} V_N(c)>a^2$.
 \end{enumerate}
-Hence $V_N(c)$ converges to $a^2$ if and only if
-\[
-c\;\ge\;c_{\rm cov}(\beta),
-\]
-with $c_{\rm cov}$ as in \eqref{disp:eq:ccov}; if $\kappa(\beta)=\infty$ this never happens.
+Hence $V_N(c)$ converges to $a^2$ if and only if $c\ge c_{\rm cov}(\beta)$, with $c_{\rm cov}$ as in \eqref{disp:eq:ccov}; if $\kappa(\beta)=\infty$ this never happens.
 \end{theorem}
 \begin{proof}
-By Theorem~\ref{thm:A} and \eqref{disp:eq:EN},
-\[
-V_N(c)-a^2-E_N(c)\to0 ,
-\]
-so it suffices to treat $E_N(c)$. Since $E_N\ge0$, statement (ii) is equivalent to $\limsup E_N>0$.
+By Theorem~\ref{thm:A} and \eqref{disp:eq:EN}, $V_N(c)-a^2-E_N(c)\to0$, so it suffices to treat $E_N(c)$. Since $E_N\ge0$, statement (ii) is equivalent to $\limsup E_N>0$.
 
 (i) Let $c\ge QL$ and $\delta>0$. If $L<\infty$, then for large $N$
 \[
@@ -113,11 +99,7 @@ so it suffices to treat $E_N(c)$. Since $E_N\ge0$, statement (ii) is equivalent 
 hence $m_N(c/Q+\delta)=0$ by Lemma~\ref{disp:lem:mass}. Lemma~\ref{disp:lem:reduction}(i) gives $E_N(c)\to0$.
 
 (ii) Suppose $c/Q<\Lambda$ and choose $\delta>0$ with $c/Q+\delta<\Lambda$. Then $m_N(c/Q+\delta)\not\to0$, and
-Lemma~\ref{disp:lem:reduction}(ii) gives $\limsup E_N>0$. Thus (ii) follows once we know
-\[
-\Lambda\;=\;L ,
-\]
-which is Proposition~\ref{disp:prop:lambda} below. (The inequality $\Lambda\le L$ is trivial.)
+Lemma~\ref{disp:lem:reduction}(ii) gives $\limsup E_N>0$. Thus (ii) follows once we know $\Lambda=L$, which is Proposition~\ref{disp:prop:lambda} below. (The inequality $\Lambda\le L$ is trivial.)
 \end{proof}
 
 We now express $L$ through the continued fraction of $\beta$. By Theorem~\ref{gap:thm:three} (with $t$ in place of $s$), the blocks
@@ -130,7 +112,7 @@ Write
 \omega_k=\frac{q_{k-1}}{q_k}=[0;a_k,\dots,a_1],\qquad
 \xi_k=\frac{\eta_k}{\eta_{k-1}}=[0;a_{k+1},a_{k+2},\dots],
 \]
-where $\xi_k$ is as in Section~\ref{gap:sec:cor}. By Corollary~\ref{gap:cor:ineq},
+where $\xi_k$ is as in \eqref{gap:eq:xi}. By Corollary~\ref{gap:cor:ineq} and \eqref{gap:eq:xi},
 \begin{equation}\label{disp:eq:omegaxi}
 q_k\eta_{k-1}=\frac1{1+\omega_k\xi_k},\qquad \xi_k<\frac1{a_{k+1}} .
 \end{equation}
@@ -155,11 +137,7 @@ q_k\ell_{k,r}&=\bigl(1-(r-1)\xi_k\bigr)\,q_k\eta_{k-1}=\frac{1-(r-1)\xi_k}{1+\om
 \end{proof}
 
 \begin{proposition}\label{disp:prop:lambda}
-For every irrational $\beta\in(0,\frac12)$,
-\[
-\Lambda=L(\beta);
-\]
-that is, $\limsup_{N\to\infty} m_N(\sigma)>0$ for every $\sigma<L(\beta)$.
+For every irrational $\beta\in(0,\frac12)$, $\Lambda=L(\beta)$; that is, $\limsup_{N\to\infty} m_N(\sigma)>0$ for every $\sigma<L(\beta)$.
 \end{proposition}
 \emph{Idea of the proof.} In the bounded case we move a little to the left of the extremal $N_{k,r}$, which keeps the largest gap but gives it positive frequency, so Lemma~\ref{disp:lem:mass} applies.
 
@@ -184,10 +162,7 @@ By Lemma~\ref{disp:lem:sup} there are infinitely many blocks $(k,r)$, $k\to\inft
 \begin{equation}\label{disp:eq:extremal}
 \mathcal D_{N_{k,r}}=\pi N_{k,r}\ell_{k,r}\;\ge\;L-\varepsilon .
 \end{equation}
-Fix one with $q_k$ large and put
-\[
-j:=\lceil\varepsilon q_k\rceil,\qquad N':=N_{k,r}-j .
-\]
+Fix one with $q_k$ large and put $j:=\lceil\varepsilon q_k\rceil$, $N':=N_{k,r}-j$.
 Then $N'$ lies in the same block, since its offset is $t'=q_k-1-j\ge0$. By \eqref{disp:eq:ell} the largest gap of the $N'$ points is
 still $\ell_{k,r}$, and its multiplicity is
 \[
@@ -226,10 +201,7 @@ Let $\beta\in(0,\frac12)$ be irrational.
 \kappa(\beta)\;\ge\;1+\frac2{\sqrt5}=1.8944\ldots ,
 \]
 with equality if and only if $\beta$ is noble (all partial quotients eventually $1$).
-\item[(ii)] If $a_{k+1}\ge2$ for infinitely many $k$, then
-\[
-\kappa(\beta)\;\ge\;2 .
-\]
+\item[(ii)] If $a_{k+1}\ge2$ for infinitely many $k$, then $\kappa(\beta)\ge2$.
 \item[(iii)] Consequently
 \[
 \frac{c_{\rm cov}(\beta)}{\pi Q}=\kappa(\beta)\ \ge\ 1+\frac2{\sqrt5},\qquad c_{\rm cov}(\beta)\ \ge\ c_*(\beta):=\frac{\pi\sin(\pi\beta)}{\sqrt5\,\lambda^3},

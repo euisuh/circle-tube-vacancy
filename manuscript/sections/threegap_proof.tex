@@ -1,0 +1,181 @@
+\section{Proof of Theorem~\ref{gap:thm:three}}\label{app:threegap}
+
+Notation is that of Section~\ref{gap:sec:three}; we use only \eqref{gap:eq:det}--\eqref{gap:eq:F2}.
+
+\begin{proof}[Proof of Theorem~\ref{gap:thm:three}]
+\emph{Preliminaries: uniqueness and counts.} The intervals
+\[
+I_k=[\,q_k+q_{k-1},\,q_{k+1}+q_k),\qquad k\ge0,
+\]
+partition $[1,\infty)$, because $q_0+q_{-1}=1$ and the right end of $I_k$ is the left end of $I_{k+1}$.
+For $N\in I_k$,
+\[
+N-q_{k-1}\in[\,q_k,\,(a_{k+1}+1)q_k),
+\]
+which gives $(r,t)$ uniquely. The counts are nonnegative and sum to $N$, since $(N-q_k)+t+(q_k-t)=N$.
+For \eqref{gap:eq:AB}, write $N-t=rq_k+q_{k-1}$; then by \eqref{gap:eq:F2},
+\[
+(N-t)\eta_k+q_k(\eta_{k-1}-r\eta_k)=q_{k-1}\eta_k+q_k\eta_{k-1}=1.
+\]
+The two forms of $B$ agree by \eqref{gap:eq:rec}.
+
+\emph{Preliminaries: the case $k=0$.} Then $N=r\le a_1$, $t=0$ and $q_0=1$. The points are ordered,
+\[
+(N-1)\beta<a_1\beta<1,\qquad\text{so}\qquad 0<\beta<\dots<(N-1)\beta<1,
+\]
+with gaps
+\begin{align*}
+\beta&=\eta_0 &&(N-1\text{ times}),\\
+1-(N-1)\beta&=C &&(\text{once}).
+\end{align*}
+
+\emph{Step 1: general structure.} Let $N\ge2$ and let $\mathrm d_+$ (resp.\ $\mathrm d_-$) be the $d\in[1,N-1]$ with
+$\{d\beta\}$ minimal (resp.\ maximal); these are unique since the $\{d\beta\}$ are distinct. Put
+\[
+\Delta_+=\{\mathrm d_+\beta\},\qquad \Delta_-=1-\{\mathrm d_-\beta\}.
+\]
+Then:
+\begin{enumerate}
+\item[(a)] $\mathrm d_++\mathrm d_-\ge N$. Otherwise
+\[
+d=\mathrm d_++\mathrm d_-\le N-1
+\qquad\text{and}\qquad
+\{d\beta\}\equiv\Delta_+-\Delta_-\ne0,
+\]
+so
+\[
+\{d\beta\}=
+\begin{cases}
+\Delta_+-\Delta_-\in(0,\Delta_+) & \text{if }\Delta_+>\Delta_-,\\
+1-\Delta_-+\Delta_+>\{\mathrm d_-\beta\} & \text{if }\Delta_+<\Delta_-.
+\end{cases}
+\]
+Both contradict the choice of $\mathrm d_\pm$.
+\item[(b)] The gaps are
+\begin{align*}
+&\Delta_+ &&(N-\mathrm d_+\text{ times}),\\
+&\Delta_- &&(N-\mathrm d_-\text{ times}),\\
+&\Delta_++\Delta_- &&(\mathrm d_++\mathrm d_--N\text{ times}).
+\end{align*}
+To prove this, let $\operatorname{nxt}(j)$ be the successor of the point $j\beta$ ($0\le j<N$) in the
+counterclockwise order; its index is $j+d$, where $d\ne0$ minimizes the forward distance $\{d\beta\}$ over
+$-j\le d\le N-1-j$. Positive $d$ give $\{d\beta\}\ge\Delta_+$; negative $d=-e$ give
+\[
+\{-e\beta\}=1-\{e\beta\}\ge\Delta_-.
+\]
+We determine $\operatorname{nxt}(j)$ on three ranges of $j$.
+ \begin{itemize}
+ \item \emph{Range $j<N-\mathrm d_+$.} Here $\operatorname{nxt}(j)=j+\mathrm d_+$, with gap $\Delta_+$.
+ Positive $d$ are fine. For negative $d=-e$ with $e\le j$, suppose $1-\{e\beta\}<\Delta_+$.
+ Since $e\le j<N-\mathrm d_+$,
+ \[
+ e+\mathrm d_+\le N-1
+ \qquad\text{and}\qquad
+ \{(e+\mathrm d_+)\beta\}=\{e\beta\}+\Delta_+-1\in(0,\Delta_+),
+ \]
+ which contradicts the choice of $\mathrm d_+$.
+ \item \emph{Range $j\ge\mathrm d_-$.} By (a), $j\ge N-\mathrm d_+$, so this range is disjoint from the previous one.
+ Here $\operatorname{nxt}(j)=j-\mathrm d_-$, with gap $\Delta_-$. Negative $d$ are fine.
+ For positive $d$, suppose $\{d\beta\}<\Delta_-$. Since $d\le N-1-j$ and $j\ge\mathrm d_-$,
+ \[
+ d+\mathrm d_-\le N-1
+ \qquad\text{and}\qquad
+ \{(d+\mathrm d_-)\beta\}=\{d\beta\}+1-\Delta_-\in(\{\mathrm d_-\beta\},1),
+ \]
+ which contradicts the choice of $\mathrm d_-$.
+ \item \emph{Range $N-\mathrm d_+\le j<\mathrm d_-$.} Here $\operatorname{nxt}(j)=j+\mathrm d_+-\mathrm d_-$, with gap $\Delta_++\Delta_-$.
+ The index lies in $[0,N-1]$, because
+ \[
+ j+\mathrm d_+-\mathrm d_-\ge N-\mathrm d_-\ge1
+ \qquad\text{and}\qquad
+ j+\mathrm d_+-\mathrm d_-<\mathrm d_+\le N-1.
+ \]
+ Positive available $d$ satisfy $d\le\mathrm d_+-1$. For such $d$, suppose $\Delta_+<\{d\beta\}<\Delta_++\Delta_-$.
+ Then $e=\mathrm d_+-d\in[1,\mathrm d_+-1]$ and
+ \[
+ \{e\beta\}=1-(\{d\beta\}-\Delta_+)>1-\Delta_-,
+ \]
+ which contradicts the choice of $\mathrm d_-$.
+ For negative $d=-e$ with $e\le j<\mathrm d_-$, suppose $\Delta_-<1-\{e\beta\}<\Delta_++\Delta_-$.
+ Then $d'=\mathrm d_--e\in[1,\mathrm d_--1]$ and
+ \[
+ \{d'\beta\}=1-\Delta_--\{e\beta\}\in(0,\Delta_+),
+ \]
+ which contradicts the choice of $\mathrm d_+$.
+
+ Finally, the candidate index itself has forward distance $\Delta_++\Delta_-$: indeed
+ \[
+ (\mathrm d_+-\mathrm d_-)\beta\equiv\Delta_++\Delta_-\pmod1,
+ \]
+ and $\Delta_++\Delta_-<1$. For the latter, if $\Delta_++\Delta_-\ge1$, the same argument with $d=\mathrm d_+-\mathrm d_-$ or $e=\mathrm d_--\mathrm d_+$ in $[1,N-1]$ contradicts minimality or maximality; equality would give $(\mathrm d_+-\mathrm d_-)\beta\in\mathbb Z$, hence $\mathrm d_+=\mathrm d_-$ and $\Delta_++\Delta_-=1$, which forces $N=2$, where the third range is empty.
+ \end{itemize}
+Distinct points give strict inequalities, so these are the successors. The three ranges of $j$ have sizes
+$N-\mathrm d_+$, $N-\mathrm d_-$ and $\mathrm d_++\mathrm d_--N$, which gives the multiplicities.
+\end{enumerate}
+
+\emph{Step 2: identifying $\mathrm d_\pm$.} Let $k\ge1$ and $0\le\rho\le a_{k+1}$, and put
+\[
+\mathrm d_\rho=\rho q_k+q_{k-1}\ge1,\qquad
+\nu=\eta_{k-1}-\rho\eta_k>0,\qquad
+\sigma=(-1)^k;
+\]
+by \eqref{gap:eq:rec}, $\nu\ge\eta_{k+1}$. Then
+\begin{equation}\label{gap:eq:step2}
+q_k\beta\equiv\sigma\eta_k,\qquad \mathrm d_\rho\beta\equiv-\sigma\nu\pmod1,\qquad
+q_k\nu+\mathrm d_\rho\eta_k=1,
+\end{equation}
+the last by \eqref{gap:eq:F2}.
+
+\emph{Claim.} If $N\le\mathrm d_\rho+q_k$, there are no $d\in[1,N-1]$ and $p\in\mathbb Z$ with
+\[
+e=\sigma(d\beta-p)\in(-\nu,\eta_k)\setminus\{0\}.
+\]
+To see this, consider the vectors
+\[
+b_1=(q_k,\sigma\eta_k),\qquad b_2=(\mathrm d_\rho,-\sigma\nu).
+\]
+They have determinant $-\sigma$ and span the lattice $\mathcal L=\{(d,d\beta-p):d,p\in\mathbb Z\}$;
+unimodularity follows from \eqref{gap:eq:det}, since $(\mathrm d_\rho,\cdot)=\rho(q_k,\cdot)+(q_{k-1},\cdot)$.
+Write $(d,d\beta-p)=mb_1+nb_2$ with $m,n\in\mathbb Z$. Cramer's rule gives
+\[
+m=d\nu+\mathrm d_\rho e,\qquad n=\eta_kd-q_ke,\qquad e=\sigma(d\beta-p).
+\]
+Suppose first $e\in(0,\eta_k)$. Then $m\ge1$, and
+\[
+d=mq_k+n\mathrm d_\rho\le N-1<q_k+\mathrm d_\rho
+\]
+forces $n\le0$, so $e=m\eta_k-n\nu\ge\eta_k$, a contradiction. Suppose next $e\in(-\nu,0)$. Then $n\ge1$, the same bound on $d$ forces $m\le0$, and $e=m\eta_k-n\nu\le-\nu$, a contradiction. This proves the claim.
+
+Consequently, for $d\in[1,N-1]$,
+\[
+\{d\beta\}\notin
+\begin{cases}
+(0,\eta_k)\cup(1-\nu,1) & \text{if }\sigma=1,\\
+(0,\nu)\cup(1-\eta_k,1) & \text{if }\sigma=-1.
+\end{cases}
+\]
+If also $q_k\le N-1$ and $\mathrm d_\rho\le N-1$, the values attained there are extremal:
+\[
+\bigl\{\{q_k\beta\},\{\mathrm d_\rho\beta\}\bigr\}=
+\begin{cases}
+\{\eta_k,\,1-\nu\} & \text{if }\sigma=1,\\
+\{1-\eta_k,\,\nu\} & \text{if }\sigma=-1.
+\end{cases}
+\]
+Hence
+\[
+\{\mathrm d_+,\mathrm d_-\}=\{q_k,\mathrm d_\rho\},\qquad \{\Delta_+,\Delta_-\}=\{\eta_k,\nu\},
+\]
+and by Step 1(b) the gaps are
+\begin{align*}
+&\eta_k &&(N-q_k\text{ times}),\\
+&\nu &&(N-\mathrm d_\rho\text{ times}),\\
+&\eta_k+\nu &&(q_k+\mathrm d_\rho-N\text{ times}).
+\end{align*}
+
+\emph{Step 3: apply with $k\ge1$.} Let $(k,r,t)$ be as in \eqref{gap:eq:decomp} with $k\ge1$.
+If $t\ge1$, take $\rho=r$. Then $\mathrm d_r=N-t\le N-1$ and $N-\mathrm d_r=t$; also
+$q_k\le N-1$ (as $N\ge q_k+q_{k-1}+1$) and $N=\mathrm d_r+t\le\mathrm d_r+q_k$. So Step 2 applies with $\nu=B$, and the counts are $N-q_k$, $t$, $q_k-t$ for $A$, $B$, $C$.
+If $t=0$, take $\rho=r-1$. Then $\mathrm d_\rho=N-q_k\ge q_{k-1}\ge1$ and $N=\mathrm d_\rho+q_k$;
+also $q_k\le N-1$ and $\nu=\eta_{k-1}-(r-1)\eta_k=C$. The counts are $N-q_k$ for $A$, $q_k$ for $C$, and $0$ for $C+A$. This is the claim with $t=0$.
+\end{proof}

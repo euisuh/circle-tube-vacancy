@@ -1,11 +1,11 @@
 % Section text to \input into main.tex (amsart).  Uses \Vd, \dist (unused), theorem envs
-% theorem/lemma/proposition/corollary/remark.  Requires labels thm:A, thm:C and eq:mN from main.tex.
+% theorem/lemma/proposition/corollary/remark.  Requires labels thm:A, thm:B and eq:mN from main.tex.
 % All labels carry the prefix disp:.
 \section{Coverage threshold for every irrational angle}\label{disp:sec}
 
-Throughout, $\beta=\alpha/\pi\in(0,\tfrac12)$ is irrational, $a=\cos\alpha$, $Q=\sin\alpha$, and
-$g_{N,0},\dots,g_{N,N-1}$ are the gaps (in radians, summing to $2\pi$) of the points
-$\theta_j=(2j+1)\alpha$ modulo $2\pi$; these are $2\pi$ times the gaps of $\{j\beta\}_{0\le j<N}$ on $\mathbb R/\mathbb Z$.
+We keep the notation of Section~1: $\beta=\alpha/\pi\in(0,\tfrac12)$ is irrational, $a=\cos\alpha$, $Q=\sin\alpha$, and
+$g_{N,0},\dots,g_{N,N-1}$ are the gaps (in radians, summing to $2\pi$) of the points $\theta_j=(2j+1)\alpha$ modulo $2\pi$.
+These gaps are $2\pi$ times the gaps of $\{j\beta\}_{0\le j<N}$ on $\mathbb R/\mathbb Z$.
 Recall the notation
 \[
 G_N=\max_j g_{N,j},\qquad \gamma_N=\frac{G_N}{2\pi},\qquad \mathcal D_N=\frac{N G_N}{2}=\pi N \gamma_N ,
@@ -14,10 +14,16 @@ G_N=\max_j g_{N,j},\qquad \gamma_N=\frac{G_N}{2\pi},\qquad \mathcal D_N=\frac{N 
 \kappa(\beta)=\limsup_{N\to\infty}N \gamma_N\in[1,\infty],\qquad L(\beta)=\limsup_{N\to\infty}\mathcal D_N=\pi\kappa(\beta).
 \]
 Here $\gamma_N$ is the largest gap, in turns, of $\{j\beta\}_{j<N}$ on the circle. If $d^{\mathbb T}_N=\gamma_N/2$ denotes the
-dispersion of the points on the circle $\mathbb R/\mathbb Z$ with its geodesic metric, then $\mathcal D_N=2\pi N d^{\mathbb T}_N$.
-(This is \emph{not} Niederreiter's dispersion, which is defined on the interval $[0,1]$ with the Euclidean metric;
-see Remark~\ref{disp:rem:nied}.)
-By Lemma~\ref{gap:lem:mu}, $\int\ell\,d\mu_N=\pi$ and $\pi\,m_N(s)=\int(\ell-s)_+\,d\mu_N(\ell)$; $\mathcal D_N$ is the largest atom of $\mu_N$.
+dispersion of the points on the circle $\mathbb R/\mathbb Z$ with its geodesic metric, then
+\[
+\mathcal D_N=2\pi N d^{\mathbb T}_N .
+\]
+This is \emph{not} Niederreiter's dispersion, which is defined on the interval $[0,1]$ with the Euclidean metric;
+see Remark~\ref{disp:rem:nied}.
+In the language of Lemma~\ref{gap:lem:mu}, $\mathcal D_N$ is the largest atom of $\mu_N$:
+\[
+\mathcal D_N=\max\operatorname{supp}\mu_N .
+\]
 
 \begin{lemma}\label{disp:lem:mass}
 For all $N$ and $s\ge0$, with $n_N$ the number of indices $j$ with $g_{N,j}=G_N$,
@@ -27,108 +33,224 @@ For all $N$ and $s\ge0$, with $n_N$ the number of indices $j$ with $g_{N,j}=G_N$
 In particular $m_N(s)=0$ iff $s\ge \mathcal D_N$.
 \end{lemma}
 \begin{proof}
-Each term $(g_{N,j}-2s/N)_+$ lies between $0$ and $(G_N-2s/N)_+=\tfrac2N(\mathcal D_N-s)_+$, and at least $n_N$ terms equal the
-upper bound. Divide by $2\pi$ after summing.
+Each term of \eqref{eq:mN} satisfies
+\[
+0\;\le\;(g_{N,j}-2s/N)_+\;\le\;(G_N-2s/N)_+=\tfrac2N(\mathcal D_N-s)_+ ,
+\]
+and at least $n_N$ terms equal the upper bound. Divide by $2\pi$ after summing.
 \end{proof}
 
-Let $E_N(c)=2\int_0^Q q\,m_N(c/q)^2\,dq=\widetilde V_N(c)-a^2\ge0$.
+Define the excess
+\begin{equation}\label{disp:eq:EN}
+E_N(c)=2\int_0^Q q\,m_N(c/q)^2\,dq=\widetilde V_N(c)-a^2\;\ge\;0 .
+\end{equation}
 
 \begin{lemma}\label{disp:lem:reduction}
-Fix $c>0$. Then $E_N(c)\to0$ if and only if $m_N(c/Q+\delta)\to0$ for every $\delta>0$. Moreover
-$\limsup_{N\to\infty} E_N(c)>0$ if and only if $\limsup_{N\to\infty} m_N(c/Q+\delta)>0$ for some $\delta>0$.
+Fix $c>0$.
+\begin{enumerate}
+\item[(i)] $E_N(c)\to0$ if and only if
+\[
+m_N(c/Q+\delta)\to0\qquad\text{for every }\delta>0 .
+\]
+\item[(ii)] $\limsup_{N\to\infty} E_N(c)>0$ if and only if
+\[
+\limsup_{N\to\infty} m_N(c/Q+\delta)>0\qquad\text{for some }\delta>0 .
+\]
+\end{enumerate}
 \end{lemma}
 \begin{proof}
-$m_N$ is nonincreasing in $s$ and $0\le m_N\le1$. If $m_N(c/Q+\delta)\ge\varepsilon$ then $m_N(c/q)\ge\varepsilon$ for
-$q\in[c/(c/Q+\delta),Q]$, so $E_N(c)\ge\varepsilon^2\bigl(Q^2-(cQ/(c+\delta Q))^2\bigr)$, a positive constant times $\varepsilon^2$.
-Conversely, if $m_N(c/Q+\delta)\to0$ for all $\delta>0$, split $[0,Q]$ at $q_\delta=c/(c/Q+\delta)$: the part
-$q\in[q_\delta,Q]$ contributes at most $Q^2-q_\delta^2$, which tends to $0$ with $\delta$, and the part
-$q<q_\delta$ contributes at most $Q^2m_N(c/Q+\delta)^2\to0$ as $N\to\infty$.
+Recall that $m_N$ is nonincreasing in $s$ and $0\le m_N\le1$. Suppose $m_N(c/Q+\delta)\ge\varepsilon$. Then $m_N(c/q)\ge\varepsilon$ for
+all $q$ in $[c/(c/Q+\delta),Q]$, and integrating over this range gives
+\begin{equation}\label{disp:eq:ENlower}
+E_N(c)\;\ge\;\varepsilon^2\Bigl(Q^2-\Bigl(\frac{cQ}{c+\delta Q}\Bigr)^2\Bigr),
+\end{equation}
+a positive constant times $\varepsilon^2$. This proves the ``if'' half of (ii) and the ``only if'' half of (i).
+
+Conversely, suppose $m_N(c/Q+\delta)\to0$ for all $\delta>0$. Split $[0,Q]$ at
+\[
+q_\delta=\frac{c}{c/Q+\delta}.
+\]
+The two parts of the integral are bounded separately:
+\begin{align*}
+2\int_{q_\delta}^{Q}q\,m_N(c/q)^2\,dq&\le Q^2-q_\delta^2, &&\text{which tends to $0$ with $\delta$;}\\
+2\int_{0}^{q_\delta}q\,m_N(c/q)^2\,dq&\le Q^2\,m_N(c/Q+\delta)^2, &&\text{which tends to $0$ as $N\to\infty$.}
+\end{align*}
+Hence $E_N(c)\to0$. This proves the remaining halves of (i) and (ii).
 \end{proof}
 
 Since $m_N(\sigma)$ is nonincreasing in $\sigma$, the set $\{\sigma\ge0: m_N(\sigma)\to0\}$ is an up-set; put
 \[
 \Lambda=\inf\{\sigma\ge 0:\ m_N(\sigma)\to0\}.
 \]
+We also name the headline constant,
+\begin{equation}\label{disp:eq:ccov}
+c_{\rm cov}(\beta):=Q\,L(\beta)=\pi Q\,\kappa(\beta)\in[\pi Q,\infty].
+\end{equation}
 
 \begin{theorem}[Coverage threshold, every irrational angle]\label{disp:thm:iff}
-Let $\beta\in(0,\frac12)$ be irrational, $c>0$, and $L=L(\beta)=\pi\limsup_{N\to\infty} N \gamma_N\in[\pi,\infty]$. Then
+Let $\beta\in(0,\frac12)$ be irrational, let $c>0$, and let $L=L(\beta)\in[\pi,\infty]$ be as above. Then
 \begin{enumerate}
 \item[(i)] if $c\ge QL$, then $V_N(c)\to a^2$;
 \item[(ii)] if $c<QL$, then $\limsup_{N\to\infty} V_N(c)>a^2$.
 \end{enumerate}
-Hence $V_N(c)$ converges to $a^2$ if and only if $c\ge c_{\rm cov}(\beta):=Q\,L(\beta)=\pi Q\,\kappa(\beta)$ (never, if $\kappa=\infty$).
+Hence $V_N(c)$ converges to $a^2$ if and only if
+\[
+c\;\ge\;c_{\rm cov}(\beta),
+\]
+with $c_{\rm cov}$ as in \eqref{disp:eq:ccov}; if $\kappa(\beta)=\infty$ this never happens.
 \end{theorem}
 \begin{proof}
-By Theorem~\ref{thm:A}, $V_N(c)-a^2-E_N(c)\to0$, so it suffices to treat $E_N(c)$. Since $E_N\ge0$ and $\widetilde V_N\ge a^2$,
-(ii) means $\limsup E_N>0$.
+By Theorem~\ref{thm:A} and \eqref{disp:eq:EN},
+\[
+V_N(c)-a^2-E_N(c)\to0 ,
+\]
+so it suffices to treat $E_N(c)$. Since $E_N\ge0$, statement (ii) is equivalent to $\limsup E_N>0$.
 
-(i) For $c\ge QL$ and $\delta>0$: $\mathcal D_N\le L+\delta/2<c/Q+\delta$ for large $N$ (if $L<\infty$), hence
-$m_N(c/Q+\delta)=0$ by Lemma~\ref{disp:lem:mass}; apply Lemma~\ref{disp:lem:reduction}.
+(i) Let $c\ge QL$ and $\delta>0$. If $L<\infty$, then for large $N$
+\[
+\mathcal D_N\;\le\;L+\delta/2\;<\;c/Q+\delta ,
+\]
+hence $m_N(c/Q+\delta)=0$ by Lemma~\ref{disp:lem:mass}. Lemma~\ref{disp:lem:reduction}(i) gives $E_N(c)\to0$.
 
-(ii) If $c/Q<\Lambda$, choose
-$\delta>0$ with $c/Q+\delta<\Lambda$; then $m_N(c/Q+\delta)\not\to0$ and Lemma~\ref{disp:lem:reduction} gives
-$\limsup E_N>0$. So (ii) follows from $\Lambda\ge L$, which is Proposition~\ref{disp:prop:lambda} below. (Trivially $\Lambda\le L$.)
+(ii) Suppose $c/Q<\Lambda$ and choose $\delta>0$ with $c/Q+\delta<\Lambda$. Then $m_N(c/Q+\delta)\not\to0$, and
+Lemma~\ref{disp:lem:reduction}(ii) gives $\limsup E_N>0$. Thus (ii) follows once we know
+\[
+\Lambda\;=\;L ,
+\]
+which is Proposition~\ref{disp:prop:lambda} below. (The inequality $\Lambda\le L$ is trivial.)
 \end{proof}
 
-By Theorem~\ref{gap:thm:three} (with $t$ in place of $s$), the blocks $(k,r)$, $1\le r\le a_{k+1}$,
-tile $N\ge q_1+q_0$, and in block $(k,r)$, $N=rq_k+q_{k-1}+t$, the largest gap is
-$\ell_{k,r}=\eta_{k-1}-(r-1)\eta_k$ with multiplicity $q_k-t\ge1$.
-
-Write $\omega_k=q_{k-1}/q_k=[0;a_k,\dots,a_1]$ and $\xi_k=\eta_k/\eta_{k-1}=[0;a_{k+1},a_{k+2},\dots]$. Then $q_k\eta_{k-1}=1/(1+\omega_k\xi_k)$ and
-$\xi_k<1/a_{k+1}$.
+We now express $L$ through the continued fraction of $\beta$. By Theorem~\ref{gap:thm:three} (with $t$ in place of $s$), the blocks
+$(k,r)$ with $1\le r\le a_{k+1}$ tile the range $N\ge q_1+q_0$. In block $(k,r)$ we have $N=rq_k+q_{k-1}+t$, and the largest gap is
+\begin{equation}\label{disp:eq:ell}
+\ell_{k,r}:=\eta_{k-1}-(r-1)\eta_k ,\qquad\text{with multiplicity } q_k-t\ge1 .
+\end{equation}
+Write
+\[
+\omega_k=\frac{q_{k-1}}{q_k}=[0;a_k,\dots,a_1],\qquad
+\xi_k=\frac{\eta_k}{\eta_{k-1}}=[0;a_{k+1},a_{k+2},\dots],
+\]
+where $\xi_k$ is as in Section~\ref{gap:sec:cor}. By Corollary~\ref{gap:cor:ineq},
+\begin{equation}\label{disp:eq:omegaxi}
+q_k\eta_{k-1}=\frac1{1+\omega_k\xi_k},\qquad \xi_k<\frac1{a_{k+1}} .
+\end{equation}
 
 \begin{lemma}[Exact limsup in terms of the expansion]\label{disp:lem:sup}
 Within each block $(k,r)$ the quantity $N\gamma_N$ is increasing in $N$, so its supremum over the block is attained at
-$N_{k,r}=(r+1)q_k+q_{k-1}-1$. Consequently
+\[
+N_{k,r}:=(r+1)q_k+q_{k-1}-1 .
+\]
+Consequently
 \[
 \kappa(\beta)=\limsup_{k\to\infty}\ \max_{1\le r\le a_{k+1}}\ \frac{(r+1+\omega_k)\,\bigl(1-(r-1)\xi_k\bigr)}{1+\omega_k\xi_k}\ .
 \]
 \end{lemma}
 \begin{proof}
-$N_{k,r}\ell_{k,r}=\bigl((r+1)+\omega_k\bigr)q_k\ell_{k,r}-\ell_{k,r}$, $q_k\ell_{k,r}=(1-(r-1)\xi_k)\,q_k\eta_{k-1}$, and $\ell_{k,r}\le\eta_{k-1}\to0$.
+Indeed, by \eqref{disp:eq:ell} and \eqref{disp:eq:omegaxi},
+\begin{align*}
+N_{k,r}\,\ell_{k,r}&=\bigl((r+1)+\omega_k\bigr)\,q_k\ell_{k,r}-\ell_{k,r},\\
+q_k\ell_{k,r}&=\bigl(1-(r-1)\xi_k\bigr)\,q_k\eta_{k-1}=\frac{1-(r-1)\xi_k}{1+\omega_k\xi_k},\\
+\ell_{k,r}&\le\eta_{k-1}\to0 .\qedhere
+\end{align*}
 \end{proof}
 
 \begin{proposition}\label{disp:prop:lambda}
-$\Lambda=L(\beta)$ for every irrational $\beta\in(0,\frac12)$; that is, $\limsup_{N\to\infty} m_N(\sigma)>0$ for every $\sigma<L(\beta)$.
+For every irrational $\beta\in(0,\frac12)$,
+\[
+\Lambda=L(\beta);
+\]
+that is, $\limsup_{N\to\infty} m_N(\sigma)>0$ for every $\sigma<L(\beta)$.
 \end{proposition}
 \emph{Idea of the proof.} In the bounded case we move a little to the left of the extremal $N_{k,r}$, which keeps the largest gap but gives it positive frequency, so Lemma~\ref{disp:lem:mass} applies.
 
 \begin{proof}
-\emph{Case 1: unbounded partial quotients.} By Theorem~\ref{thm:C}(2), $\limsup V_N(c)>a^2$ for every $c>0$, so by Theorem~\ref{thm:A} and
-Lemma~\ref{disp:lem:reduction} (with $c=Q\sigma$) there is $\delta>0$ with $\limsup m_N(\sigma+\delta)>0$; since $m_N$ is
-nonincreasing, $\limsup m_N(\sigma)>0$ for every $\sigma$; also $L=\infty$ (take $r=\lceil a_{k+1}/2\rceil$ in
-Lemma~\ref{disp:lem:sup}: the bracket is $\ge a_{k+1}/8$).
+\emph{Case 1: unbounded partial quotients.} By Theorem~\ref{thm:B}(2), $\limsup V_N(c)>a^2$ for every $c>0$. Fix $\sigma>0$ and apply
+Theorem~\ref{thm:A} and Lemma~\ref{disp:lem:reduction}(ii) with $c=Q\sigma$: there is $\delta>0$ with
+\[
+\limsup_{N\to\infty} m_N(\sigma+\delta)>0 .
+\]
+Since $m_N$ is nonincreasing, $\limsup m_N(\sigma)>0$ for every $\sigma$. It remains to check $L=\infty$: taking $r=\lceil a_{k+1}/2\rceil$
+in Lemma~\ref{disp:lem:sup} and using \eqref{disp:eq:omegaxi},
+\[
+\frac{(r+1+\omega_k)\,\bigl(1-(r-1)\xi_k\bigr)}{1+\omega_k\xi_k}\;\ge\;\frac{a_{k+1}}{8},
+\]
+which is unbounded along a subsequence.
 
-\emph{Case 2: bounded type, $a_k\le A$.} Let $\sigma<L$ and pick $\varepsilon\in(0,\tfrac12)$ with $(1-\varepsilon)(L-\varepsilon)>\sigma$. By Lemma~\ref{disp:lem:sup} there are
-infinitely many blocks $(k,r)$, $k\to\infty$, with $\mathcal \mathcal D_{N_{k,r}}=\pi N_{k,r}\ell_{k,r}\ge L-\varepsilon$. Fix one with $q_k$ large and put
-$j=\lceil\varepsilon q_k\rceil$, $N'=N_{k,r}-j$. Then $N'$ lies in the same block (its $t'=q_k-1-j\ge0$), the largest gap is still $\ell_{k,r}$, and its
-multiplicity is $j+1\ge\varepsilon q_k$. Since $N_{k,r}\ge 2q_k-1$, $j/N_{k,r}\le\varepsilon$, so $\mathcal D_{N'}\ge(1-\varepsilon)\mathcal D_{N_{k,r}}$; and
-$N'\le N_{k,r}\le(A+2)q_k$ gives $n_{N'}/N'\ge\varepsilon/(A+2)$. Lemma~\ref{disp:lem:mass} yields
+\emph{Case 2: bounded type, $a_k\le A$.} Let $\sigma<L$ and pick $\varepsilon\in(0,\tfrac12)$ with
+\[
+(1-\varepsilon)(L-\varepsilon)>\sigma .
+\]
+By Lemma~\ref{disp:lem:sup} there are infinitely many blocks $(k,r)$, $k\to\infty$, with
+\begin{equation}\label{disp:eq:extremal}
+\mathcal D_{N_{k,r}}=\pi N_{k,r}\ell_{k,r}\;\ge\;L-\varepsilon .
+\end{equation}
+Fix one with $q_k$ large and put
+\[
+j:=\lceil\varepsilon q_k\rceil,\qquad N':=N_{k,r}-j .
+\]
+Then $N'$ lies in the same block, since its offset is $t'=q_k-1-j\ge0$. By \eqref{disp:eq:ell} the largest gap of the $N'$ points is
+still $\ell_{k,r}$, and its multiplicity is
+\[
+n_{N'}=q_k-t'=j+1\;\ge\;\varepsilon q_k .
+\]
+Since $N_{k,r}\ge2q_k-1$ and $q_k$ is large, $j/N_{k,r}\le\varepsilon$, whence
+\[
+\mathcal D_{N'}=\pi N'\ell_{k,r}\;\ge\;(1-\varepsilon)\,\mathcal D_{N_{k,r}} .
+\]
+Moreover $N'\le N_{k,r}\le(A+2)q_k$, so the frequency of the largest gap satisfies
+\[
+\frac{n_{N'}}{N'}\;\ge\;\frac{\varepsilon}{A+2}.
+\]
+Lemma~\ref{disp:lem:mass} together with \eqref{disp:eq:extremal} yields
 \[
 m_{N'}(\sigma)\ \ge\ \frac{\varepsilon}{\pi(A+2)}\bigl((1-\varepsilon)(L-\varepsilon)-\sigma\bigr)>0 ,
 \]
-a bound independent of $k$.
+a bound independent of $k$. Hence $\limsup_N m_N(\sigma)>0$.
 \end{proof}
 
 \begin{remark}[Why the converse is not obvious, and why it holds]\label{disp:rem:conv}
-For a single $N$ the largest gap may occur once ($n_N=1$ at $N=N_{k,r}$), so Lemma~\ref{disp:lem:mass} alone only gives $m_N(s)\ge(\mathcal D_N-s)_+/(\pi N)$.
+For a single $N$ the largest gap may occur once ($n_N=1$ at $N=N_{k,r}$), so Lemma~\ref{disp:lem:mass} alone only gives
+\[
+m_N(s)\ge\frac{(\mathcal D_N-s)_+}{\pi N}.
+\]
 For the golden angle this is exactly what happens at the extremal phase $x=\lambda$, where the weight $f_0=(\lambda-x)/(1+x)$ of the largest atom vanishes.
 Proposition~\ref{disp:prop:lambda} shows that this degeneration costs nothing for the threshold: a slightly earlier $N'$ carries the same largest gap with positive
-frequency and loses only a factor $1-\varepsilon$ in $\mathcal D_N$. The mechanism needs bounded $N/q_k$; for unbounded type the sparse class takes over (Theorem~\ref{thm:C}(2)) and the threshold is $+\infty$.
+frequency and loses only a factor $1-\varepsilon$ in $\mathcal D_N$. The mechanism needs bounded $N/q_k$; for unbounded type the sparse class takes over (Theorem~\ref{thm:B}(2)) and the threshold is $+\infty$.
 \end{remark}
 
 \begin{proposition}[Smallest threshold]\label{disp:prop:min}
-For every irrational $\beta\in(0,\frac12)$, $\kappa(\beta)\ge1+2/\sqrt5=1.8944\ldots$, with equality if and only if $\beta$ is noble (all partial quotients eventually $1$).
-If $a_{k+1}\ge2$ for infinitely many $k$ then $\kappa(\beta)\ge2$. Consequently
+Let $\beta\in(0,\frac12)$ be irrational.
+\begin{enumerate}
+\item[(i)] One has
+\[
+\kappa(\beta)\;\ge\;1+\frac2{\sqrt5}=1.8944\ldots ,
+\]
+with equality if and only if $\beta$ is noble (all partial quotients eventually $1$).
+\item[(ii)] If $a_{k+1}\ge2$ for infinitely many $k$, then
+\[
+\kappa(\beta)\;\ge\;2 .
+\]
+\item[(iii)] Consequently
 \[
 \frac{c_{\rm cov}(\beta)}{\pi Q}=\kappa(\beta)\ \ge\ 1+\frac2{\sqrt5},\qquad c_{\rm cov}(\beta)\ \ge\ c_*(\beta):=\frac{\pi\sin(\pi\beta)}{\sqrt5\,\lambda^3},
 \]
-with equality iff $\beta$ is noble; for noble $\beta$ this is the threshold $c_*$ of Theorem~\ref{thm:B}.
+with equality iff $\beta$ is noble; for noble $\beta$ this is the threshold $c_*$ of Theorem~\ref{thm:C}.
+\end{enumerate}
 \end{proposition}
 \begin{proof}
-If $a_{k+1}\ge2$ for infinitely many $k$, take $r=1$ in Lemma~\ref{disp:lem:sup}: with $\xi_k<\tfrac12$ and $\omega_k\in(0,1)$,
-$(2+\omega_k)/(1+\omega_k\xi_k)>(2+\omega_k)/(1+\omega_k/2)=2$, so $\kappa\ge2>1+2/\sqrt5$. Otherwise $a_k=1$ for $k\ge k_0$: only $r=1$ occurs, $\xi_k=\lambda$ for $k\ge k_0$,
-$\omega_k\to\lambda$, and the bracket tends to $(2+\lambda)/(1+\lambda^2)=(2+\lambda)/(2-\lambda)=1+2/\sqrt5$ (using $\lambda^2=1-\lambda$).
+Suppose first that $a_{k+1}\ge2$ for infinitely many $k$. For such $k$ take $r=1$ in Lemma~\ref{disp:lem:sup}; since $\xi_k<\tfrac12$ by
+\eqref{disp:eq:omegaxi} and $\omega_k\in(0,1)$,
+\[
+\frac{2+\omega_k}{1+\omega_k\xi_k}\;>\;\frac{2+\omega_k}{1+\omega_k/2}\;=\;2 ,
+\]
+so $\kappa\ge2>1+2/\sqrt5$. This proves (ii) and the strict inequality in (i) for non-noble $\beta$.
+
+Otherwise $a_k=1$ for all $k\ge k_0$. Then only $r=1$ occurs, $\xi_k=\lambda$ for $k\ge k_0$, $\omega_k\to\lambda$, and the bracket in
+Lemma~\ref{disp:lem:sup} tends to
+\[
+\frac{2+\lambda}{1+\lambda^2}\;=\;\frac{2+\lambda}{2-\lambda}\;=\;1+\frac2{\sqrt5},
+\]
+using $\lambda^2=1-\lambda$. This gives equality in (i) for noble $\beta$. Part (iii) follows from (i) and \eqref{disp:eq:ccov}.
 \end{proof}
 
 \begin{remark}[Normalization and the minimality statement]\label{disp:rem:norm}
@@ -137,8 +259,8 @@ The normalized threshold $c_{\rm cov}/(\pi Q)$ equals $\kappa(\beta)$. The absol
 \end{remark}
 
 \begin{remark}[Relation to Niederreiter's dispersion]\label{disp:rem:nied}
-Niederreiter~\cite{Nie84} defines, for a sequence $(x_n)\subset[0,1]$, $d_N=\sup_{x\in[0,1]}\min_{n\le N}|x-x_n|$ and
-$\mathrm{Disp}=\limsup N d_N$. This differs from $\kappa/2$: the interval metric charges the two end segments in full and does not wrap around, and the constant for $\{n\alpha\}$ is
+Niederreiter's dispersion $\mathrm{Disp}=\limsup Nd_N$ of a sequence in $[0,1]$ was recalled in Section~\ref{sec:related}.
+It differs from $\kappa/2$: the interval metric charges the two end segments in full and does not wrap around, and the constant for $\{n\alpha\}$ is
 given by Drobot's formula \cite{Dro86}; see also \cite{Tri93}. Numerically the interval constant at the golden angle is $(1+3/\sqrt5)/2\approx1.1708$, not $\kappa/2=0.9472$.
 So $c_*/(\pi Q)=1+2/\sqrt5$ is the \emph{circular} dispersion constant of the golden rotation, and Proposition~\ref{disp:prop:min} (proved above via the three-gap theorem)
 is a statement about this circular constant, not about Niederreiter's.
@@ -146,8 +268,8 @@ We do not claim that \cite{Nie84} states Proposition~\ref{disp:prop:min}; we kno
 \end{remark}
 
 \subsection{Numerical check}\label{disp:sec:num}
-For golden, noble, silver and mixed angles we compared the block formula with a brute-force
-maximum of $N\gamma_N$ for $N\le2500$, and evaluated $\widetilde V_N(c)-a^2$ at $N$ equal to a block end
-minus $1\%$ of $q_k$. The excess is positive and stable from block to block for $c=0.8\,c_{\rm cov}$
-and $0.97\,c_{\rm cov}$ (of order $10^{-5}$ and $10^{-9}$; the largest class then has frequency about
-$0.01q_k/N$), and exactly $0$ for $c=1.03\,c_{\rm cov}$.
+For golden, noble, silver and mixed angles we compared the block formula of Lemma~\ref{disp:lem:sup} with a brute-force
+maximum of $N\gamma_N$ for $N\le2500$. We also evaluated the excess $\widetilde V_N(c)-a^2$ at $N$ equal to a block end
+minus $1\%$ of $q_k$, so that the largest class has frequency about $0.01q_k/N$. For $c=0.8\,c_{\rm cov}$ and
+$c=0.97\,c_{\rm cov}$ the excess is positive and stable from block to block, of order $10^{-5}$ and $10^{-9}$ respectively.
+For $c=1.03\,c_{\rm cov}$ it is exactly $0$.

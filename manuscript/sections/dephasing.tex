@@ -1,16 +1,26 @@
 \section{Exact two-branch structure}\label{sec:geometry}
 
 \paragraph{Conventions.}
-$\mathbb T=\mathbb R/2\pi\mathbb Z$ with the normalized measure $d\varphi/2\pi$. For $F\in L^1(\mathbb T)$ put
-$\hat F(k)=\int_{\mathbb T}F(\varphi)e^{-ik\varphi}\,\tfrac{d\varphi}{2\pi}$, so that translating $F$ by $\tau$ multiplies $\hat F(k)$ by $e^{-ik\tau}$.
-Points of the disk are written $z=re^{i\varphi}$, and $q(r)=\sqrt{r^2-a^2}$.
-Fix $\varepsilon\in(0,(1-a)/3)$, put $I_\varepsilon=[a+\varepsilon,1-\varepsilon]$, $w=c/N$ and
-$\tau_\varepsilon=\min(\varepsilon/2,a/2)$. Let $N_0=N_0(\varepsilon,c)$ be such that for $N\ge N_0$
+Let $\mathbb T=\mathbb R/2\pi\mathbb Z$ with the normalized measure $d\varphi/2\pi$. For $F\in L^1(\mathbb T)$ put
+\[
+\hat F(k)=\int_{\mathbb T}F(\varphi)e^{-ik\varphi}\,\frac{d\varphi}{2\pi},
+\]
+so that translating $F$ by $\tau$ multiplies $\hat F(k)$ by $e^{-ik\tau}$.
+Points of the disk are written $z=re^{i\varphi}$, and we set
+\[
+q(r)=\sqrt{r^2-a^2}.
+\]
+
+Fix $\varepsilon\in(0,(1-a)/3)$ and put
+\[
+I_\varepsilon=[a+\varepsilon,1-\varepsilon],\qquad w=\frac cN,\qquad \tau_\varepsilon=\min\Bigl(\frac\varepsilon2,\frac a2\Bigr).
+\]
+Let $N_0=N_0(\varepsilon,c)$ be such that for $N\ge N_0$
 \begin{equation}\label{deph:N0}
-w<\tau_\varepsilon\qquad\text{and}\qquad (1-\varepsilon)^2-(a-w)^2<Q^2 ;
+w<\tau_\varepsilon\qquad\text{and}\qquad (1-\varepsilon)^2-(a-w)^2<Q^2 .
 \end{equation}
-the second condition holds for small $w$ because $(1-\varepsilon)^2-a^2<1-a^2=Q^2$. (Only $w<\min(\varepsilon/2,a)$ is needed
-for Lemma~\ref{lem:branches}; the factor $1/2$ in front of $a$ is used in Lemma~\ref{deph:reg}.)
+The second condition holds for small $w$ because $(1-\varepsilon)^2-a^2<1-a^2=Q^2$. Only $w<\min(\varepsilon/2,a)$ is needed
+for Lemma~\ref{lem:branches}; the factor $1/2$ in front of $a$ is used in Lemma~\ref{deph:reg}.
 All $N$ below satisfy $N\ge N_0$.
 
 \begin{figure}[t]
@@ -26,76 +36,140 @@ The shaded stadium is the tube of half-width $w$ about that chord ($w$ exaggerat
 \end{figure}
 
 \begin{lemma}\label{lem:branches}
-For $r\in I_\varepsilon$ let $d_\mp(r)=\arccos((a\pm w)/r)$. A point $z=re^{i\varphi}$ satisfies
-$\dist(z,\Gamma_N)\le w$ if and only if $\varphi-\theta_j\in\pm[d_-(r),d_+(r)]\pmod{2\pi}$ for some $j<N$.
+For $r\in I_\varepsilon$ let $d_\mp(r)=\arccos((a\pm w)/r)$. A point $z=re^{i\varphi}$ satisfies $\dist(z,\Gamma_N)\le w$ if and only if
+\[
+\varphi-\theta_j\in\pm[d_-(r),d_+(r)]\pmod{2\pi}\qquad\text{for some } j<N .
+\]
 \end{lemma}
 
 \begin{proof}
-Both $(a\pm w)/r$ lie in $(0,1)$: $a-w>0$ and $a+w<a+\varepsilon\le r$. So $0<d_-<d_+<\pi/2$.
-Let $\delta=\varphi-\theta_j\in(-\pi,\pi]$. The distance from $z$ to the line $\mathbf n_j\cdot y=a$ is $|r\cos\delta-a|$, which is
-at most $w$ iff $\cos\delta\in[(a-w)/r,(a+w)/r]$, i.e.\ iff $|\delta|\in[d_-,d_+]$ (this also excludes $|\delta|$ near $\pi$).
-For such $\delta$, the coordinate of $z$ along the chord direction is $r|\sin\delta|\le r\sin d_+=\sqrt{r^2-(a-w)^2}<Q$
+Both $(a\pm w)/r$ lie in $(0,1)$, since $a-w>0$ and $a+w<a+\varepsilon\le r$. So $0<d_-<d_+<\pi/2$.
+Let $\delta=\varphi-\theta_j\in(-\pi,\pi]$. The distance from $z$ to the line $\mathbf n_j\cdot y=a$ is $|r\cos\delta-a|$, and
+\begin{align*}
+|r\cos\delta-a|\le w
+&\iff \cos\delta\in\Bigl[\frac{a-w}{r},\frac{a+w}{r}\Bigr]\\
+&\iff |\delta|\in[d_-,d_+];
+\end{align*}
+in particular $|\delta|$ near $\pi$ is excluded.
+For such $\delta$, the coordinate of $z$ along the chord direction satisfies
+\[
+r|\sin\delta|\;\le\; r\sin d_+\;=\;\sqrt{r^2-(a-w)^2}\;<\;Q
+\]
 by \eqref{deph:N0}, while chord $j$ occupies the coordinates $[-Q,Q]$. So the foot of the perpendicular lies on the chord and
 $\dist(z,[p_j,p_{j+1}])=\dist(z,\text{line}_j)\le w$. For other $\delta$ the distance to the chord is at least the distance to the
 line, which exceeds $w$. Taking the minimum over $j<N$ gives the claim.
 \end{proof}
 
-Let $F_{N,s}$ be the indicator of the points of $\mathbb T$ at circular distance more than $s/N$ from every $\theta_j$, $j<N$; then
-$\int F_{N,s}\,d\varphi/2\pi=m_N(s)$, $F_{N,s}$ is nonincreasing in $s$, and $\hat F_{N,s}(0)=m_N(s)$. Write
-$\zeta(r,t)=\arccos((a+t)/r)$, so $d_\mp=\zeta(r,\pm w)$, and set
+Let $F_{N,s}$ be the indicator of the points of $\mathbb T$ at circular distance more than $s/N$ from every $\theta_j$, $j<N$. Then
+\begin{itemize}
+\item $\int F_{N,s}\,d\varphi/2\pi=m_N(s)$, equivalently $\hat F_{N,s}(0)=m_N(s)$;
+\item $F_{N,s}$ is nonincreasing in $s$.
+\end{itemize}
+Write
+\[
+\zeta(r,t)=\arccos\frac{a+t}{r},\qquad\text{so that}\qquad d_\mp=\zeta(r,\pm w),
+\]
+and set
 \[
 \bar d_N=\tfrac12(d_++d_-),\quad h_N=\tfrac12(d_+-d_-),\quad s_N=Nh_N,\quad \psi_N=2\bar d_N=\zeta(r,w)+\zeta(r,-w).
 \]
-Since $\varphi-\theta_j\in[d_-,d_+]$ means $|\varphi-\bar d_N-\theta_j|\le h_N$, and likewise for the negative branch,
-Lemma~\ref{lem:branches} says: $z$ is uncovered iff $F_{N,s_N(r)}(\varphi-\bar d_N)F_{N,s_N(r)}(\varphi+\bar d_N)=1$. Hence the
-uncovered angular fraction at radius $r\in I_\varepsilon$ is
+The condition $\varphi-\theta_j\in[d_-,d_+]$ means $|\varphi-\bar d_N-\theta_j|\le h_N$, and likewise for the negative branch.
+Lemma~\ref{lem:branches} therefore says that $z$ is uncovered iff
+\[
+F_{N,s_N(r)}(\varphi-\bar d_N)\,F_{N,s_N(r)}(\varphi+\bar d_N)=1 .
+\]
+Hence the uncovered angular fraction at radius $r\in I_\varepsilon$ is
 \begin{equation}\label{eq:autocorr}
 U_N(r)=\int_{\mathbb T}F_{N,s_N(r)}(\varphi-\bar d_N)\,F_{N,s_N(r)}(\varphi+\bar d_N)\,\frac{d\varphi}{2\pi}=\mathcal C_{N,s_N(r)}(\psi_N(r)),
 \end{equation}
-with $\mathcal C_{N,s}(t)=\int F_{N,s}(\varphi)F_{N,s}(\varphi+t)\,d\varphi/2\pi$ (substitute $\varphi\mapsto\varphi+\bar d_N$).
+where
+\[
+\mathcal C_{N,s}(t)=\int_{\mathbb T} F_{N,s}(\varphi)F_{N,s}(\varphi+t)\,\frac{d\varphi}{2\pi}
+\]
+is the autocorrelation (substitute $\varphi\mapsto\varphi+\bar d_N$ in \eqref{eq:autocorr}).
 
 \begin{lemma}\label{deph:reg}
-There are constants $\Omega_\varepsilon,c_\varepsilon$ (depending on $a,\varepsilon,c$) such that for all $N\ge N_0$ and $r\in I_\varepsilon$:
+There are constants $\Omega_\varepsilon,c_\varepsilon,c_\varepsilon'$ (depending on $a,\varepsilon,c$) such that for all $N\ge N_0$ and $r\in I_\varepsilon$:
 \begin{enumerate}
-\item $|s_N(r)-c/q(r)|\le c_\varepsilon/N$;
-\item $\psi_N'(r)=\sum_\pm\dfrac{a\pm w}{r\sqrt{r^2-(a\pm w)^2}}\ \ge a$ and $|\psi_N''(r)|\le 2\Omega_\varepsilon$;
-\item $\|\psi_N-\psi\|_{C^2(I_\varepsilon)}\le c_\varepsilon' /N^2$, where $\psi=2\arccos(a/r)$, $\psi'=2a/(rq)$.
+\item
+\[
+|s_N(r)-c/q(r)|\le\frac{c_\varepsilon}{N};
+\]
+\item
+\[
+\psi_N'(r)=\sum_\pm\frac{a\pm w}{r\sqrt{r^2-(a\pm w)^2}}\ \ge a
+\qquad\text{and}\qquad
+|\psi_N''(r)|\le 2\Omega_\varepsilon ;
+\]
+\item with $\psi=2\arccos(a/r)$, so that $\psi'=2a/(rq)$,
+\[
+\|\psi_N-\psi\|_{C^2(I_\varepsilon)}\le \frac{c_\varepsilon'}{N^2}.
+\]
 \end{enumerate}
 \end{lemma}
 
 \begin{proof}
-On $K=I_\varepsilon\times[-\tau_\varepsilon,\tau_\varepsilon]$ the argument $(a+t)/r$ lies in $[a/2,(a+\varepsilon/2)/(a+\varepsilon)]\subset(0,1)$, where $\arccos$
-is real analytic. So $\zeta$ is real analytic near the compact set $K$, and every partial derivative of $\zeta$ is bounded on $K$;
-let $\Omega_\varepsilon$ bound $|\partial_r^2\zeta|$, $|\partial_t^2\zeta|$, $|\partial_r^j\partial_t^2\zeta|$ ($j\le2$) on $K$. Explicitly,
-$\partial_t\zeta=-(r^2-(a+t)^2)^{-1/2}$ and $\partial_r\zeta=(a+t)\,[r\sqrt{r^2-(a+t)^2}]^{-1}$.
+Put $K=I_\varepsilon\times[-\tau_\varepsilon,\tau_\varepsilon]$. On $K$ the argument of the arccosine satisfies
+\[
+\frac{a+t}{r}\in\Bigl[\frac a2,\ \frac{a+\varepsilon/2}{a+\varepsilon}\Bigr]\subset(0,1),
+\]
+where $\arccos$ is real analytic. So $\zeta$ is real analytic near the compact set $K$, and every partial derivative of $\zeta$ is bounded on $K$.
+Let $\Omega_\varepsilon$ be a common bound on $K$ for
+\[
+|\partial_r^2\zeta|,\qquad |\partial_t^2\zeta|,\qquad |\partial_r^j\partial_t^2\zeta|\quad(j\le2).
+\]
+Explicitly,
+\begin{equation}\label{deph:partials}
+\partial_t\zeta=-\frac{1}{\sqrt{r^2-(a+t)^2}},\qquad
+\partial_r\zeta=\frac{a+t}{r\sqrt{r^2-(a+t)^2}} .
+\end{equation}
 
-(1) $s_N=\frac{N}{2}\bigl(\zeta(r,-w)-\zeta(r,w)\bigr)=\frac c{2w}\int_{-w}^{w}(-\partial_t\zeta)(r,t)\,dt$ is the mean of $-\partial_t\zeta$ over $[-w,w]$,
-and $-\partial_t\zeta(r,0)=1/q(r)$. Since $|\partial_t\zeta(r,t)-\partial_t\zeta(r,0)|\le \Omega_\varepsilon|t|$, we get $|s_N-c/q|\le c\Omega_\varepsilon w=c^2\Omega_\varepsilon/N$.
+(1) By definition of $s_N$ and \eqref{deph:partials},
+\[
+s_N=\frac{N}{2}\bigl(\zeta(r,-w)-\zeta(r,w)\bigr)=\frac c{2w}\int_{-w}^{w}(-\partial_t\zeta)(r,t)\,dt ,
+\]
+so $s_N/c$ is the mean of $-\partial_t\zeta$ over $[-w,w]$, and $-\partial_t\zeta(r,0)=1/q(r)$. Since $|\partial_t\zeta(r,t)-\partial_t\zeta(r,0)|\le \Omega_\varepsilon|t|$,
+\[
+|s_N-c/q|\;\le\; c\,\Omega_\varepsilon w\;=\;\frac{c^2\Omega_\varepsilon}{N}.
+\]
 
-(2) The formula is $\partial_r\zeta(r,w)+\partial_r\zeta(r,-w)$. Each term is at least $(a\pm w)/r^2\ge a/2$, because $\sqrt{r^2-(a\pm w)^2}\le r\le1$ and
-$a\pm w\ge a/2$. The bound on $\psi_N''$ is $|\partial_r^2\zeta|\le \Omega_\varepsilon$ twice.
+(2) By \eqref{deph:partials}, $\psi_N'=\partial_r\zeta(r,w)+\partial_r\zeta(r,-w)$ is the displayed sum. Each term is at least $(a\pm w)/r^2\ge a/2$, because $\sqrt{r^2-(a\pm w)^2}\le r\le1$ and
+$a\pm w\ge a/2$. The bound on $\psi_N''$ is $|\partial_r^2\zeta|\le \Omega_\varepsilon$ applied twice.
 
-(3) $\psi_N-\psi=\zeta(r,w)+\zeta(r,-w)-2\zeta(r,0)=w^2\int_0^1(1-u)\bigl[\partial_t^2\zeta(r,uw)+\partial_t^2\zeta(r,-uw)\bigr]du$; differentiating
-in $r$ up to twice under the integral gives the bound $2\Omega_\varepsilon w^2$.
+(3) By Taylor's formula in $t$,
+\[
+\psi_N-\psi=\zeta(r,w)+\zeta(r,-w)-2\zeta(r,0)=w^2\int_0^1(1-u)\bigl[\partial_t^2\zeta(r,uw)+\partial_t^2\zeta(r,-uw)\bigr]du .
+\]
+Differentiating in $r$ up to twice under the integral gives the bound $2\Omega_\varepsilon w^2$.
 \end{proof}
 
 Only (1) and (2) are used below; (3) records the limiting lag $\psi=2\arccos(a/r)$.
 
 \section{Proof of Theorem~\ref{thm:A}}\label{sec:proofA}
 
-Write $\widetilde V_N=a^2+2\int_a^1r\,m_N(c/q(r))^2dr=a^2+2\int_0^Qq\,m_N(c/q)^2dq$ (substituting $q\,dq=r\,dr$).
-Since $|\{z:|z|\in dr\}|=2\pi r\,dr$, $V_N=2\int_0^1rU_N(r)\,dr$ with $U_N(r)$ the uncovered fraction of the circle of radius $r$.
-Fix $\varepsilon$, $N\ge N_0$.
+Substituting $q\,dq=r\,dr$, the comparison function of Theorem~\ref{thm:A} is
+\begin{equation}\label{deph:eq:Vtilde}
+\widetilde V_N=a^2+2\int_a^1r\,m_N(c/q(r))^2\,dr=a^2+2\int_0^Qq\,m_N(c/q)^2\,dq .
+\end{equation}
+Since $|\{z:|z|\in dr\}|=2\pi r\,dr$, the vacancy itself is
+\[
+V_N=2\int_0^1 r\,U_N(r)\,dr ,
+\]
+with $U_N(r)$ the uncovered fraction of the circle of radius $r$.
+Fix $\varepsilon$ and $N\ge N_0$.
 
 \emph{Idea of the proof.} By Lemma~\ref{lem:branches} the uncovered fraction at radius $r$ is the autocorrelation $\mathcal C_{N,s}(\psi)$ of the circle vacancy indicator at lag $\psi_N(r)$. Its zero Fourier mode is $m_N(s)^2$. The nonzero modes die for two independent reasons: each coefficient $\hat F_{N,s}(k)$ tends to $0$ because the orbit is almost invariant under an irrational rotation (Step 1), and the lag moves with $r$ at speed bounded below, so oscillatory integrals gain a factor $1/|k|$ (Step 2). Steps 3 and 4 unfreeze $s$ and assemble the limits.
 
-\emph{Step 0: layers.} Write $a^2=\int_0^a2r\,dr$, so $\widetilde V_N=\int_0^a2r\,dr+\int_a^12r\,m_N^2\,dr$, and compare piece by piece
-using $0\le U_N,m_N\le1$.
+\emph{Step 0: layers.} Write $a^2=\int_0^a2r\,dr$, so that
+\[
+\widetilde V_N=\int_0^a2r\,dr+\int_a^12r\,m_N^2\,dr ,
+\]
+and compare with $V_N$ piece by piece, using $0\le U_N,m_N\le1$.
 \begin{itemize}
-\item $r<a-w$: every line has distance $\ge a-r>w$ from $z$, so $U_N=1$; both sides contribute $(a-w)^2$. Difference $0$.
-\item $r\in[a-w,a]$: $V_N$ contributes $\in[0,a^2-(a-w)^2]$, and $\widetilde V_N$ contributes exactly $a^2-(a-w)^2\le2aw\le2w$. Difference $\le2w$.
-\item $r\in[a,a+\varepsilon]$: both contributions lie in $[0,(a+\varepsilon)^2-a^2]$, and $(a+\varepsilon)^2-a^2=\varepsilon(2a+\varepsilon)\le2\varepsilon$. Difference $\le2\varepsilon$.
-\item $r\in[1-\varepsilon,1]$: both lie in $[0,1-(1-\varepsilon)^2]\subset[0,2\varepsilon]$. Difference $\le2\varepsilon$.
+\item $r<a-w$: every line has distance $\ge a-r>w$ from $z$, so $U_N=1$. Both sides contribute $(a-w)^2$; the difference is $0$.
+\item $r\in[a-w,a]$: the contribution of $V_N$ lies in $[0,a^2-(a-w)^2]$, and that of $\widetilde V_N$ is exactly $a^2-(a-w)^2$. The difference is at most $a^2-(a-w)^2\le2w$.
+\item $r\in[a,a+\varepsilon]$: both contributions lie in $[0,(a+\varepsilon)^2-a^2]$, and $(a+\varepsilon)^2-a^2\le2\varepsilon$. The difference is at most $2\varepsilon$.
+\item $r\in[1-\varepsilon,1]$: both contributions lie in $[0,2\varepsilon]$. The difference is at most $2\varepsilon$.
 \end{itemize}
 Therefore, with $w<\varepsilon/2$ (so that the total is also $\le6\varepsilon+2w$),
 \begin{equation}\label{deph:layers}
@@ -103,59 +177,88 @@ Therefore, with $w<\varepsilon/2$ (so that the total is also $\le6\varepsilon+2w
 \mathcal E_N=\int_{I_\varepsilon}2r\bigl[\mathcal C_{N,s_N(r)}(\psi_N(r))-m_N(c/q(r))^2\bigr]dr .
 \end{equation}
 
-\emph{Step 1: low modes.} Rotation by $2\alpha$ maps $\{\theta_0,\dots,\theta_{N-1}\}$ to $\{\theta_1,\dots,\theta_N\}$, so
-$F_{N,s}(\cdot-2\alpha)$ and $F_{N,s}$ differ only on the two closed arcs of half-length $s/N$ about $\theta_0$ and $\theta_N$ (overlaps
-with other arcs only shrink the difference):
-$\|F_{N,s}(\cdot-2\alpha)-F_{N,s}\|_{L^1(d\varphi/2\pi)}\le2s/(\pi N)$. Taking Fourier coefficients,
+\emph{Step 1: low modes.} Rotation by $2\alpha$ maps $\{\theta_0,\dots,\theta_{N-1}\}$ to $\{\theta_1,\dots,\theta_N\}$. Hence
+$F_{N,s}(\cdot-2\alpha)$ and $F_{N,s}$ differ only on the two closed arcs of half-length $s/N$ about $\theta_0$ and $\theta_N$; overlaps
+with other arcs only shrink the difference. Thus
+\begin{equation}\label{deph:eq:shift}
+\|F_{N,s}(\cdot-2\alpha)-F_{N,s}\|_{L^1(d\varphi/2\pi)}\le\frac{2s}{\pi N}.
+\end{equation}
+Taking Fourier coefficients in \eqref{deph:eq:shift},
 \[
 |e^{-2ik\alpha}-1|\,|\hat F_{N,s}(k)|\le\frac{2s}{\pi N}\qquad(k\in\mathbb Z).
 \]
 Since $\beta=\alpha/\pi\notin\mathbb Q$, $e^{-2ik\alpha}=e^{-2\pi ik\beta}\ne1$ for $k\ne0$. Hence for every fixed $s\ge0$ and $k\ne0$,
 $\hat F_{N,s}(k)\to0$ as $N\to\infty$. This is the only use of irrationality.
 
-\emph{Step 2: high modes, frozen $s$.} $F_{N,s}$ is real with $F_{N,s}^2=F_{N,s}$, so Parseval gives $\sum_k|\hat F_{N,s}(k)|^2=m_N(s)\le1$ and
-$\mathcal C_{N,s}(t)=\sum_k|\hat F_{N,s}(k)|^2e^{ikt}$, absolutely and uniformly convergent; the $k=0$ term is $m_N(s)^2$.
+\emph{Step 2: high modes, frozen $s$.} The function $F_{N,s}$ is real with $F_{N,s}^2=F_{N,s}$, so Parseval gives
+\begin{align}
+\sum_k|\hat F_{N,s}(k)|^2&=m_N(s)\le1, \label{deph:eq:parseval}\\
+\mathcal C_{N,s}(t)&=\sum_k|\hat F_{N,s}(k)|^2e^{ikt}, \label{deph:eq:fourierC}
+\end{align}
+the series in \eqref{deph:eq:fourierC} being absolutely and uniformly convergent; its $k=0$ term is $m_N(s)^2$.
 Let $J=[r_1,r_2]\subset I_\varepsilon$ and $k\ne0$. By Lemma~\ref{deph:reg}(2), $\psi_N'\ge a>0$, so integrating by parts,
 \[
-\int_J2r\,e^{ik\psi_N}dr=\Bigl[\frac{2r\,e^{ik\psi_N}}{ik\,\psi_N'}\Bigr]_{r_1}^{r_2}-\frac1{ik}\int_J\Bigl(\frac{2r}{\psi_N'}\Bigr)'e^{ik\psi_N}dr,
+\int_J2r\,e^{ik\psi_N}dr=\Bigl[\frac{2r\,e^{ik\psi_N}}{ik\,\psi_N'}\Bigr]_{r_1}^{r_2}-\frac1{ik}\int_J\Bigl(\frac{2r}{\psi_N'}\Bigr)'e^{ik\psi_N}dr .
 \]
-and $|2r/\psi_N'|\le2/a$, $|(2r/\psi_N')'|=\bigl|2/\psi_N'-2r\psi_N''/\psi_N'^2\bigr|\le2/a+4\Omega_\varepsilon/a^2$. Since $|J|\le1$,
+By Lemma~\ref{deph:reg}(2) again,
+\begin{align*}
+\Bigl|\frac{2r}{\psi_N'}\Bigr|&\le\frac2a,\\
+\Bigl|\Bigl(\frac{2r}{\psi_N'}\Bigr)'\Bigr|&=\Bigl|\frac2{\psi_N'}-\frac{2r\,\psi_N''}{\psi_N'^2}\Bigr|\le\frac2a+\frac{4\Omega_\varepsilon}{a^2}.
+\end{align*}
+Since $|J|\le1$,
 \begin{equation}\label{deph:ibp}
 \Bigl|\int_J2r\,e^{ik\psi_N(r)}dr\Bigr|\le\frac{\mathcal B_\varepsilon}{|k|},\qquad \mathcal B_\varepsilon=\frac6a+\frac{4\Omega_\varepsilon}{a^2},
 \end{equation}
-uniformly in $N\ge N_0$, $J\subset I_\varepsilon$, $k\ne0$. Interchanging sum and integral, for every $s\ge0$ and $K\ge1$,
+uniformly in $N\ge N_0$, $J\subset I_\varepsilon$, $k\ne0$. Interchanging sum and integral in \eqref{deph:eq:fourierC}, for every $s\ge0$ and $K\ge1$,
 \begin{multline}\label{deph:frozen}
 \Bigl|\int_J2r\bigl[\mathcal C_{N,s}(\psi_N(r))-m_N(s)^2\bigr]dr\Bigr|\le\sum_{0<|k|\le K}|\hat F_{N,s}(k)|^2+\mathcal B_\varepsilon\sum_{|k|>K}\frac{|\hat F_{N,s}(k)|^2}{|k|}\\
 \le\sum_{0<|k|\le K}|\hat F_{N,s}(k)|^2+\frac{\mathcal B_\varepsilon}K,
 \end{multline}
-using $\int_J2r\,dr\le1$ for the low-frequency part. By Step 1 the finite sum tends to $0$ as $N\to\infty$ with $K,s$ fixed.
+using $\int_J2r\,dr\le1$ for the low-frequency part and \eqref{deph:eq:parseval} for the high-frequency part. By Step 1 the finite sum tends to $0$ as $N\to\infty$ with $K,s$ fixed.
 
 \emph{Step 3: unfreezing.} For $0\le s<t$ the sets $\{F_{N,s}=1\}$ and $\{F_{N,t}=1\}$ differ by at most $2N$ arcs of length $(t-s)/N$, so
-$\|F_{N,s}-F_{N,t}\|_{L^1(d\varphi/2\pi)}\le(t-s)/\pi$. With $0\le F\le1$ this gives, uniformly in $N$ and in the lag,
+\begin{equation}\label{deph:eq:lip}
+\|F_{N,s}-F_{N,t}\|_{L^1(d\varphi/2\pi)}\le\frac{t-s}{\pi}.
+\end{equation}
+With $0\le F\le1$ this gives, uniformly in $N$ and in the lag,
 \[
 |\mathcal C_{N,s}(\cdot)-\mathcal C_{N,t}(\cdot)|\le\frac{2|s-t|}\pi,\qquad |m_N(s)^2-m_N(t)^2|\le\frac{2|s-t|}\pi .
 \]
-Fix $\eta>0$. As $r\mapsto c/q(r)$ is continuous on $I_\varepsilon$, choose a partition $I_\varepsilon=J_1\cup\dots\cup J_L$ into
-intervals (with disjoint interiors) such that $c/q$ oscillates by less than $\eta$ on each $J_i$, and a value $s_i=c/q(r_i)$ with $r_i\in J_i$.
-By Lemma~\ref{deph:reg}(1), $\sup_{I_\varepsilon}|s_N-c/q|<\eta$ for $N\ge N_1(\eta,\varepsilon)$. Then for $r\in J_i$, $|s_N(r)-s_i|<2\eta$ and $|c/q(r)-s_i|<\eta$, so
+Fix $\eta>0$. As $r\mapsto c/q(r)$ is continuous on $I_\varepsilon$, we may choose a partition into intervals with disjoint interiors,
+\[
+I_\varepsilon=J_1\cup\dots\cup J_L ,
+\]
+such that $c/q$ oscillates by less than $\eta$ on each $J_i$; pick $r_i\in J_i$ and put $s_i=c/q(r_i)$.
+By Lemma~\ref{deph:reg}(1) there is $N_1=N_1(\eta,\varepsilon)$ such that
+\[
+\sup_{I_\varepsilon}|s_N-c/q|<\eta\qquad\text{for }N\ge N_1 .
+\]
+Then for $r\in J_i$ we have $|s_N(r)-s_i|<2\eta$ and $|c/q(r)-s_i|<\eta$, so
 \[
 \bigl|\mathcal C_{N,s_N(r)}(\psi_N)-m_N(c/q)^2-\bigl[\mathcal C_{N,s_i}(\psi_N)-m_N(s_i)^2\bigr]\bigr|\le\frac{4\eta}\pi+\frac{2\eta}\pi=\frac{6\eta}\pi .
 \]
-Integrating against $2r\,dr$ over $I_\varepsilon$ (total mass $\le1$) and applying \eqref{deph:frozen} on each $J_i$ with $s=s_i$:
-\[
+Integrating against $2r\,dr$ over $I_\varepsilon$ (total mass $\le1$) and applying \eqref{deph:frozen} on each $J_i$ with $s=s_i$,
+\begin{equation}\label{deph:eq:EN}
 |\mathcal E_N|\le\frac{6\eta}\pi+\sum_{i=1}^L\Bigl[\sum_{0<|k|\le K}|\hat F_{N,s_i}(k)|^2+\frac{\mathcal B_\varepsilon}K\Bigr]
 \qquad(N\ge\max(N_0,N_1)).
-\]
+\end{equation}
 
-\emph{Step 4: limits.} In the last display $\varepsilon,\eta$ (hence $L$ and the $s_i$) and $K$ are fixed; $L$ is finite, and
-the finite sum of Fourier coefficients tends to $0$ as $N\to\infty$ by Step 1. Thus
-$\limsup_N|\mathcal E_N|\le6\eta/\pi+L\mathcal B_\varepsilon/K$ for every $K$. Letting $K\to\infty$ and then $\eta\to0$
-(note $L$ depends on $\eta$ but not on $K$) gives $\mathcal E_N\to0$. By \eqref{deph:layers}, and $w=c/N\to0$,
-$\limsup_N|V_N-\widetilde V_N|\le4\varepsilon$ for each $\varepsilon\in(0,(1-a)/3)$, whence $V_N-\widetilde V_N\to0$.
-This is Theorem~\ref{thm:A}. \qed
+\emph{Step 4: limits.} In \eqref{deph:eq:EN} the parameters $\varepsilon,\eta$ (hence $L$ and the $s_i$) and $K$ are fixed; $L$ is finite, and
+the finite sum of Fourier coefficients tends to $0$ as $N\to\infty$ by Step 1. Thus, for every $K$,
+\[
+\limsup_{N\to\infty}|\mathcal E_N|\le\frac{6\eta}\pi+\frac{L\,\mathcal B_\varepsilon}K .
+\]
+Letting $K\to\infty$ and then $\eta\to0$ (note $L$ depends on $\eta$ but not on $K$) gives $\mathcal E_N\to0$. By \eqref{deph:layers} and $w=c/N\to0$,
+\[
+\limsup_{N\to\infty}|V_N-\widetilde V_N|\le4\varepsilon\qquad\text{for each }\varepsilon\in(0,(1-a)/3),
+\]
+whence $V_N-\widetilde V_N\to0$. This is Theorem~\ref{thm:A}. \qed
 
 \begin{remark}
-Order of limits: $\varepsilon$ fixed, then the partition ($\eta$, $L$, $s_i$), then the cutoff $K$; let $N\to\infty$, then
-$K\to\infty$, then $\eta\to0$, and finally $\varepsilon\to0$. No rate is obtained: the rate in Step~1 depends on how well $k\beta$ is
+Order of limits: $\varepsilon$ is fixed first, then the partition ($\eta$, $L$, $s_i$), then the cutoff $K$. The limits are taken in the order
+\[
+N\to\infty,\qquad K\to\infty,\qquad \eta\to0,\qquad \varepsilon\to0 .
+\]
+No rate is obtained: the rate in Step~1 depends on how well $k\beta$ is
 approximated by integers, which is why only the qualitative statement is made.
 \end{remark}

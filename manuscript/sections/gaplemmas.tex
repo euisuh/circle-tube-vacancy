@@ -10,186 +10,522 @@ $\{\theta_j\}_{j<N}$. The \emph{scaled half-gap law} is the probability measure 
 with atoms $N g_{N,j}/2$ and weights $1/N$ (atoms at equal gaps add).
 
 \begin{lemma}\label{gap:lem:mu}
-$\int\ell\,d\mu_N(\ell)=\pi$, and for all $s\ge0$
+For all $s\ge0$,
 \[
+\int\ell\,d\mu_N(\ell)=\pi
+\qquad\text{and}\qquad
 \pi\,m_N(s)=\int(\ell-s)_+\,d\mu_N(\ell).
 \]
 \end{lemma}
 \begin{proof}
-$\int\ell\,d\mu_N=\frac1N\sum_j\frac N2g_{N,j}=\pi$. By \eqref{eq:mN},
-$\pi m_N(s)=\frac12\sum_j(g_{N,j}-\tfrac{2s}N)_+=\frac1N\sum_j(\tfrac N2g_{N,j}-s)_+$.
+By the definition of $\mu_N$ and by \eqref{eq:mN},
+\begin{align*}
+\int\ell\,d\mu_N&=\frac1N\sum_j\frac N2g_{N,j}=\pi,\\
+\pi m_N(s)&=\frac12\sum_j\Bigl(g_{N,j}-\frac{2s}N\Bigr)_+
+=\frac1N\sum_j\Bigl(\frac N2g_{N,j}-s\Bigr)_+ .\qedhere
+\end{align*}
 \end{proof}
 
 \subsection{The three-distance theorem in the $N$-point convention}\label{gap:sec:three}
 
-Let $\beta\in(0,\tfrac12)$ be irrational, $\beta=[0;a_1,a_2,\dots]$. Put $q_{-1}=0$, $q_0=1$,
-$q_{k+1}=a_{k+1}q_k+q_{k-1}$, similarly $p_{-1}=1$, $p_0=0$, and $\delta_k=q_k\beta-p_k$,
-$\eta_k=|\delta_k|$ (so $\eta_{-1}=1$, $\eta_0=\beta$). We use the classical facts
+Let $\beta\in(0,\tfrac12)$ be irrational, with continued fraction $\beta=[0;a_1,a_2,\dots]$.
+The convergent denominators and numerators are defined by
+\[
+q_{-1}=0,\quad q_0=1,\quad q_{k+1}=a_{k+1}q_k+q_{k-1};\qquad
+p_{-1}=1,\quad p_0=0,\quad p_{k+1}=a_{k+1}p_k+p_{k-1}.
+\]
+The signed and absolute errors of the convergents are
+\[
+\delta_k=q_k\beta-p_k,\qquad \eta_k=|\delta_k|,
+\]
+so that $\eta_{-1}=1$ and $\eta_0=\beta$. We use the classical facts
 (Khinchin, \emph{Continued Fractions}, \S\S1--2):
-\begin{enumerate}
-\item[(F1)] $q_{k-1}p_k-q_kp_{k-1}=(-1)^{k-1}$; $\delta_k=(-1)^k\eta_k$; $\eta_{k+1}=\eta_{k-1}-a_{k+1}\eta_k>0$.
-\item[(F2)] $q_k\eta_{k-1}+q_{k-1}\eta_k=1$ for $k\ge0$. (Indeed
-$q_k\delta_{k-1}-q_{k-1}\delta_k=q_{k-1}p_k-q_kp_{k-1}=(-1)^{k-1}$, and
-$\delta_{k-1},\delta_k$ have opposite signs.)
-\end{enumerate}
-Since $a_1\ge2$ we have $q_{k-1}<q_k$ for $k\ge1$, and $\eta_k\le\eta_0<\tfrac12$ for $k\ge0$.
+\begin{align}
+q_{k-1}p_k-q_kp_{k-1}&=(-1)^{k-1},\label{gap:eq:det}\\
+\delta_k&=(-1)^k\eta_k,\label{gap:eq:sign}\\
+\eta_{k+1}&=\eta_{k-1}-a_{k+1}\eta_k>0,\label{gap:eq:rec}\\
+q_k\eta_{k-1}+q_{k-1}\eta_k&=1\qquad(k\ge0).\label{gap:eq:F2}
+\end{align}
+The last identity follows from the first two: by \eqref{gap:eq:det},
+\[
+q_k\delta_{k-1}-q_{k-1}\delta_k=q_{k-1}p_k-q_kp_{k-1}=(-1)^{k-1},
+\]
+and $\delta_{k-1}$, $\delta_k$ have opposite signs by \eqref{gap:eq:sign}.
+Since $a_1\ge2$,
+\[
+q_{k-1}<q_k\quad(k\ge1),\qquad \eta_k\le\eta_0<\tfrac12\quad(k\ge0).
+\]
 Convention: gaps are those of the $N$ points $\{j\beta\bmod1\}_{0\le j<N}$ on $\mathbb R/\mathbb Z$;
 the gaps of $\{\theta_j\}$ are $2\pi$ times these.
 
 \begin{theorem}[Three distances, $N$ points]\label{gap:thm:three}
 Let $N\ge2$. There is a unique triple $(k,r,t)$ with
+\begin{equation}\label{gap:eq:decomp}
+N=rq_k+q_{k-1}+t,\qquad k\ge0,\quad 1\le r\le a_{k+1},\quad 0\le t<q_k;
+\end{equation}
+namely, $k$ is the index with
 \[
-N=rq_k+q_{k-1}+t,\qquad k\ge0,\quad 1\le r\le a_{k+1},\quad 0\le t<q_k,
+q_k+q_{k-1}\le N<q_{k+1}+q_k,
 \]
-namely $k$ is the index with $q_k+q_{k-1}\le N<q_{k+1}+q_k$ and $(r,t)$ is the quotient and
-remainder of $N-q_{k-1}$ divided by $q_k$. The gaps of $\{j\beta\}_{j<N}$ are
+and $(r,t)$ is the quotient and remainder of $N-q_{k-1}$ divided by $q_k$.
+The gaps of $\{j\beta\}_{j<N}$ are
 \begin{align*}
 A&=\eta_k &&(N-q_k\text{ times}),\\
 B&=\eta_{k+1}+(a_{k+1}-r)\eta_k=\eta_{k-1}-r\eta_k &&(t\text{ times}),\\
-C&=A+B=\eta_{k-1}-(r-1)\eta_k &&(q_k-t\text{ times}).
+C&=A+B=\eta_{k-1}-(r-1)\eta_k &&(q_k-t\text{ times}),
 \end{align*}
-(For $t=0$ class $B$ is empty.) Moreover $(N-t)A+q_kB=1$.
+where for $t=0$ class $B$ is empty. Moreover
+\begin{equation}\label{gap:eq:AB}
+(N-t)A+q_kB=1.
+\end{equation}
 \end{theorem}
 
 \emph{Idea of the proof.} Steps 1 and 2 are the classical argument: the closest forward and backward returns $\mathrm d_\pm\le N-1$ determine all gaps, and these returns are $q_k$ and $\rho q_k+q_{k-1}$ for the right $\rho$. Step 3 matches the two descriptions and treats $t=0$ separately.
 
 \begin{proof}
-\emph{Preliminaries: uniqueness and counts.} The intervals $I_k=[q_k+q_{k-1},\,q_{k+1}+q_k)$, $k\ge0$, partition $[1,\infty)$
-($q_0+q_{-1}=1$ and the right end of $I_k$ is the left end of $I_{k+1}$). For $N\in I_k$,
-$N-q_{k-1}\in[q_k,(a_{k+1}+1)q_k)$, which gives $(r,t)$ uniquely.
-Counts are nonnegative and sum to $N$: $(N-q_k)+t+(q_k-t)=N$. The identity: with $N-t=rq_k+q_{k-1}$,
-$(N-t)\eta_k+q_k(\eta_{k-1}-r\eta_k)=q_{k-1}\eta_k+q_k\eta_{k-1}=1$ by (F2).
-The two forms of $B$ agree by (F1).
+\emph{Preliminaries: uniqueness and counts.} The intervals
+\[
+I_k=[\,q_k+q_{k-1},\,q_{k+1}+q_k),\qquad k\ge0,
+\]
+partition $[1,\infty)$, because $q_0+q_{-1}=1$ and the right end of $I_k$ is the left end of $I_{k+1}$.
+For $N\in I_k$,
+\[
+N-q_{k-1}\in[\,q_k,\,(a_{k+1}+1)q_k),
+\]
+which gives $(r,t)$ uniquely. The counts are nonnegative and sum to $N$, since
+\[
+(N-q_k)+t+(q_k-t)=N.
+\]
+For \eqref{gap:eq:AB}, write $N-t=rq_k+q_{k-1}$; then by \eqref{gap:eq:F2},
+\[
+(N-t)\eta_k+q_k(\eta_{k-1}-r\eta_k)=q_{k-1}\eta_k+q_k\eta_{k-1}=1.
+\]
+The two forms of $B$ agree by \eqref{gap:eq:rec}.
 
-\emph{Preliminaries: the case $k=0$.} Then $N=r\le a_1$, $t=0$, $q_0=1$. Since $(N-1)\beta<a_1\beta<1$, the points are
-$0<\beta<\dots<(N-1)\beta<1$, with gaps $\beta=\eta_0$ ($N-1$ times) and $1-(N-1)\beta=C$ (once).
+\emph{Preliminaries: the case $k=0$.} Then $N=r\le a_1$, $t=0$ and $q_0=1$. The points are ordered,
+\[
+(N-1)\beta<a_1\beta<1,\qquad\text{so}\qquad 0<\beta<\dots<(N-1)\beta<1,
+\]
+with gaps
+\begin{align*}
+\beta&=\eta_0 &&(N-1\text{ times}),\\
+1-(N-1)\beta&=C &&(\text{once}).
+\end{align*}
 
 \emph{Step 1: general structure.} Let $N\ge2$ and let $\mathrm d_+$ (resp.\ $\mathrm d_-$) be the $d\in[1,N-1]$ with
 $\{d\beta\}$ minimal (resp.\ maximal); these are unique since the $\{d\beta\}$ are distinct. Put
-$\Delta_+=\{\mathrm d_+\beta\}$, $\Delta_-=1-\{\mathrm d_-\beta\}$. Then:
+\[
+\Delta_+=\{\mathrm d_+\beta\},\qquad \Delta_-=1-\{\mathrm d_-\beta\}.
+\]
+Then:
 \begin{enumerate}
-\item[(a)] $\mathrm d_++\mathrm d_-\ge N$. Otherwise $d=\mathrm d_++\mathrm d_-\le N-1$ and $\{d\beta\}\equiv\Delta_+-\Delta_-\ne0$. If
-$\Delta_+>\Delta_-$ then $\{d\beta\}=\Delta_+-\Delta_-\in(0,\Delta_+)$; if $\Delta_+<\Delta_-$ then
-$\{d\beta\}=1-\Delta_-+\Delta_+>\{\mathrm d_-\beta\}$. Both contradict the choice of $\mathrm d_\pm$.
-\item[(b)] The gaps are $\Delta_+$ ($N-\mathrm d_+$ times), $\Delta_-$ ($N-\mathrm d_-$ times), $\Delta_++\Delta_-$
-($\mathrm d_++\mathrm d_--N$ times). To prove this, let $\operatorname{nxt}(j)$ be the successor of the point $j\beta$ ($0\le j<N$) in the
-counterclockwise order; its index is $j+d$ with $d\ne0$ minimizing the forward distance $\{d\beta\}$ over
+\item[(a)] $\mathrm d_++\mathrm d_-\ge N$. Otherwise
+\[
+d=\mathrm d_++\mathrm d_-\le N-1
+\qquad\text{and}\qquad
+\{d\beta\}\equiv\Delta_+-\Delta_-\ne0,
+\]
+so
+\[
+\{d\beta\}=
+\begin{cases}
+\Delta_+-\Delta_-\in(0,\Delta_+) & \text{if }\Delta_+>\Delta_-,\\
+1-\Delta_-+\Delta_+>\{\mathrm d_-\beta\} & \text{if }\Delta_+<\Delta_-.
+\end{cases}
+\]
+Both contradict the choice of $\mathrm d_\pm$.
+\item[(b)] The gaps are
+\begin{align*}
+&\Delta_+ &&(N-\mathrm d_+\text{ times}),\\
+&\Delta_- &&(N-\mathrm d_-\text{ times}),\\
+&\Delta_++\Delta_- &&(\mathrm d_++\mathrm d_--N\text{ times}).
+\end{align*}
+To prove this, let $\operatorname{nxt}(j)$ be the successor of the point $j\beta$ ($0\le j<N$) in the
+counterclockwise order; its index is $j+d$, where $d\ne0$ minimizes the forward distance $\{d\beta\}$ over
 $-j\le d\le N-1-j$. Positive $d$ give $\{d\beta\}\ge\Delta_+$; negative $d=-e$ give
-$\{-e\beta\}=1-\{e\beta\}\ge\Delta_-$.
+\[
+\{-e\beta\}=1-\{e\beta\}\ge\Delta_-.
+\]
+We determine $\operatorname{nxt}(j)$ on three ranges of $j$.
  \begin{itemize}
- \item $j<N-\mathrm d_+$: $\operatorname{nxt}(j)=j+\mathrm d_+$, gap $\Delta_+$. Positive $d$ are fine. Negative $d=-e$, $e\le j$:
- if $1-\{e\beta\}<\Delta_+$, then $e+\mathrm d_+\le N-1$ and $\{(e+\mathrm d_+)\beta\}=\{e\beta\}+\Delta_+-1\in(0,\Delta_+)$, a contradiction.
- \item $j\ge \mathrm d_-$ (then $j\ge N-\mathrm d_+$ by (a), so the cases are disjoint): $\operatorname{nxt}(j)=j-\mathrm d_-$, gap $\Delta_-$.
- Negative $d$ are fine. Positive $d\le N-1-j\le N-1-\mathrm d_-$: if $\{d\beta\}<\Delta_-$, then $d+\mathrm d_-\le N-1$ and
- $\{(d+\mathrm d_-)\beta\}=\{d\beta\}+1-\Delta_-\in(\{\mathrm d_-\beta\},1)$, a contradiction.
- \item $N-\mathrm d_+\le j<\mathrm d_-$: $\operatorname{nxt}(j)=j+\mathrm d_+-\mathrm d_-$, gap $\Delta_++\Delta_-$. The index lies in $[0,N-1]$:
- it is $\ge N-\mathrm d_-\ge1$ and $<\mathrm d_+\le N-1$. Positive available $d\le \mathrm d_+-1$: if $\Delta_+<\{d\beta\}<\Delta_++\Delta_-$
- then $e=\mathrm d_+-d\in[1,\mathrm d_+-1]$ has $\{e\beta\}=1-(\{d\beta\}-\Delta_+)>1-\Delta_-$, a contradiction.
- Negative $d=-e$, $e\le j<\mathrm d_-$: if $\Delta_-<1-\{e\beta\}<\Delta_++\Delta_-$, then $d=\mathrm d_--e\in[1,\mathrm d_--1]$ has
- $\{d\beta\}=1-\Delta_--\{e\beta\}\in(0,\Delta_+)$, a contradiction.
- Finally the candidate itself: $(\mathrm d_+-\mathrm d_-)\beta\equiv\Delta_++\Delta_-\pmod1$ and this is $<1$ (if $\ge1$, the same
- argument with $d=\mathrm d_+-\mathrm d_-$ or $e=\mathrm d_--\mathrm d_+$ in $[1,N-1]$ contradicts minimality or maximality; equality
- would give $(\mathrm d_+-\mathrm d_-)\beta\in\mathbb Z$, so $\mathrm d_+=\mathrm d_-$ and $\Delta_++\Delta_-=1$, which forces $N=2$, where the third case is empty).
+ \item \emph{Range $j<N-\mathrm d_+$.} Here $\operatorname{nxt}(j)=j+\mathrm d_+$, with gap $\Delta_+$.
+ Positive $d$ are fine. For negative $d=-e$ with $e\le j$, suppose $1-\{e\beta\}<\Delta_+$.
+ Since $e\le j<N-\mathrm d_+$,
+ \[
+ e+\mathrm d_+\le N-1
+ \qquad\text{and}\qquad
+ \{(e+\mathrm d_+)\beta\}=\{e\beta\}+\Delta_+-1\in(0,\Delta_+),
+ \]
+ which contradicts the choice of $\mathrm d_+$.
+ \item \emph{Range $j\ge\mathrm d_-$.} By (a), $j\ge N-\mathrm d_+$, so this range is disjoint from the previous one.
+ Here $\operatorname{nxt}(j)=j-\mathrm d_-$, with gap $\Delta_-$. Negative $d$ are fine.
+ For positive $d$, suppose $\{d\beta\}<\Delta_-$. Since $d\le N-1-j$ and $j\ge\mathrm d_-$,
+ \[
+ d+\mathrm d_-\le N-1
+ \qquad\text{and}\qquad
+ \{(d+\mathrm d_-)\beta\}=\{d\beta\}+1-\Delta_-\in(\{\mathrm d_-\beta\},1),
+ \]
+ which contradicts the choice of $\mathrm d_-$.
+ \item \emph{Range $N-\mathrm d_+\le j<\mathrm d_-$.} Here $\operatorname{nxt}(j)=j+\mathrm d_+-\mathrm d_-$, with gap $\Delta_++\Delta_-$.
+ The index lies in $[0,N-1]$, because
+ \[
+ j+\mathrm d_+-\mathrm d_-\ge N-\mathrm d_-\ge1
+ \qquad\text{and}\qquad
+ j+\mathrm d_+-\mathrm d_-<\mathrm d_+\le N-1.
+ \]
+ Positive available $d$ satisfy $d\le\mathrm d_+-1$. For such $d$, suppose $\Delta_+<\{d\beta\}<\Delta_++\Delta_-$.
+ Then $e=\mathrm d_+-d\in[1,\mathrm d_+-1]$ and
+ \[
+ \{e\beta\}=1-(\{d\beta\}-\Delta_+)>1-\Delta_-,
+ \]
+ which contradicts the choice of $\mathrm d_-$.
+ For negative $d=-e$ with $e\le j<\mathrm d_-$, suppose $\Delta_-<1-\{e\beta\}<\Delta_++\Delta_-$.
+ Then $d'=\mathrm d_--e\in[1,\mathrm d_--1]$ and
+ \[
+ \{d'\beta\}=1-\Delta_--\{e\beta\}\in(0,\Delta_+),
+ \]
+ which contradicts the choice of $\mathrm d_+$.
+
+ Finally, the candidate index itself has forward distance $\Delta_++\Delta_-$: indeed
+ \[
+ (\mathrm d_+-\mathrm d_-)\beta\equiv\Delta_++\Delta_-\pmod1,
+ \]
+ and $\Delta_++\Delta_-<1$. For the latter, if $\Delta_++\Delta_-\ge1$, the same argument with $d=\mathrm d_+-\mathrm d_-$ or $e=\mathrm d_--\mathrm d_+$ in $[1,N-1]$ contradicts minimality or maximality; equality would give $(\mathrm d_+-\mathrm d_-)\beta\in\mathbb Z$, hence $\mathrm d_+=\mathrm d_-$ and $\Delta_++\Delta_-=1$, which forces $N=2$, where the third range is empty.
  \end{itemize}
 Distinct points give strict inequalities, so these are the successors. The three ranges of $j$ have sizes
-$N-\mathrm d_+$, $N-\mathrm d_-$, $\mathrm d_++\mathrm d_--N$.
+$N-\mathrm d_+$, $N-\mathrm d_-$ and $\mathrm d_++\mathrm d_--N$, which gives the multiplicities.
 \end{enumerate}
 
-\emph{Step 2: identifying $\mathrm d_\pm$.} Let $k\ge1$, $0\le\rho\le a_{k+1}$, $\mathrm d_\rho=\rho q_k+q_{k-1}\ge1$ and
-$\nu=\eta_{k-1}-\rho\eta_k>0$ (by (F1), $\nu\ge\eta_{k+1}$). Let $\sigma=(-1)^k$. Then
-$q_k\beta\equiv\sigma\eta_k$ and $\mathrm d_\rho\beta\equiv-\sigma \nu\pmod 1$, and $q_k\nu+\mathrm d_\rho\eta_k=1$ by (F2).
-\emph{Claim:} if $N\le \mathrm d_\rho+q_k$ there is no $d\in[1,N-1]$ and $p\in\mathbb Z$ with
-$e=\sigma(d\beta-p)\in(-\nu,\eta_k)\setminus\{0\}$.
-The vectors $b_1=(q_k,\sigma\eta_k)$, $b_2=(\mathrm d_\rho,-\sigma \nu)$ have determinant $-\sigma$ and span
-$\mathcal L=\{(d,d\beta-p)\}$ (unimodularity from (F1): $(\mathrm d_\rho,\cdot)=\rho(q_k,\cdot)+(q_{k-1},\cdot)$). Write
-$(d,d\beta-p)=mb_1+nb_2$, $m,n\in\mathbb Z$. Cramer's rule gives $m=d\nu+\mathrm d_\rho e$, $n=\eta_kd-q_ke$ with $e=\sigma(d\beta-p)$.
-If $e\in(0,\eta_k)$ then $m\ge1$, and $d=mq_k+n\mathrm d_\rho\le N-1<q_k+\mathrm d_\rho$ forces $n\le0$, so $e=\sigma(\cdot)$ equals
-$m\eta_k-n\nu\ge\eta_k$: contradiction. If $e\in(-\nu,0)$ then $n\ge1$, forcing $m\le0$ and $e=m\eta_k-n\nu\le-\nu$: contradiction.
-Consequently, for $d\in[1,N-1]$, $\{d\beta\}\notin(0,\eta_k)$ and $\notin(1-\nu,1)$ if $\sigma=1$ (and $\{d\beta\}\notin(0,\nu)$,
-$\notin(1-\eta_k,1)$ if $\sigma=-1$). If also $q_k\le N-1$ and $\mathrm d_\rho\le N-1$, the values attained there are
-extremal: $\{\{q_k\beta\},\{\mathrm d_\rho\beta\}\}=\{\eta_k,1-\nu\}$ ($\sigma=1$) or $\{1-\eta_k,\nu\}$ ($\sigma=-1$). Hence $\{\mathrm d_+,\mathrm d_-\}=\{q_k,\mathrm d_\rho\}$,
-$\{\Delta_+,\Delta_-\}=\{\eta_k,\nu\}$, and by Step 1(b) the gaps are $\eta_k$ ($N-q_k$ times), $\nu$ ($N-\mathrm d_\rho$ times), $\eta_k+\nu$
-($q_k+\mathrm d_\rho-N$ times).
+\emph{Step 2: identifying $\mathrm d_\pm$.} Let $k\ge1$ and $0\le\rho\le a_{k+1}$, and put
+\[
+\mathrm d_\rho=\rho q_k+q_{k-1}\ge1,\qquad
+\nu=\eta_{k-1}-\rho\eta_k>0,\qquad
+\sigma=(-1)^k;
+\]
+by \eqref{gap:eq:rec}, $\nu\ge\eta_{k+1}$. Then
+\begin{equation}\label{gap:eq:step2}
+q_k\beta\equiv\sigma\eta_k,\qquad \mathrm d_\rho\beta\equiv-\sigma\nu\pmod1,\qquad
+q_k\nu+\mathrm d_\rho\eta_k=1,
+\end{equation}
+the last by \eqref{gap:eq:F2}.
 
-\emph{Step 3: apply with $k\ge1$.} If $t\ge1$ take $\rho=r$: $\mathrm d_r=N-t\le N-1$, $N-\mathrm d_r=t$, $q_k\le N-1$ (as $N\ge q_k+q_{k-1}+1$),
-$N=\mathrm d_r+t\le \mathrm d_r+q_k$; $\nu=B$, and the counts are $N-q_k,\ t,\ q_k-t$ for $A,B,C$. If $t=0$ take $\rho=r-1$:
-$\mathrm d_\rho=N-q_k\ge q_{k-1}\ge1$, $N=\mathrm d_\rho+q_k$, $q_k\le N-1$, $\nu=\eta_{k-1}-(r-1)\eta_k=C$; the counts are $N-q_k$ for $A$,
-$q_k$ for $C$, and $0$ for $C+A$. This is the claim with $t=0$.
+\emph{Claim.} If $N\le\mathrm d_\rho+q_k$, there are no $d\in[1,N-1]$ and $p\in\mathbb Z$ with
+\[
+e=\sigma(d\beta-p)\in(-\nu,\eta_k)\setminus\{0\}.
+\]
+To see this, consider the vectors
+\[
+b_1=(q_k,\sigma\eta_k),\qquad b_2=(\mathrm d_\rho,-\sigma\nu).
+\]
+They have determinant $-\sigma$ and span the lattice $\mathcal L=\{(d,d\beta-p):d,p\in\mathbb Z\}$;
+unimodularity follows from \eqref{gap:eq:det}, since $(\mathrm d_\rho,\cdot)=\rho(q_k,\cdot)+(q_{k-1},\cdot)$.
+Write $(d,d\beta-p)=mb_1+nb_2$ with $m,n\in\mathbb Z$. Cramer's rule gives
+\[
+m=d\nu+\mathrm d_\rho e,\qquad n=\eta_kd-q_ke,\qquad e=\sigma(d\beta-p).
+\]
+Suppose first $e\in(0,\eta_k)$. Then $m\ge1$, and
+\[
+d=mq_k+n\mathrm d_\rho\le N-1<q_k+\mathrm d_\rho
+\]
+forces $n\le0$, so
+\[
+e=m\eta_k-n\nu\ge\eta_k,
+\]
+a contradiction. Suppose next $e\in(-\nu,0)$. Then $n\ge1$, the same bound on $d$ forces $m\le0$, and
+\[
+e=m\eta_k-n\nu\le-\nu,
+\]
+a contradiction. This proves the claim.
+
+Consequently, for $d\in[1,N-1]$,
+\[
+\{d\beta\}\notin
+\begin{cases}
+(0,\eta_k)\cup(1-\nu,1) & \text{if }\sigma=1,\\
+(0,\nu)\cup(1-\eta_k,1) & \text{if }\sigma=-1.
+\end{cases}
+\]
+If also $q_k\le N-1$ and $\mathrm d_\rho\le N-1$, the values attained there are extremal:
+\[
+\bigl\{\{q_k\beta\},\{\mathrm d_\rho\beta\}\bigr\}=
+\begin{cases}
+\{\eta_k,\,1-\nu\} & \text{if }\sigma=1,\\
+\{1-\eta_k,\,\nu\} & \text{if }\sigma=-1.
+\end{cases}
+\]
+Hence
+\[
+\{\mathrm d_+,\mathrm d_-\}=\{q_k,\mathrm d_\rho\},\qquad \{\Delta_+,\Delta_-\}=\{\eta_k,\nu\},
+\]
+and by Step 1(b) the gaps are
+\begin{align*}
+&\eta_k &&(N-q_k\text{ times}),\\
+&\nu &&(N-\mathrm d_\rho\text{ times}),\\
+&\eta_k+\nu &&(q_k+\mathrm d_\rho-N\text{ times}).
+\end{align*}
+
+\emph{Step 3: apply with $k\ge1$.} Let $(k,r,t)$ be as in \eqref{gap:eq:decomp} with $k\ge1$.
+If $t\ge1$, take $\rho=r$. Then
+\begin{align*}
+\mathrm d_r&=N-t\le N-1, & N-\mathrm d_r&=t,\\
+q_k&\le N-1\quad(\text{as }N\ge q_k+q_{k-1}+1), & N&=\mathrm d_r+t\le\mathrm d_r+q_k,
+\end{align*}
+so Step 2 applies with $\nu=B$, and the counts are $N-q_k$, $t$, $q_k-t$ for $A$, $B$, $C$.
+If $t=0$, take $\rho=r-1$. Then
+\begin{align*}
+\mathrm d_\rho&=N-q_k\ge q_{k-1}\ge1, & N&=\mathrm d_\rho+q_k,\\
+q_k&\le N-1, & \nu&=\eta_{k-1}-(r-1)\eta_k=C,
+\end{align*}
+and the counts are $N-q_k$ for $A$, $q_k$ for $C$, and $0$ for $C+A$. This is the claim with $t=0$.
 \end{proof}
 
 \begin{remark}[Relation to Leong]
-Leong \cite[Thm.~3]{Leong17} treats $N'+1$ points $0,\beta,\dots,N'\beta$, i.e.\ $N=N'+1$. Under that shift the
-ranges $q_k+q_{k-1}\le N'<q_{k+1}+q_k$ become $q_k+q_{k-1}<N\le q_{k+1}+q_k$, so the boundary values
-$N=q_k+q_{k-1}$ ($r=1,t=0$) fall at the end of the previous level's range, and a direct citation needs the level drop
-$k\to k-1$ (with $r'=a_k$) for $r=1$ and for $N=q_k$. Theorem~\ref{gap:thm:three} avoids this: every $N\ge2$ is covered
-exactly once with $t=0$ allowed, and its proof is self-contained apart from (F1)--(F2).
+Leong \cite[Thm.~3]{Leong17} treats the $N'+1$ points $0,\beta,\dots,N'\beta$, i.e.\ $N=N'+1$.
+Under that shift the ranges
+\[
+q_k+q_{k-1}\le N'<q_{k+1}+q_k
+\qquad\text{become}\qquad
+q_k+q_{k-1}<N\le q_{k+1}+q_k,
+\]
+so the boundary values $N=q_k+q_{k-1}$ (that is, $r=1$, $t=0$) fall at the end of the previous level's range.
+A direct citation therefore needs the level drop $k\to k-1$ (with $r'=a_k$) for $r=1$ and for $N=q_k$.
+Theorem~\ref{gap:thm:three} avoids this: every $N\ge2$ is covered exactly once with $t=0$ allowed,
+and its proof is self-contained apart from \eqref{gap:eq:det}--\eqref{gap:eq:F2}.
 \end{remark}
 
 \subsection{Corollaries}\label{gap:sec:cor}
 
-Write $\xi_k=\eta_k/\eta_{k-1}$ for $k\ge0$. Then $\xi_k=1/(a_{k+1}+\xi_{k+1})$ by (F1), and
-$\xi_k\in(0,1)$ because $\eta_{k-1}\ge a_{k+1}\eta_k+\eta_{k+1}>\eta_k$.
+For $k\ge0$ write
+\begin{equation}\label{gap:eq:xi}
+\xi_k=\frac{\eta_k}{\eta_{k-1}},
+\qquad\text{so that}\qquad
+\xi_k=\frac1{a_{k+1}+\xi_{k+1}}
+\end{equation}
+by \eqref{gap:eq:rec}. Moreover $\xi_k\in(0,1)$, because
+\[
+\eta_{k-1}\ge a_{k+1}\eta_k+\eta_{k+1}>\eta_k.
+\]
 
 \begin{corollary}[Standard inequalities]\label{gap:cor:ineq}
-For $k\ge0$: $q_k\eta_{k-1}+q_{k-1}\eta_k=1$, and
-$\dfrac1{a_{k+1}+2}<q_k\eta_k<\dfrac1{a_{k+1}}$.
+For $k\ge0$:
+\begin{enumerate}
+\item[(i)] $q_k\eta_{k-1}+q_{k-1}\eta_k=1$;
+\item[(ii)] the two-sided bound
+\[
+\frac1{a_{k+1}+2}<q_k\eta_k<\frac1{a_{k+1}}.
+\]
+\end{enumerate}
 \end{corollary}
 \begin{proof}
-The first is (F2). Applying (F2) at $k+1$ and dividing by $q_k\eta_k$ gives
-$1/(q_k\eta_k)=q_{k+1}/q_k+\eta_{k+1}/\eta_k$. Here $a_{k+1}\le q_{k+1}/q_k=a_{k+1}+q_{k-1}/q_k<a_{k+1}+1$ and
-$0<\eta_{k+1}/\eta_k<1$.
+Part (i) is \eqref{gap:eq:F2}. For (ii), apply \eqref{gap:eq:F2} at $k+1$ and divide by $q_k\eta_k$:
+\[
+\frac1{q_k\eta_k}=\frac{q_{k+1}}{q_k}+\frac{\eta_{k+1}}{\eta_k}.
+\]
+Here
+\[
+a_{k+1}\le\frac{q_{k+1}}{q_k}=a_{k+1}+\frac{q_{k-1}}{q_k}<a_{k+1}+1
+\qquad\text{and}\qquad
+0<\frac{\eta_{k+1}}{\eta_k}<1.\qedhere
+\]
 \end{proof}
 
 \begin{corollary}[Two-distance times]\label{gap:cor:two}
-(i) If $N=rq_k+q_{k-1}$, $k\ge0$, $1\le r\le a_{k+1}$, $N\ge2$: the gaps are $\eta_k$ ($N-q_k$ times) and
-$\eta_{k-1}-(r-1)\eta_k$ ($q_k$ times).
-(ii) If $N=q_k\ge2$ ($k\ge1$): the gaps are $\eta_{k-1}$ ($q_k-q_{k-1}$ times) and $\eta_{k-1}+\eta_k$ ($q_{k-1}$ times).
+Two cases of Theorem~\ref{gap:thm:three} have only two gap lengths.
+\begin{enumerate}
+\item[(i)] Let $N=rq_k+q_{k-1}$ with $k\ge0$, $1\le r\le a_{k+1}$ and $N\ge2$. Then the gaps are
+\begin{align*}
+&\eta_k &&(N-q_k\text{ times}),\\
+&\eta_{k-1}-(r-1)\eta_k &&(q_k\text{ times}).
+\end{align*}
+\item[(ii)] Let $N=q_k\ge2$ with $k\ge1$. Then the gaps are
+\begin{align*}
+&\eta_{k-1} &&(q_k-q_{k-1}\text{ times}),\\
+&\eta_{k-1}+\eta_k &&(q_{k-1}\text{ times}).
+\end{align*}
+\end{enumerate}
 \end{corollary}
 \begin{proof}
-(i) is Theorem~\ref{gap:thm:three} with $t=0$ (the decomposition of $N$ is $(k,r,0)$). (ii) $N=q_k=a_kq_{k-1}+q_{k-2}$ has
-decomposition $(k-1,r=a_k,t=0)$. Part (i) at level $k-1$ gives $\eta_{k-1}$ ($q_k-q_{k-1}$ times) and
-$\eta_{k-2}-(a_k-1)\eta_{k-1}=\eta_k+\eta_{k-1}$ ($q_{k-1}$ times), using (F1) $\eta_k=\eta_{k-2}-a_k\eta_{k-1}$. For $k=1$ use the case $k=0$ of the theorem
-($q_1=a_1$).
+(i) is Theorem~\ref{gap:thm:three} with $t=0$; the decomposition of $N$ is $(k,r,0)$.
+
+(ii) Since
+\[
+N=q_k=a_kq_{k-1}+q_{k-2},
+\]
+the decomposition of $N$ is $(k-1,\,r=a_k,\,t=0)$. Part (i) at level $k-1$ gives the gaps $\eta_{k-1}$ ($q_k-q_{k-1}$ times) and
+\[
+\eta_{k-2}-(a_k-1)\eta_{k-1}=\eta_k+\eta_{k-1}\qquad(q_{k-1}\text{ times}),
+\]
+using \eqref{gap:eq:rec} in the form $\eta_k=\eta_{k-2}-a_k\eta_{k-1}$.
+For $k=1$ use the case $k=0$ of the theorem ($q_1=a_1$).
 \end{proof}
-These are the cases used in Theorem~\ref{thm:C}(2); there $q_k\eta_{k-1}=1-q_{k-1}\eta_k\in(1-1/a_{k+1},1)$ and
-$q_k(\eta_{k-1}+\eta_k)=1+(q_k-q_{k-1})\eta_k\in(1,1+1/a_{k+1})$ by Corollary~\ref{gap:cor:ineq}.
+These are the cases used in Theorem~\ref{thm:B}(2). There, by Corollary~\ref{gap:cor:ineq},
+\begin{equation}\label{gap:eq:twoscaled}
+\begin{aligned}
+q_k\eta_{k-1}&=1-q_{k-1}\eta_k\in\Bigl(1-\frac1{a_{k+1}},\,1\Bigr),\\
+q_k(\eta_{k-1}+\eta_k)&=1+(q_k-q_{k-1})\eta_k\in\Bigl(1,\,1+\frac1{a_{k+1}}\Bigr).
+\end{aligned}
+\end{equation}
 
 \begin{corollary}[Bounded type]\label{gap:cor:bdd}
-Let $a_j\le A_0$ for all $j$ and $\varepsilon=1/((A_0+1)(A_0+2))$. For $k\ge1$ and $N=rq_k+q_{k-1}+t$ as in
-Theorem~\ref{gap:thm:three}:
-(i) $1/(A_0+1)<\eta_{k+1}/\eta_k<(A_0+1)/(A_0+2)$;
-(ii) $(N-q_k)/N\ge\varepsilon$ and $q_k/N\ge1/(A_0+2)$;
-(iii) $C/A\ge1+1/(A_0+1)$ always; $B/A\ge1+1/(A_0+1)$ if $r<a_{k+1}$; $A/B\ge1+1/(A_0+1)$ if $r=a_{k+1}$.
+Let $a_j\le A_0$ for all $j$, and put
+\[
+\varepsilon=\frac1{(A_0+1)(A_0+2)}.
+\]
+Let $k\ge1$ and let $N=rq_k+q_{k-1}+t$ be as in Theorem~\ref{gap:thm:three}. Then:
+\begin{enumerate}
+\item[(i)] the ratio $\eta_{k+1}/\eta_k$ satisfies
+\[
+\frac1{A_0+1}<\frac{\eta_{k+1}}{\eta_k}<\frac{A_0+1}{A_0+2};
+\]
+\item[(ii)] the class frequencies satisfy
+\[
+\frac{N-q_k}N\ge\varepsilon\qquad\text{and}\qquad\frac{q_k}N\ge\frac1{A_0+2};
+\]
+\item[(iii)] the gap ratios satisfy
+\begin{align*}
+C/A&\ge1+1/(A_0+1) &&\text{always},\\
+B/A&\ge1+1/(A_0+1) &&\text{if }r<a_{k+1},\\
+A/B&\ge1+1/(A_0+1) &&\text{if }r=a_{k+1}.
+\end{align*}
+\end{enumerate}
 \end{corollary}
 \begin{proof}
-(i) $\xi_{k+1}=1/(a_{k+2}+\xi_{k+2})>1/(A_0+1)$, and $\xi_{k+1}<1/(1+\xi_{k+2})<1/(1+1/(A_0+1))$.
-(ii) $N-q_k=(r-1)q_k+q_{k-1}+t\ge q_{k-1}\ge q_k/(A_0+1)$ and $N<q_{k+1}+q_k\le(A_0+2)q_k$. Hence $(N-q_k)/N\ge q_{k-1}/((A_0+2)q_k)\ge\varepsilon$ and $q_k/N>1/(A_0+2)$.
-(iii) $C/A=1+B/A$. If $r<a_{k+1}$ then $B\ge\eta_{k+1}+\eta_k$, so $B/A\ge1+\xi_{k+1}>1+1/(A_0+1)$ by (i), and $C/A>2$. If $r=a_{k+1}$ then $B=\eta_{k+1}$ and
-$A/B=1/\xi_{k+1}>1+1/(A_0+1)$ by (i), while $C/A=1+\xi_{k+1}>1+1/(A_0+1)$.
+(i) By \eqref{gap:eq:xi},
+\[
+\xi_{k+1}=\frac1{a_{k+2}+\xi_{k+2}}>\frac1{A_0+1}
+\qquad\text{and}\qquad
+\xi_{k+1}<\frac1{1+\xi_{k+2}}<\frac1{1+1/(A_0+1)}.
+\]
+
+(ii) We have
+\[
+N-q_k=(r-1)q_k+q_{k-1}+t\ge q_{k-1}\ge\frac{q_k}{A_0+1}
+\qquad\text{and}\qquad
+N<q_{k+1}+q_k\le(A_0+2)q_k.
+\]
+Hence
+\[
+\frac{N-q_k}N\ge\frac{q_{k-1}}{(A_0+2)q_k}\ge\varepsilon
+\qquad\text{and}\qquad
+\frac{q_k}N>\frac1{A_0+2}.
+\]
+
+(iii) First, $C/A=1+B/A$. If $r<a_{k+1}$, then $B\ge\eta_{k+1}+\eta_k$, so by (i)
+\[
+\frac BA\ge1+\xi_{k+1}>1+\frac1{A_0+1}
+\qquad\text{and}\qquad
+\frac CA>2.
+\]
+If $r=a_{k+1}$, then $B=\eta_{k+1}$, so by (i)
+\[
+\frac AB=\frac1{\xi_{k+1}}>1+\frac1{A_0+1}
+\qquad\text{and}\qquad
+\frac CA=1+\xi_{k+1}>1+\frac1{A_0+1}.\qedhere
+\]
 \end{proof}
-This is exactly what the proof of Theorem~\ref{thm:C}(3) needs, now
+This is exactly what the proof of Theorem~\ref{thm:B}(3) needs, now
 with the unified decomposition valid for all $N\ge2$; for $k=0$ the frequency of class $A$ may be $0$, which affects only the finitely many $N\le a_1$.
 
 \begin{corollary}[Golden law]\label{gap:cor:golden}
-Let $\lambda=(\sqrt5-1)/2$, $F_1=F_2=1$, and $\beta=\lambda^2=[0;2,1,1,\dots]$. For $m\ge3$ and $N=F_m+t$, $0\le t<F_{m-1}$, the gaps of
-$\{j\beta\}_{j<N}$ are $\lambda^{m-2},\lambda^{m-1},\lambda^m$ with multiplicities $F_{m-1}-t$, $F_{m-2}+t$, $t$.
+Let
+\[
+\lambda=\frac{\sqrt5-1}2,\qquad F_1=F_2=1,\qquad \beta=\lambda^2=[0;2,1,1,\dots].
+\]
+Let $m\ge3$ and $N=F_m+t$ with $0\le t<F_{m-1}$. Then the gaps of $\{j\beta\}_{j<N}$ are
+\begin{align*}
+&\lambda^{m-2} &&(F_{m-1}-t\text{ times}),\\
+&\lambda^{m-1} &&(F_{m-2}+t\text{ times}),\\
+&\lambda^{m} &&(t\text{ times}).
+\end{align*}
 \end{corollary}
 \begin{proof}
-Here $a_1=2$, $a_j=1$ ($j\ge2$), $q_j=F_{j+2}$, $\eta_j=\lambda^{j+2}$ ($j\ge0$; $q_0=1,q_1=2$, $\eta_0=\lambda^2$, $\eta_1=1-2\lambda^2=\lambda^3$, then
-$\eta_{j+1}=\eta_{j-1}-\eta_j$ as $\lambda^{j+3}=\lambda^{j+1}-\lambda^{j+2}$). For $m=3$: $N=2$ is the case $k=0,r=2$ of the theorem, gaps $\lambda^2,1-\lambda^2=\lambda$,
-matching $(F_2-0,F_1+0,0)=(1,1,0)$. For $m\ge4$ put $K=m-3\ge1$: $q_K+q_{K-1}=F_{m-1}+F_{m-2}=F_m\le N<F_{m+1}=q_{K+1}+q_K$. Since $a_{K+1}=1$, $r=1$ and
-$t=N-F_m<q_K=F_{m-1}$. Then $A=\eta_K=\lambda^{m-1}$ ($N-q_K=F_{m-2}+t$), $B=\eta_{K+1}=\lambda^m$ ($t$), $C=\eta_{K-1}=\lambda^{m-2}$ ($F_{m-1}-t$).
+Here $a_1=2$ and $a_j=1$ for $j\ge2$. For $j\ge0$,
+\begin{equation}\label{gap:eq:goldid}
+q_j=F_{j+2},\qquad \eta_j=\lambda^{j+2}.
+\end{equation}
+Indeed $q_0=1$, $q_1=2$, and
+\[
+\eta_0=\lambda^2,\qquad \eta_1=1-2\lambda^2=\lambda^3,
+\]
+while the recursion $\eta_{j+1}=\eta_{j-1}-\eta_j$ matches $\lambda^{j+3}=\lambda^{j+1}-\lambda^{j+2}$.
+
+For $m=3$, $N=2$ is the case $k=0$, $r=2$ of the theorem, with gaps
+\[
+\lambda^2,\qquad 1-\lambda^2=\lambda,
+\]
+matching the multiplicities $(F_2-0,\,F_1+0,\,0)=(1,1,0)$.
+
+For $m\ge4$ put $K=m-3\ge1$. Then
+\[
+q_K+q_{K-1}=F_{m-1}+F_{m-2}=F_m\le N<F_{m+1}=q_{K+1}+q_K,
+\]
+so $N$ lies at level $K$. Since $a_{K+1}=1$, we get $r=1$ and $t=N-F_m<q_K=F_{m-1}$.
+The theorem gives
+\begin{align*}
+A&=\eta_K=\lambda^{m-1} &&(N-q_K=F_{m-2}+t\text{ times}),\\
+B&=\eta_{K+1}=\lambda^{m} &&(t\text{ times}),\\
+C&=\eta_{K-1}=\lambda^{m-2} &&(F_{m-1}-t\text{ times}).\qedhere
+\end{align*}
 \end{proof}
-(Equivalently, apply the theorem to $\lambda=[0;1,1,\dots]$ after the reflection $x\mapsto-x$, which maps $\{j\lambda\}$ to $\{j\beta\}$ since $\beta\equiv-\lambda$; indices then shift by one. The
-direct formulation above avoids $a_1=1$, outside our range $\beta<\tfrac12$.)
+Equivalently, one may apply the theorem to $\lambda=[0;1,1,\dots]$ after the reflection $x\mapsto-x$, which maps $\{j\lambda\}$ to $\{j\beta\}$ since $\beta\equiv-\lambda$; indices then shift by one. The direct formulation above avoids $a_1=1$, which is outside our range $\beta<\tfrac12$.
 
 \begin{corollary}[Noble law]\label{gap:cor:noble}
-Let $a_j=1$ for all $j\ge k_0$. Then for $k>k_0$, $N=q_k+t$, $0\le t<q_{k-1}$, the gaps are $\eta_{k-1}$ ($N-q_{k-1}$ times), $\eta_k$ ($t$ times), $\eta_{k-2}$ ($q_{k-1}-t$ times).
-Moreover $\eta_k/\eta_{k-1}=\lambda$ for $k\ge k_0$, $q_{k-1}/q_k\to\lambda$, $q_k\eta_{k-1}\to1/(1+\lambda^2)=1/(\sqrt5\lambda)$ and $q_k\eta_{k-2}\to1/(\sqrt5\lambda^2)$.
+Let $a_j=1$ for all $j\ge k_0$.
+\begin{enumerate}
+\item[(i)] For $k>k_0$ and $N=q_k+t$ with $0\le t<q_{k-1}$, the gaps are
+\begin{align*}
+&\eta_{k-1} &&(N-q_{k-1}\text{ times}),\\
+&\eta_k &&(t\text{ times}),\\
+&\eta_{k-2} &&(q_{k-1}-t\text{ times}).
+\end{align*}
+\item[(ii)] For $k\ge k_0$, $\eta_k/\eta_{k-1}=\lambda$. Moreover, as $k\to\infty$,
+\[
+\frac{q_{k-1}}{q_k}\to\lambda,\qquad
+q_k\eta_{k-1}\to\frac1{1+\lambda^2}=\frac1{\sqrt5\,\lambda},\qquad
+q_k\eta_{k-2}\to\frac1{\sqrt5\,\lambda^2}.
+\]
+\end{enumerate}
 \end{corollary}
 \begin{proof}
-Put $K=k-1\ge k_0\ge1$. Since $a_k=1$, $q_k=q_K+q_{K-1}$, so $N=q_K+q_{K-1}+t$ with $r=1=a_{K+1}$, $0\le t<q_K$: this is $(K,1,t)$. Then $A=\eta_{k-1}$, $B=\eta_{K+1}=\eta_k$, $C=\eta_{K-1}=\eta_{k-2}$ with counts $N-q_{k-1},t,q_{k-1}-t$.
-For $j\ge k_0$, $\xi_j=1/(1+\xi_{j+1})$; with $f(x)=1/(1+x)$ one has $|f(x)-\lambda|\le\lambda|x-\lambda|$ on $[0,\infty)$, so $|\xi_j-\lambda|\le\lambda^n$ for every $n$, i.e.\ $\xi_j=\lambda$.
-The same contraction applied to $q_{j-1}/q_j=f(q_{j-2}/q_{j-1})$ gives $q_{k-1}/q_k\to\lambda$. By (F2), $q_k\eta_{k-1}=(1+(q_{k-1}/q_k)\xi_k)^{-1}\to1/(1+\lambda^2)$, and $\eta_{k-2}=\eta_{k-1}/\lambda$. ($1+\lambda^2=\sqrt5\lambda$.)
+(i) Put $K=k-1\ge k_0\ge1$. Since $a_k=1$, $q_k=q_K+q_{K-1}$, hence
+\[
+N=q_K+q_{K-1}+t,\qquad r=1=a_{K+1},\qquad 0\le t<q_K,
+\]
+so the decomposition of $N$ is $(K,1,t)$. Theorem~\ref{gap:thm:three} gives
+\begin{align*}
+A&=\eta_K=\eta_{k-1} &&(N-q_{k-1}\text{ times}),\\
+B&=\eta_{K+1}=\eta_k &&(t\text{ times}),\\
+C&=\eta_{K-1}=\eta_{k-2} &&(q_{k-1}-t\text{ times}).
+\end{align*}
+
+(ii) For $j\ge k_0$, \eqref{gap:eq:xi} reads $\xi_j=f(\xi_{j+1})$, where
+\[
+f(x)=\frac1{1+x},\qquad |f(x)-\lambda|\le\lambda\,|x-\lambda|\quad\text{on }[0,\infty).
+\]
+Iterating, $|\xi_j-\lambda|\le\lambda^n$ for every $n$, so $\xi_j=\lambda$.
+The same contraction applied to
+\[
+\frac{q_{j-1}}{q_j}=f\Bigl(\frac{q_{j-2}}{q_{j-1}}\Bigr)
+\]
+gives $q_{k-1}/q_k\to\lambda$. Finally, by \eqref{gap:eq:F2} and \eqref{gap:eq:xi},
+\[
+q_k\eta_{k-1}=\Bigl(1+\frac{q_{k-1}}{q_k}\,\xi_k\Bigr)^{-1}\to\frac1{1+\lambda^2}=\frac1{\sqrt5\,\lambda},
+\qquad
+\eta_{k-2}=\frac{\eta_{k-1}}{\lambda},
+\]
+where $1+\lambda^2=\sqrt5\,\lambda$.
 \end{proof}
-Consequently, with $x_N=t/q_k\in[0,q_{k-1}/q_k)$, the atoms of $\mu_N$ are $\pi N\eta_{k-2}\cdot\{1,\lambda,\lambda^2\}$ with weights $(q_{k-1}-t,\,N-q_{k-1},\,t)/N$ (note $\eta_{k-1}=\lambda\eta_{k-2}$, $\eta_k=\lambda^2\eta_{k-2}$) and $N\eta_{k-2}=(1+x_N)q_k\eta_{k-2}\to(1+x)/(\sqrt5\lambda^2)$; this is the family $\mu_x$ of Section~\ref{sec:golden}.
+Consequently, writing
+\[
+x_N=\frac t{q_k}\in\Bigl[0,\frac{q_{k-1}}{q_k}\Bigr)
+\]
+and using $\eta_{k-1}=\lambda\eta_{k-2}$, $\eta_k=\lambda^2\eta_{k-2}$, the measure $\mu_N$ has
+\begin{align*}
+\text{atoms}&\quad \pi N\eta_{k-2}\cdot\{1,\lambda,\lambda^2\},\\
+\text{weights}&\quad \frac{q_{k-1}-t}N,\ \frac{N-q_{k-1}}N,\ \frac tN,
+\end{align*}
+respectively, and
+\[
+N\eta_{k-2}=(1+x_N)\,q_k\eta_{k-2}\to\frac{1+x}{\sqrt5\,\lambda^2}.
+\]
+This is the family $\mu_x$ of Section~\ref{sec:golden}.

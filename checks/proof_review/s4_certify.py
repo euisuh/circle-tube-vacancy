@@ -1,5 +1,5 @@
 import sys, random, importlib.util, time
-spec=importlib.util.spec_from_file_location("certify","/Users/uiseo/Documents/Circle Research/certify.py")
+spec=importlib.util.spec_from_file_location("certify",str(__import__("pathlib").Path(__file__).resolve().parents[2])+"/certify.py")
 c=importlib.util.module_from_spec(spec); spec.loader.exec_module(c)
 import mpmath as mp
 mp.mp.dps=80

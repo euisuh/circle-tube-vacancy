@@ -5,7 +5,7 @@
 The geometry executor ran and saved `verified-full.json`, `verified-full.csv`,
 `verified-full.stdout.log`, `verified-checks.json`, and `verified-tests.log` during
 this archive task. The documentation executor read those saved outputs before
-writing this report. Earlier `full`, `large`, `smoke`, and `theory_checks` files
+writing this report. Earlier `full`, `large`, `smoke`, and `theory_checks` files (now in `results/archive/`)
 already existed when the executors inspected the folder; they are preserved but
 are not the verification source for the current claim. Historical numbers from
 voice replies are recorded separately in `../docs/HISTORY.md`.

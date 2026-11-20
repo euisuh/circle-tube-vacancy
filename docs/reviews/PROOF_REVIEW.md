@@ -1,6 +1,6 @@
 # Adversarial review of docs/THEOREM.md and certify.py
 
-Reviewer: Claude Sonnet 5.5, 2026-11-14. Scratch scripts: `docs/reviews/proof_review_scratch/` (s1..s6).
+Reviewer: Claude Sonnet 5.5, 2026-11-14. Scratch scripts: `checks/proof_review/` (s1..s6).
 Labels: CORRECT / GAP (fixable) / ERROR. No ERROR found.
 
 ## Item verdicts
@@ -86,7 +86,7 @@ Also unverified: the Leong citation, and the all-N proof of B.1, which currently
 
 # Round 2: Theorem C (uniform-gap envelope)
 
-Scratch: `proof_review_scratch/r2_c2.py`, `r2_lemma.py`, `r2_W.py`, `r2_unb.py`. No ERROR. Three cosmetic GAPs.
+Scratch: `checks/proof_review/r2_c2.py`, `r2_lemma.py`, `r2_W.py`, `r2_unb.py`. No ERROR. Three cosmetic GAPs.
 
 1. **Closed form of V_δ(c), c < πQ: CORRECT.** With k = c/π, `2∫_k^Q q(1-k/q)² dq = Q²-4kQ+3k²+2k² ln(Q/k)`. This matches the stated formula, and a 200001-point quadrature agrees to 1e-11 (c = 0.3, 1, 2). V_δ = a² for c ≥ πQ.
    - C.1 is correct: Jensen gives `Σ(g-2s/N)_+ ≥ (2π-2s)_+`, so `m_N ≥ (1-s/π)_+`. The mean-gap identity is correct, and the monotone integrand gives `Ṽ_N ≥ V_δ`.

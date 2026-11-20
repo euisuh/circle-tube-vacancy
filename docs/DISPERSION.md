@@ -1,8 +1,8 @@
 # Coverage threshold for every irrational angle (2026-11-14)
 
 Status labels: **audited argument** (own proof, checked against computation) unless stated. LaTeX version with the
-same statements: `manuscript/sections/dispersion.tex` (labels `disp:*`). Scratch checks: `docs/dispersion_scratch/disp_check.py`
-(output saved in `docs/dispersion_scratch/out.txt`).
+same statements: `manuscript/sections/dispersion.tex` (labels `disp:*`). Scratch checks: `checks/dispersion/disp_check.py`
+(output saved in `checks/dispersion/out.txt`).
 
 ## Normalization
 Gaps g_{N,j} of θ_j=(2j+1)α mod 2π (= 2π × gaps of {jβ}_{j<N}); G_N=max g; h_N=G_N/2π (largest gap in turns);

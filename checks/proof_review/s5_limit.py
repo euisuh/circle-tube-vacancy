@@ -1,5 +1,5 @@
 import importlib.util, mpmath as mp
-spec=importlib.util.spec_from_file_location("certify","/Users/uiseo/Documents/Circle Research/certify.py")
+spec=importlib.util.spec_from_file_location("certify",str(__import__("pathlib").Path(__file__).resolve().parents[2])+"/certify.py")
 c=importlib.util.module_from_spec(spec); spec.loader.exec_module(c)
 mp.mp.dps=c.iv.dps=30
 lam=(mp.sqrt(5)-1)/2; al=mp.pi*lam**2; a=mp.cos(al);Q=mp.sin(al);u=mp.pi/(mp.sqrt(5)*lam**2)

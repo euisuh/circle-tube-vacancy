@@ -64,6 +64,8 @@ def threshold_figure():
     cstar = math.pi * Q / (math.sqrt(5) * LAM ** 3)
     out.append(f'\\draw[gray, densely dotted] ({cstar*sx:.3f},0) -- ({cstar*sx:.3f},2) node[above, font=\\small] {{$c_*$}};')
     out.append(f'\\draw[gray, densely dotted] ({math.pi*Q*sx:.3f},0) -- ({math.pi*Q*sx:.3f},3) node[above, font=\\small] {{$\\pi Q$}};')
+    qu = Q * math.pi / (math.sqrt(5) * LAM ** 2)
+    out.append(f'\\draw[gray, densely dotted] ({qu*sx:.3f},0) -- ({qu*sx:.3f},2.5) node[above, font=\\small] {{$Qu$}};')
     out.append('\\draw[thick, black] ' + path(amp, lambda c: c * sx, lambda v: v * sy) + ';')
     out.append('\\draw[thick, black, dashed] ' + path(gap, lambda c: c * sx, lambda v: v * sy) + ';')
     return '\n'.join(out)

@@ -188,7 +188,7 @@ Section~\ref{disp:sec} also shows that noble angles minimize the normalized thre
 $\kappa(\beta)$ (Proposition~\ref{disp:prop:min}).
 
 For $Qu\le c<c_*$ (about $3.428\le c<5.547$) the outer annulus is asymptotically fully
-covered along Fibonacci times, while along other times a positive area stays
+covered along Fibonacci times, while along suitable other times a positive area stays
 uncovered. For instance, at $c=1$ the Fibonacci limit is $V(0,1)\approx0.3362$, while the
 limit along the phase $x=1/3$ is $V(1/3,1)\approx0.3381$. Certified digits (interval
 arithmetic, Section~\ref{sec:golden}) are collected in Table~\ref{tab:limits}.
@@ -358,24 +358,16 @@ $\gamma>0$ independent of $N$.
 
 \section{The golden angle}\label{sec:golden}
 
-\begin{lemma}\label{lem:golden}
-Let $\beta=\lambda^2$, $m\ge3$ and $N=F_m+t$ with $0\le t<F_{m-1}$. The $N$ gaps of
-$\{j\beta\bmod1\}_{j<N}$ are
-\begin{align*}
-\lambda^{m-2}&&(F_{m-1}-t\text{ times}),\\
-\lambda^{m-1}&&(F_{m-2}+t\text{ times}),\\
-\lambda^{m}&&(t\text{ times}).
-\end{align*}
-\end{lemma}
-
-This is Corollary~\ref{gap:cor:golden}. We also verified it in exact arithmetic in
-$\mathbb Z[\lambda]$ for every $2\le N\le3000$ (Appendix~\ref{app:repro}).
+The gap law of the golden angle is Corollary~\ref{gap:cor:golden}: for $N=F_m+t$ with
+$m\ge3$ and $0\le t<F_{m-1}$ the gaps are $\lambda^{m-2}$, $\lambda^{m-1}$, $\lambda^m$
+with multiplicities $F_{m-1}-t$, $F_{m-2}+t$, $t$. We also verified it in exact
+arithmetic in $\mathbb Z[\lambda]$ for every $2\le N\le3000$ (Appendix~\ref{app:repro}).
 
 \emph{Idea of the proof.} Along $N=F_m+t$ the gap law is a three-atom law that depends, up to $o(1)$, only on the phase $t/F_m$. This reduces $V_N(c)$ to $V(x,c)$, and $V(x,c)\ge V(0,c)$ is a convex-order comparison of the laws $\mu_x$ and $\mu_0$, which have the same mean.
 
 \begin{proof}[Proof of Theorem~\ref{thm:C}]
 \emph{Step 1: reduction to the phase.} For $N=F_m+t$ put $x_N=t/F_m$. By
-Lemma~\ref{lem:golden}, the atoms of $\mu_N$ (the scaled half-gaps $Ng/2$) and their weights are
+Corollary~\ref{gap:cor:golden}, the atoms of $\mu_N$ (the scaled half-gaps $Ng/2$) and their weights are
 \[
 \pi F_m\lambda^{m-2}(1+x_N)\lambda^i\quad(i=0,1,2),\qquad
 \frac{(F_{m-1}-t,\ F_{m-2}+t,\ t)}{N}.
@@ -630,7 +622,7 @@ therefore attained at a neighbour of $\varphi+d$ or $\varphi-d$.
 
 All code is in the accompanying repository: \texttt{circle\_research.py} (geometry,
 Monte Carlo, limit formulas), \texttt{certify.py} (exact $\mathbb Z[\lambda]$ check of
-Lemma~\ref{lem:golden} for $2\le N\le3000$ and interval enclosures),
+Corollary~\ref{gap:cor:golden} for $2\le N\le3000$ and interval enclosures),
 \texttt{test\_circle\_research.py} (unit tests), and \texttt{manuscript/make\_figures.py}.
 Python 3.14.7, NumPy 2.5.3, mpmath 1.3.0. Saved outputs and hashes are in
 \texttt{results/}.
@@ -649,16 +641,15 @@ Python 3.14.7, NumPy 2.5.3, mpmath 1.3.0. Saved outputs and hashes are in
 \bibitem{Dup79} Y.~Dupain, Discr\'epance de la suite $(\{n\alpha\})$, $\alpha=(1+\sqrt5)/2$, \emph{Ann. Inst. Fourier (Grenoble)} \textbf{29} (1979), no.~1, 81--106.
 \bibitem{DK24} A.~Dzhalilov and J.~Khomidov, Limit law of rescaled hitting time functions for quadratic irrational rotations, \emph{Uzbek Math. J.} \textbf{68} (2024), no.~2, 61--68.
 \bibitem{FS02} A.-H.~Fan and J.~Schmeling, Coverings of the circle driven by rotations, in: \emph{Dynamical Systems from Number Theory to Probability II} (A.~Khrennikov, ed.), V\"axj\"o University Press, 2002, 7--15.
-\bibitem{Leong17} N.~Leong, Sums of reciprocals and the three distance theorem, arXiv:1712.03758.
+\bibitem{Leong17} V.~Beresnevich and N.~Leong, Sums of reciprocals and the three distance theorem, arXiv:1712.03758.
 \bibitem{Nie84} H.~Niederreiter, On a measure of denseness for sequences, in: \emph{Topics in Classical Number Theory, Vol.~II (Budapest, 1981)}, Colloq. Math. Soc. J\'anos Bolyai \textbf{34}, North-Holland, Amsterdam, 1984, 1163--1208.
-\bibitem{Ram14} F.~A.~Ram\'irez, Khintchine types of translated coordinate hyperplanes, arXiv:1405.7277.
 \bibitem{Slater67} N.~B.~Slater, Gaps and steps for the sequence $n\theta$ mod 1, \emph{Proc. Cambridge Philos. Soc.} \textbf{63} (1967), 1115--1123.
 \bibitem{Sos58} V.~T.~S\'os, On the distribution mod 1 of the sequence $n\alpha$, \emph{Ann. Univ. Sci. Budapest. E\"otv\"os Sect. Math.} \textbf{1} (1958), 127--134.
 \bibitem{Swier59} S.~\'Swierczkowski, On successive settings of an arc on the circumference of a circle, \emph{Fund. Math.} \textbf{46} (1959), 187--189.
 \bibitem{Tab05} S.~Tabachnikov, \emph{Geometry and Billiards}, Student Mathematical Library \textbf{30}, Amer. Math. Soc., Providence, RI, 2005.
 \bibitem{Tri93} A.~Tripathi, A comparison of dispersion and Markov constants, \emph{Acta Arith.} \textbf{63} (1993), 193--203.
 \bibitem{vRav88} T.~van Ravenstein, The three gap theorem (Steinhaus conjecture), \emph{J. Austral. Math. Soc. Ser. A} \textbf{45} (1988), 360--370.
-\bibitem{Zhao25} Y.~Zhao, Almost sure convergence of cover times for $\psi$-mixing systems, arXiv:2412.17425.
+\bibitem{Zhao25} B.~Zhao, Almost sure convergence of cover times for $\psi$-mixing systems, arXiv:2412.17425.
 \end{thebibliography}
 
 \end{document}

@@ -530,8 +530,11 @@ $c$ & $V_{4181}$ & $V_{5574}$ & paired difference (SE) & limit difference\\
 \end{table}
 
 Across 20 independent seeds of $4\times10^6$ points each (16 further seeds 9001--9016 and three of an independent
-verifier), the pooled $z$-scores of the paired differences against the deterministic
-finite-$N$ values below are $0.91$ ($c=1$) and $1.43$ ($c=2$), and the spread across runs
+verifier), the pooled $z$-scores of the paired differences are computed against the deterministic
+finite-$N$ differences at $N=4181$ and $5574$ (exact-arc integrator, described next; not
+tabulated) from $V_N(1)=0.336056$ and $0.338011$ (difference $0.001955$) and
+$V_N(2)=0.156116$ and $0.161916$ (difference $0.005800$); they are $0.91$ ($c=1$) and
+$1.43$ ($c=2$), and the spread across runs
 matches the paired standard error.
 
 \paragraph{Deterministic integration.} An independently written integrator computes, for
@@ -541,6 +544,7 @@ integrates $2rU_N(r)$ by composite Gauss--Legendre quadrature with breakpoints a
 $a$ and the endpoint radii. Halving the panel width changes $V_N$ by at most
 $2.4\times10^{-6}$ at $N\approx4000$, and per-chord arcs agreed with dense brute angular
 sampling at every test point. Selected values at $c=1$ are given in Table~\ref{tab:det}.
+
 \begin{table}[ht]
 \centering
 \begin{tabular}{@{}rrllrrll@{}}
@@ -638,8 +642,8 @@ Python 3.14.7, NumPy 2.5.3, mpmath 1.3.0. Saved outputs and hashes are in
 \bibitem{BZ07} F.~P.~Boca and A.~Zaharescu, The distribution of the free path lengths in the periodic two-dimensional Lorentz gas in the small-scatterer limit, \emph{Comm. Math. Phys.} \textbf{269} (2007), 425--471.
 \bibitem{BI09} C.~Bonanno and S.~Isola, A renormalization approach to irrational rotations, \emph{Ann. Mat. Pura Appl.} \textbf{188} (2009); arXiv:0708.0048.
 \bibitem{MS03} E.~Caglioti and F.~Golse, On the distribution of free path lengths for the periodic Lorentz gas III, \emph{Comm. Math. Phys.} \textbf{236} (2003), 199--221; arXiv:math/0301300.
-\bibitem{CdF96} Z.~Coelho and E.~de Faria, Limit laws of entrance times for homeomorphisms of the circle, \emph{Israel J. Math.} \textbf{93} (1996), 93--112.
 \bibitem{Coelho04} Z.~Coelho, The loss of tightness of time distributions for homeomorphisms of the circle, \emph{Trans. Amer. Math. Soc.} \textbf{356} (2004), 4427--4445.
+\bibitem{CdF96} Z.~Coelho and E.~de Faria, Limit laws of entrance times for homeomorphisms of the circle, \emph{Israel J. Math.} \textbf{93} (1996), 93--112.
 \bibitem{DMS17} C.~P.~Dettmann, J.~Marklof and A.~Str\"ombergsson, Universal hitting time statistics for integrable flows, \emph{J. Stat. Phys.} \textbf{166} (2017), 714--749.
 \bibitem{Don12} H.~Don, Polygons in billiard orbits, \emph{J. Number Theory} \textbf{132} (2012), no.~6, 1151--1163; arXiv:1106.2030.
 \bibitem{Dro86} V.~Drobot, On dispersion and Markov constants, \emph{Acta Math. Hungar.} \textbf{47} (1986), 89--93.
